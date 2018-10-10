@@ -6,6 +6,7 @@ gem "haml-rails"
 gem "devise"
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
+
 require "rubygems"
 gem "autoprefixer-rails"
 require "autoprefixer-rails"
