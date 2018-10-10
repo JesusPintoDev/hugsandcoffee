@@ -1,9 +1,7 @@
 %div.container 
   %div.content.col-s-12
     %div.footer
-      %hr.half/
       %h3 Log in
-      %hr.half/
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       %hr.padding/
       .field
@@ -22,4 +20,7 @@
       %hr.padding/  
       .actions
         = f.submit 'Log in', :class => "button"
-    = render "devise/shared/links"
+      %hr.padding/  
+
+    %p.desc.black ¿No tienes una cuenta?
+    .desc.black= link_to "¡Registrate aquí!", new_registration_path(resource_name)
