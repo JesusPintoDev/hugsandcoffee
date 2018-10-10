@@ -70,18 +70,40 @@
 }
 
 .navbar {
-  padding-top: 11px;
-  padding-left: 20px;
-  padding-right: 35px;
+  padding: 0px;
+  flex-direction: row;
   max-height: 50px;
-  button {
-    background-color: white;
-    font-family: roboto;
-    border: none;
-    color: black;
-    float: right;
-    text-decoration: none;
-    font-size: 18px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  z-index: 1;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    li {
+      img {
+        float: left;
+        padding: 11px;
+        padding-left: 20px;
+        // padding-right: 35px;
+      }
+      a {
+        padding-top: 10px;
+        font-family: roboto;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+}
+
+
+
+  li a:hover {
+    background-color: #111;
   }
   // background-color: #FFFFFF;
 }
@@ -93,7 +115,7 @@
   font-size: 26px;
   text-align: center;
   padding-bottom: 100px;
-  button {
+  .button {
     font-family: roboto-regular;
     border-radius: 5px;
     background-color: #EE4380;
@@ -107,6 +129,9 @@
     display: inline-block;
     font-size: 18px;
   }
+  // a:hover {
+  //   background-color: rgb(224, 90, 137);
+  // }
 }
 
 .footer {

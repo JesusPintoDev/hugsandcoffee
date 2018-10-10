@@ -1,8 +1,8 @@
-
 %div.container
   %div.navbar.col-s-12.example
-    = image_tag 'logo_temp.svg'
-    %button Login
+    %ul
+      %li= image_tag('logo_temp.svg')
+      %li= link_to('Login', {})
   %div.content.col-s-12
     = image_tag 'coffees.svg'
     %hr/
@@ -12,7 +12,7 @@
     %p.desc mediante donaciones online
     %hr/
     %hr.half/
-    %button Crear mi perfil
+    %a.button(href="https://google.com") Crear mi perfil
   %div.footer.col-s-12
     %p Un perfil dedicado a recibir agradecimientos
     %p Puedes crear una página en minutos sin conocimientos técnicos. Muestra tus datos y agradecimientos recibidos de otras personas.
