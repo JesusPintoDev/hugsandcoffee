@@ -1,3 +1,147 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+[class*="col-"] {
+  float: left;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+ /* Extra small devices (phones, 600px and down) */
+ @media only screen and (max-width: 600px) {
+  .example {background-color: white;}
+ }
+
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) {
+  .example {background: green;}
+ }
+ 
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+   .example {background: white;}
+   .col-1 {width: 8.33%;}
+   .col-2 {width: 16.66%;}
+   .col-3 {width: 25%;}
+   .col-4 {width: 33.33%;}
+   .col-5 {width: 41.66%;}
+   .col-6 {width: 50%;}
+   .col-7 {width: 58.33%;}
+   .col-8 {width: 66.66%;}
+   .col-9 {width: 75%;}
+   .col-10 {width: 83.33%;}
+   .col-11 {width: 91.66%;}
+   .col-12 {width: 100%;}
+ }
+ 
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+  .example {background: white;}
+ }
+ 
+ /* Extra large devices (large laptops and desktops, 1200px and up) */
+ @media only screen and (min-width: 1200px) {
+  .example {background: white;}
+ } 
+
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: happyMonkey;
+}
+
+.navbar {
+  max-height: 50px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  list-style-type: none;
+  z-index: 1;
+  ul {
+    list-style-type: none;
+    li {
+      img {
+        float: left;
+        padding: 11px;
+        padding-left: 20px;
+        // padding-right: 35px;
+      }
+      a {
+        margin-right: 27px;
+        float: right;
+        padding: 16px;
+        font-family: roboto;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+}
+
+  li a:hover {
+    background-color: rgb(219, 219, 219);
+  }
+  // background-color: #FFFFFF;
+}
+
+.content {
+  padding-top: 24.5px;
+  background-color: rgb(250, 250, 250);
+  color: #363636;
+  font-size: 26px;
+  text-align: center;
+  padding-bottom: 100px;
+  .button {
+    font-family: roboto-regular;
+    border-radius: 5px;
+    background-color: #EE4380;
+    border: none;
+    color: white;
+    padding: 9px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+  }
+  // a:hover {
+  //   background-color: rgb(224, 90, 137);
+  // }
+}
+
+.footer {
+  background-color: #EE4380;
+  color: #FFFFFF;
+}
+
+.desc {
+  font-family: roboto;
+  color: #8F8F8F;
+  font-size: 20px;
+}
+
+svg {
+  width: 161px;
+  height: 193.5px;
+}
+
+hr {
+  padding-top: 28px;
+  border: none;
+}
+.half {
+  padding-top: 14px;
+}

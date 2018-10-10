@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ @font-face {
+  font-family: happyMonkey;
+  src: url(HappyMonkey-Regular.ttf);
+}
+
+@font-face {
+  font-family: roboto;
+  src: url(Roboto-Light.ttf);
+}
+
+@font-face {
+  font-family: roboto-regular;
+  src: url(Roboto-Regular.ttf);
+}
