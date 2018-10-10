@@ -2,17 +2,21 @@
   %div.navbar.col-s-12.example
     %ul
       %li= image_tag('logo_temp.svg')
-      %li= link_to('Login', {})
+      %li= link_to "Log in", new_session_path(resource_name)
   %div.content.col-s-12
     = image_tag 'coffees.svg'
-    %hr/
+    %hr.padding/
     %p Un café es un abrazo atrapado en una taza
-    %hr/
+    %hr.padding/
     %p.desc Recibe aprecio y gratitud
     %p.desc mediante donaciones online
-    %hr/
-    %hr.half/
-    %a.button(href="https://google.com") Crear mi perfil
-  %div.footer.col-s-12
+    %hr.padding/
+    %hr.padding/
+    .button= link_to "Crear mi perfil", new_registration_path(resource_name)
+  %div.footer
     %p Un perfil dedicado a recibir agradecimientos
-    %p Puedes crear una página en minutos sin conocimientos técnicos. Muestra tus datos y agradecimientos recibidos de otras personas.
+    -# %hr/
+    %div.line-separator
+    %p.desc.white Puedes crear una página en minutos sin conocimientos técnicos. Muestra tus datos y agradecimientos recibidos de otras personas.
+    %hr.padding/
+    = image_tag "cellphones.png"
