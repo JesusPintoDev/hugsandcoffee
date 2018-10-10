@@ -3,7 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 gem "haml-rails"
-gem "devise"
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 
@@ -68,3 +67,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "devise", "~> 4.5"
+
+gem "activerecord", "~> 5.2"
