@@ -1,0 +1,17 @@
+%div.admin-container
+  %div.admin-navbar
+  %div.admin-view
+    %div.admin-sidebar
+      %ul
+        %li 1
+        %li 2
+        %li 3
+    %div.admin-content a
+%div.admin-navbar
+
+%p User: #{@user}
+
+- if flash.notice
+  %div.notice-error
+    %ul
+      %li #{flash.notice}

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  fullname: MyString
+  role: MyString
+  bio: MyString
+  coffee_price: 9.99
+  monetary_symbol: MyString
+
+two:
+  user: two
+  fullname: MyString
+  role: MyString
+  bio: MyString
+  coffee_price: 9.99
+  monetary_symbol: MyString
