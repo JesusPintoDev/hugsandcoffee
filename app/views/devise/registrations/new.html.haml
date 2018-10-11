@@ -22,9 +22,11 @@
         = f.label :password_confirmation
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password"
+      %hr.padding/  
       .actions
         = f.submit 'Registrar', :class => "button"
       %hr.padding/  
       
     %p.desc.black ¿Ya tienes una cuenta?
-    .desc.black= link_to "¡Haz Log in Aquí!", new_session_path(resource_name)
+    %div.desc.black 
+      =link_to "¡Inicia sesión!", new_session_path(resource_name)
