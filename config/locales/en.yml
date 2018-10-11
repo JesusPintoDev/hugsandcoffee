@@ -30,4 +30,41 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Please Specify an Email id"
+              taken: "%{value} ya existe"
+              invalid: "Please Specify a valid Email id"
+            password:
+              blank: " no puede estar en blanco"
+              confirmation: "Los Password no coinciden"
+            password_confirmation:
+              blank: "El campo password confirmation no puede estar en blanco"
+              confirmation: "y Password no coinciden"
+            first_name:
+              blank: "Please Specify First Name"
+            last_name:
+              blank: "Please Specify Last Name"
+        pdf:
+          attributes:
+            name:
+              blank: "Please Specify name to PDF"
+              taken: "Please use different name for PDF"
+            attachment:
+              blank: "Please Upload a PDF Attachment"
+        data_element:
+          attributes:
+            name:
+              blank: "Please give Element a desired name"
+              taken: "Already Created Element with given name"
+            color:
+              blank: "Please assign a color to Element"
+        template:
+          attributes:
+            name:
+              blank: "Please Specify a Name"
+              taken: "Please use a different name"
