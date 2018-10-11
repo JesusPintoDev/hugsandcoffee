@@ -2,7 +2,7 @@
 %div.container 
   %div.content.col-s-12
     %div.footer
-      %h3 Inicio de sesión
+      %h3 Iniciar Sesión
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       %hr.padding/
       .field
@@ -22,6 +22,10 @@
         %div.alert-error
           %ul
             %li #{flash.alert}
+      - if flash.notice
+        %div.alert-notice
+          %ul
+            %li #{flash.notice}
       %hr.padding/  
       .actions
         = f.submit 'Log in', :class => "button"

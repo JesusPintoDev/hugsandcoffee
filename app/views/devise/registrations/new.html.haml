@@ -1,27 +1,29 @@
 %div.container 
   %div.content.col-s-12
     %div.footer
-      %h5 Registro de usuario
+      %h3 Crear Cuenta
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = devise_error_messages!
-      %hr.half/
+      %hr.padding/
       .field
         = f.label :email
-        %br/
+        - unless devise_error_messages! != ""
+          %br/
         = f.email_field :email, autofocus: true, autocomplete: "email"
-      %hr.half/
+      -# %hr.half/
       .field
         = f.label :password
-        - if @minimum_password_length
-          %em
-            (#{@minimum_password_length} characters minimum)
-        %br/
+        -# - if @minimum_password_length
+          -# %em
+          -#   (#{@minimum_password_length} characters minimum)
+        - unless devise_error_messages! != ""
+          %br/
         = f.password_field :password, autocomplete: "new-password"
-      %hr.half/
+      -# %hr.half/
       .field
         = f.label :password_confirmation
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password"
+      = devise_error_messages!
       %hr.padding/  
       .actions
         = f.submit 'Registrar', :class => "button"
