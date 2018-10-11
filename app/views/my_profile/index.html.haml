@@ -1,15 +1,82 @@
 %div.admin-container
   %div.admin-navbar
+    %div.logo
+      = image_tag("logo_temp.svg", alt: "Logo")
+    %div.bar
+      %input.disabled
+      %p #{@user_email}
+
+
+  -# Container de todo debajo del navbar. Usa flex-row.
   %div.admin-view
+
+    -# El sidebar colocará automáticamente los estilos a su lista
     %div.admin-sidebar
       %ul
-        %li 1
-        %li 2
-        %li 3
-    %div.admin-content a
-%div.admin-navbar
+        -# La clase .selected le dará color rosa al ícono y al texto.
+        %li.selected
+          = link_to image_tag('ico-home.svg', alt: 'Icon'), my_profile_path
+          = link_to "Home", my_profile_path
+        %li
+          = link_to image_tag('ico-profile.svg', alt: 'Icon'), my_profile_settings_path
+          = link_to "Perfil", my_profile_settings_path
+        %li 
+          = link_to image_tag('ico-images.svg', alt: 'Icon'), my_profile_images_path
+          = link_to "Imágenes", my_profile_images_path
+        %li
+          = link_to image_tag('ico-accounts.svg', alt: 'Icon'), my_profile_accounts_path
+          = link_to "Cuentas", my_profile_accounts_path
 
-%p User: #{@user}
+    -# Centro de la Vista --------------------------------------------------------------
+
+    -# Header con el título.
+    %div.admin-content
+      %div.header
+        %h1 ¡Bienvenid@, #{@user}!
+        %a.pinkbtn .pinkbtn
+        %div.separator
+
+      -# Contenido central. Automáticamente colocará elementos en flex-row
+      %div.info
+        -# Card Izquierdo. La clase card colocará su contenido en flex-column
+        %div.card
+          -# Div para controlar una sección aninada. Se forza un flex-row
+          %div.nested-section
+            -# Contenido 1 del card
+            %div.card-body
+              %h5.card-title .card-title
+              %p.card-text .card-text
+              %input
+            -# Contenido 2 del card
+            %div.card-body
+              %h5.card-title .card-title
+              %p.card-text .card-text
+              %input
+          -# Ahora el contenido estará fuera del .nested-section, así usando flex-column
+          -# Contenido 3 del card
+          %div.card-body
+            %h5.card-title .card-title
+            %p.card-text .card-text
+            %input
+
+        -# Card derecho
+        %div.card
+          -# Contenido 1
+          %div.card-body
+            %h5.card-title .card-title
+            %p.card-text .card-text
+            %input
+          -# Contenido 2
+          %div.card-body
+            %h5.card-title .card-title
+            %p.card-text .card-text
+            %input
+
+            -# -------------------------------------------------------------------------
+
+      %div.footer
+        %div.separator
+        %a.pinkbtn .pinkbtn
 
 - if flash.notice
   %div.notice-error

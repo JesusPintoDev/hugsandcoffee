@@ -2,6 +2,7 @@ class MyProfileController < ApplicationController
   before_action :authenticate_user!
   
   def index
+    @user_email = current_user.email
     @user = current_user.email.split("@")[0].capitalize
   end
 
