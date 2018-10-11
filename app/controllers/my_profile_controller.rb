@@ -1,8 +1,7 @@
 class MyProfileController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :define_user
   
   def index
-    @user = current_user.email.split("@")[0].capitalize
   end
 
   def settings
@@ -12,6 +11,11 @@ class MyProfileController < ApplicationController
   end
 
   def accounts
+  end
+
+  def define_user
+    @user_email = current_user.email
+    @user = current_user.email.split("@")[0].capitalize
   end
 
   private
