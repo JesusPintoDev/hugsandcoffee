@@ -22,6 +22,10 @@
         = f.label :password_confirmation
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password"
+      - if flash.alert
+        %div.alert-error
+          %ul
+            %li #{flash.alert}
       %hr.padding/  
       .actions
         = f.submit 'Registrar', :class => "button"
