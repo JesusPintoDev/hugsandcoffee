@@ -1,0 +1,2 @@
+class AddValidation < ApplicationRecord
+end
