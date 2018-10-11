@@ -10,6 +10,7 @@ html {
   display: flex;
   flex-direction: column;
 }
+
 .admin-navbar{
   display: flex;
   flex-direction: row;
@@ -46,6 +47,7 @@ html {
     }
   }
 }
+
 .admin-view{
   display: flex;
   flex-direction: row;
@@ -99,6 +101,20 @@ html {
         font-size: 29px;
         font-weight: normal;
       }
+      a.returnbtn {
+        font-family: roboto;
+        font-size: 16px;
+        color: #566073;
+        text-decoration: none;
+        float: left;
+        margin-top: 17px;
+        font-weight: inherit;
+      }
+      img {
+        margin-top: 20px;
+        float: left;
+        padding-right: 10px;
+      }
     }
     .info {
       display: flex;
@@ -118,13 +134,18 @@ html {
 div.card {
   margin-bottom: 52px;
   margin-right: 32px;
-  // margin-right: 32px;
   padding-bottom: 30px;
   padding-right: 30px;
   border-radius: 3px;
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
   transition: 0.3s;
+  &.transparent {
+    background-color: transparent;
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.0);
+    margin-left: -30px;
+    margin-right: 20px;
+  }
   .nested-section {
     display: flex;
   }
