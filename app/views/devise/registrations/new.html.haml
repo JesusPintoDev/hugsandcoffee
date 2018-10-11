@@ -23,5 +23,8 @@
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password"
       .actions
-        = f.submit "Sign up"
-    = render "devise/shared/links"
+        = f.submit 'Registrar', :class => "button"
+      %hr.padding/  
+      
+    %p.desc.black ¿Ya tienes una cuenta?
+    .desc.black= link_to "¡Haz Log in Aquí!", new_session_path(resource_name)
