@@ -1,0 +1,30 @@
+// Place all the styles related to the My_Profile controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin-container {
+  display: flex;
+  flex-direction: column;
+}
+.admin-navbar{
+  background-color: #EE4380;
+  min-height: 56px;
+  color: white;
+}
+.admin-view{
+  display: flex;
+  flex-direction: row;
+  .admin-sidebar{
+    background-color: #DFE4E8;
+    color: #212B35;
+    width: 25%;
+    li {
+      font-family: roboto-medium;
+    }
+  }
+  .admin-content{
+    background-color: #F4F6F8;
+    color: #212B35;
+    width: 100%;
+  }
+}

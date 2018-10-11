@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile: one
+  fullname: MyString
+  role: MyString
+  message: MyString
+  appreciation: false
+  quantity: MyString
+
+two:
+  profile: two
+  fullname: MyString
+  role: MyString
+  message: MyString
+  appreciation: false
+  quantity: MyString

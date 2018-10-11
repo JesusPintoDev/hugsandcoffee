@@ -10,7 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_151023) do
+ActiveRecord::Schema.define(version: 2018_10_11_003552) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.integer "profile_id"
+    t.string "entity"
+    t.string "email"
+    t.integer "account_number"
+    t.string "rif_ci"
+    t.string "account_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_accounts_on_profile_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.integer "profile_id"
+    t.string "url"
+    t.string "description"
+    t.boolean "show?"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_images_on_profile_id"
+  end
+
+  create_table "multipliers", force: :cascade do |t|
+    t.integer "profile_id"
+    t.string "a"
+    t.string "b"
+    t.string "c"
+    t.string "d"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_multipliers_on_profile_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "fullname"
+    t.string "role"
+    t.string "bio"
+    t.decimal "coffee_price"
+    t.string "monetary_symbol"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "testimonials", force: :cascade do |t|
+    t.integer "profile_id"
+    t.string "fullname"
+    t.string "role"
+    t.string "message"
+    t.boolean "appreciation"
+    t.string "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_testimonials_on_profile_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
