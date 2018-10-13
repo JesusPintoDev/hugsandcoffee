@@ -1,10 +1,9 @@
 class MyProfileController < ApplicationController
   before_action :validate_user_id_params_id!
   before_action :set_profile
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :define_user
   
   def index
-      @user = current_user.email.split("@")[0].capitalize
   end
 
   def settings
@@ -19,6 +18,11 @@ class MyProfileController < ApplicationController
   def first_time
       @profile = Profile.new(user_id: current_user.id)
       @profile.save
+  end
+      
+  def define_user
+    @user_email = current_user.email
+    @user = current_user.email.split("@")[0].capitalize
   end
 
   private
