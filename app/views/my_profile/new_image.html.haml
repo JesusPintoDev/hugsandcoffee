@@ -39,6 +39,7 @@
         %div.card
           %div.card-body
             %div.card-title Imagen principal
+            %p.card-text url
             %input(type="file")/
 
       %div.info
@@ -49,10 +50,11 @@
         %div.card
           %div.card-body
             %h5.card-title Subtítulo
-            %input(type="text")/
+            %input{type: "text", placeholder: "subtitle"}
             %div.checkbox
               %input(type="checkbox")
               %p Mostrar esta imagen en el perfil público
+            %p.card-text show
        
       %div.footer
         %a.pinkbtn Guardar

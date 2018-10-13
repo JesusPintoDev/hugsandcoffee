@@ -79,10 +79,10 @@
             %h5.card-title .nested-section.of-multipliers
             -# Agregar este div generará una sección de botones en fila  estilizados.
             %div.nested-section.of-multipliers
-              %button 1
-              %button 2
-              %button 3
-              %button 5
+              %input{value: 1, type: "number", min: "1", max: "99", maxlength: "2", required: true}
+              %input{value: 2, type: "number", min: "1", max: "99", maxlength: "2", required: true}
+              %input{value: 3, type: "number", min: "1", max: "99", maxlength: "2", required: true}
+              %input{value: 5, type: "number", min: "1", max: "99", maxlength: "2", required: true}
 
 
       -# Usando otro div con la clase .info creará un nuevo row de cards!
