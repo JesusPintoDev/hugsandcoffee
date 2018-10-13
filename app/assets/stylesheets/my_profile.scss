@@ -140,11 +140,14 @@ div.card {
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
   transition: 0.3s;
+  width: 100%;
   &.transparent {
     background-color: transparent;
     box-shadow: 0 0px 0px 0 rgba(0,0,0,0.0);
     margin-left: -30px;
     margin-right: 20px;
+    min-width: 25%;
+    max-width: 25%;
   }
   &:hover {
     // background-color: rgb(233, 238, 243);
@@ -223,6 +226,7 @@ div.card {
   border-radius: 5px;
   border-style: none;
   background-color: #EE4380;
+  text-decoration: none;
   cursor: pointer;
   &:hover {
     background-color: rgb(246, 104, 154);
@@ -244,4 +248,16 @@ div.separator{
 .notice {
   color: rgb(241, 167, 81);
   font-size: 25px;
+}
+
+div.checkbox {
+  display: flex;
+  padding-top: 22px;
+  font-family: roboto-medium;
+  font-size: 14px;
+  input[type=checkbox] {
+    padding: 0px;
+    margin-right: 10px;
+    width: 0%;
+  }
 }

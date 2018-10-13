@@ -34,7 +34,7 @@
       %div.header
         -# Estas dos líneas al inicio del header generarán un botón de retorno.
         = link_to image_tag('ico-return.svg', alt: 'Icon'), my_profile_path
-        %a.returnbtn(href=my_profile_path) Regresar a la vista anterior
+        %a.returnbtn(href=my_profile_path) .returnbtn
         -# El título tiene estilos automáticos gracias a la clase .header
         %h1 ¡Bienvenid@, #{@user}!
         -# Si es necesario, se puede poner un botón rosa al lado derecho del header.
@@ -91,19 +91,27 @@
         %div.card.transparent
           %div.card-body
             %h5.card-title Este card usa la clase .transparent
-            %p.card-text Ahora se pueden hacer descripciones geniales.
-            %p.card-text Tres tristes tigres comían trigo en un trigal.
+            %p.card-text Ahora se pueden hacer descripciones geniales. Tres tristes tigres comían trigo en un trigal.
         -# Otros cards de muestra.
         %div.card
           %div.card-body
             %h5.card-title .card-title
             %p.card-text .card-text
             %input
+            %div.checkbox
+              %input(type="checkbox")
+              %p div.checkbox
         %div.card
           %div.card-body
             %h5.card-title .card-title
             %p.card-text .card-text
             %input
+            %div.checkbox
+              %input(type="checkbox")
+              %p div.checkbox
+            %div.checkbox
+              %input(type="checkbox")
+              %p div.checkbox
       -# -------------------------------------------------------------------------
 
       %div.footer

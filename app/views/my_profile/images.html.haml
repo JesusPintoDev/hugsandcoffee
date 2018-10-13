@@ -1,1 +1,37 @@
-Images
+%div.admin-container
+  %div.admin-navbar
+    %div.logo
+      = image_tag("logo_temp.svg", alt: "Logo")
+    %div.bar
+      %input.disabled
+      %p #{@user_email}
+
+
+  %div.admin-view
+
+    %div.admin-sidebar
+      %ul
+        %li
+          = link_to image_tag('ico-home.svg', alt: 'Icon'), my_profile_path
+          = link_to "Home", my_profile_path
+        %li
+          = link_to image_tag('ico-profile.svg', alt: 'Icon'), my_profile_settings_path
+          = link_to "Perfil", my_profile_settings_path
+        %li.selected
+          = link_to image_tag('ico-images.svg', alt: 'Icon'), my_profile_images_path
+          = link_to "Imágenes", my_profile_images_path
+        %li
+          = link_to image_tag('ico-accounts.svg', alt: 'Icon'), my_profile_accounts_path
+          = link_to "Cuentas", my_profile_accounts_path
+
+    %div.admin-content
+
+      %div.header
+        %h1 Carousel de Imágenes
+        %a.pinkbtn(href=my_profile_new_image_path) Agregar
+        %div.separator
+
+      %div.footer
+        %div.separator
+        -# %a.pinkbtn .pinkbtn
+
