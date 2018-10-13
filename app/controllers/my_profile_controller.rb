@@ -32,12 +32,12 @@ class MyProfileController < ApplicationController
 
 
   def validate_user_id_params_id!
-    redirect_to profile_my_profile_path(current_user) if params[:profile_id].to_i != current_user.id
+   redirect_to my_profile_path(current_user) if params[:format].to_i != current_user.id
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def my_profile_params
-    params.permit(:profile_id)
+    params.permit(:format)
   end
 
 end
