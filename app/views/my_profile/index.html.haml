@@ -70,13 +70,20 @@
           -# Contenido 1
           %div.card-body
             %h5.card-title .card-title
-            %p.card-text .card-text
+            %input
+          %div.card-body
+            %h5.card-title .card-title
             %input
           -# Contenido 2
           %div.card-body
-            %h5.card-title .card-title
-            %p.card-text .card-text
-            %input
+            %h5.card-title .nested-section.of-multipliers
+            -# Agregar este div generará una sección de botones en fila  estilizados.
+            %div.nested-section.of-multipliers
+              %button 1
+              %button 2
+              %button 3
+              %button 5
+
 
       -# Usando otro div con la clase .info creará un nuevo row de cards!
       %div.info
@@ -102,8 +109,9 @@
       %div.footer
         %div.separator
         %a.pinkbtn .pinkbtn
+        %p.notice Esta vista aún está siendo usada para probar cosas.
 
-- if flash.notice
-  %div.notice-error
-    %ul
-      %li #{flash.notice}
+-# - if flash.notice
+-#   %div.notice-error
+-#     %ul
+-#       %li #{flash.notice}

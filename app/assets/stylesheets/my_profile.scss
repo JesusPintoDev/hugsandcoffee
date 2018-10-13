@@ -151,6 +151,24 @@ div.card {
   }
   .nested-section {
     display: flex;
+    &.of-multipliers {
+      flex-direction: row;
+      justify-content: center;
+      text-align: center;
+      button {
+        margin-left: 10px;
+        background-color: transparent;
+        border-style: solid;
+        border-color: #EE4380;
+        border-width: 1px;
+        font-family: happyMonkey;
+        font-size: 16px;
+        padding: 12.5px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-radius: 100%;
+      }
+    }
   }
   .card-body {
     padding-left: 32px;
@@ -216,3 +234,7 @@ div.separator{
   // border-bottom:1px solid #ececec;
 }
 
+.notice {
+  color: rgb(241, 167, 81);
+  font-size: 25px;
+}
