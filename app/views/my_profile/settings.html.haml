@@ -35,28 +35,29 @@
           %div.nested-section
             %div.card-body
               %h5.card-title Nombre y Apellido
-              %input
+              %input{placeholder: "fullname"}
             %div.card-body
               %h5.card-title Ocupación o Rol
-              %input
+              %input{placeholder: "role"}
           %div.card-body
             %h5.card-title Biografía
-            %input
+            %input{placeholder: "bio"}
 
         %div.card
           %div.card-body
             %h5.card-title Monto de un café
-            %input
+            %input{placeholder: "coffee_price"}
           %div.card-body
             %h5.card-title Símbolo de la moneda
-            %input
+            %input{placeholder: "monetary_symbol"}
           %div.card-body
             %h5.card-title Multiplicadores
+            %p.card-text (a, b, c, d)
             %div.nested-section.of-multipliers
-              %button 1
-              %button 2
-              %button 3
-              %button 5
+              %input{value: 1, type: "number", min: "1", max: "99", maxlength: "2", required: true}
+              %input{value: 2, type: "number", min: "1", max: "99", maxlength: "2", required: true}
+              %input{value: 3, type: "number", min: "1", max: "99", maxlength: "2", required: true}
+              %input{value: 5, type: "number", min: "1", max: "99", maxlength: "2", required: true}
 
       %div.footer
         %div.separator
