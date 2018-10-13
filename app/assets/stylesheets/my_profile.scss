@@ -158,7 +158,10 @@ div.card {
       flex-direction: row;
       justify-content: center;
       text-align: center;
-      button {
+      input {
+        text-align: center;
+        width: 35px;
+        padding: 1px;
         margin-left: 10px;
         background-color: transparent;
         border-style: solid;
@@ -166,7 +169,6 @@ div.card {
         border-width: 1px;
         font-family: happyMonkey;
         font-size: 16px;
-        padding: 12.5px;
         padding-top: 8px;
         padding-bottom: 8px;
         border-radius: 100%;
