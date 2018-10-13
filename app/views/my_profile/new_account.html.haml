@@ -27,10 +27,32 @@
     %div.admin-content
 
       %div.header
-        %h1 Cuentas Bancarias
-        %a.pinkbtn(href=my_profile_new_account_path) Agregar
+        = link_to image_tag('ico-return.svg', alt: 'Icon'), my_profile_accounts_path
+        %a.returnbtn(href=my_profile_accounts_path) Listado de cuentas
+        %h1 Agregar Cuenta
         %div.separator
+
+      %div.info
+        %div.card
+          %div.card-body
+            %h5.card-title Entidad
+            %input
+          %div.card-body
+            %h5.card-title Email
+            %input
+          %div.nested-section
+            %div.card-body
+              %h5.card-title Nro de Cuenta
+              %input
+            %div.card-body
+              %h5.card-title RIF o Cédula
+              %input
+            %div.card-body
+              %h5.card-title Tipo de Cuenta
+              %input
 
       %div.footer
         %div.separator
+        %a.pinkbtn Guardar
         -# %a.pinkbtn .pinkbtn
+

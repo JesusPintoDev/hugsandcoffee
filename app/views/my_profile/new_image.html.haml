@@ -14,10 +14,10 @@
         %li
           = link_to image_tag('ico-home.svg', alt: 'Icon'), my_profile_path
           = link_to "Home", my_profile_path
-        %li.selected
+        %li
           = link_to image_tag('ico-profile.svg', alt: 'Icon'), my_profile_settings_path
           = link_to "Perfil", my_profile_settings_path
-        %li   
+        %li.selected
           = link_to image_tag('ico-images.svg', alt: 'Icon'), my_profile_images_path
           = link_to "Imágenes", my_profile_images_path
         %li
@@ -27,37 +27,37 @@
     %div.admin-content
 
       %div.header
-        %h1 Perfil de Usuario
-        %div.separator
+        = link_to image_tag('ico-return.svg', alt: 'Icon'), my_profile_images_path
+        %a.returnbtn(href=my_profile_images_path) Listado de imágenes
+        %h1 Agregar imagen
 
       %div.info
-        %div.card
-          %div.nested-section
-            %div.card-body
-              %h5.card-title Nombre y Apellido
-              %input
-            %div.card-body
-              %h5.card-title Ocupación o Rol
-              %input
+        %div.card.transparent
           %div.card-body
-            %h5.card-title Biografía
-            %input
-
+            %h5.card-title Imagen del carousel
+            %p.card-text Agregar imagen que se mostrará en el 
+            %p.card-text carousel del perfil público
         %div.card
           %div.card-body
-            %h5.card-title Monto de un café
-            %input
-          %div.card-body
-            %h5.card-title Símbolo de la moneda
-            %input
-          %div.card-body
-            %h5.card-title Multiplicadores
-            %div.nested-section.of-multipliers
-              %button 1
-              %button 2
-              %button 3
-              %button 5
+            %div.card-title Imagen principal
+            %input(type="file")/
 
+      %div.info
+        %div.card.transparent
+          %div.card-body
+            %h5.card-title Datos de la imagen
+            %p.card-text Parámetro de publicación y leyenda de
+            %p.card-text la imagen a mostrarse en el carousel
+        %div.card
+          %div.card-body
+            %h5.card-title Subtítulo
+            %input(type="text")/
+            %div.checkbox
+              %input(type="checkbox")
+              %p Mostrar esta imagen en el perfil público
+       
       %div.footer
-        %div.separator
         %a.pinkbtn Guardar
+        %div.separator
+        -# %a.pinkbtn .pinkbtn
+
