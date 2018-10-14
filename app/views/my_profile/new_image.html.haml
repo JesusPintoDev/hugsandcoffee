@@ -35,26 +35,26 @@
         %div.card.transparent
           %div.card-body
             %h5.card-title Imagen del carousel
-            %p.card-text Agregar imagen que se mostrará en el 
-            %p.card-text carousel del perfil público
+            %p.card-text Agregar imagen que se mostrará en el carousel del perfil público
         %div.card
           %div.card-body
             %div.card-title Imagen principal
+            %p.card-text url
             %input(type="file")/
 
       %div.info
         %div.card.transparent
           %div.card-body
             %h5.card-title Datos de la imagen
-            %p.card-text Parámetro de publicación y leyenda de
-            %p.card-text la imagen a mostrarse en el carousel
+            %p.card-text Parámetro de publicación y leyenda de la imagen a mostrarse en el carousel
         %div.card
           %div.card-body
             %h5.card-title Subtítulo
-            %input(type="text")/
+            %input{type: "text", placeholder: "subtitle"}
             %div.checkbox
               %input(type="checkbox")
               %p Mostrar esta imagen en el perfil público
+            %p.card-text show
        
       %div.footer
         %a.pinkbtn Guardar
