@@ -13,14 +13,8 @@ class MyProfileController < ApplicationController
   end
 
   def update
-    #respond_to do |format|
       if @my_profile.update(my_profile_params)
         redirect_to profile_path(current_user), notice: 'Profile was successfully updated.' 
-        #format.json { render :show, status: :ok, location: @profile }
-      #else
-        #format.html { render :edit }
-        #format.json { render json: @my_profile.errors, status: :unprocessable_entity }
-      #end
     end
   end
 
