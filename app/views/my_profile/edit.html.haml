@@ -50,30 +50,27 @@
             %div.nested-section
               -# Contenido 1 del card
               %div.card-body
-                %h5.card-title .card-title
-                %p.card-text .card-text
-                %input
+                %h5.card-title Nombre y Apellido
+                = f.text_field :fullname, placeholder: "fullname"
               -# Contenido 2 del card
               %div.card-body
-                %h5.card-title .card-title
-                %p.card-text .card-text
-                %input
+                %h5.card-title Ocupación o Rol
+                = f.text_field :role, placeholder: "role"
             -# Ahora el contenido estará fuera del .nested-section, así usando flex-column
             -# Contenido 3 del card
             %div.card-body
-              %h5.card-title .card-title
-              %p.card-text .card-text
-              %input
+              %h5.card-title Biografía
+              = f.text_area :bio, placeholder: "bio"
 
           -# Card derecho
           %div.card
             -# Contenido 1
             %div.card-body
-              %h5.card-title .card-title
-              %input
+              %h5.card-title Monto de un café
+              = f.text_field :coffe_price, placeholder: "coffe_price"
             %div.card-body
-              %h5.card-title .card-title
-              %input
+              %h5.card-title Símbolo de la moneda
+              = f.text_field :monetary_symbol, placeholder: "monetary_symbol"
             -# Contenido 2
             %div.card-body
               %h5.card-title .nested-section.of-multipliers
