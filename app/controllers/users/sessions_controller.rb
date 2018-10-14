@@ -21,7 +21,7 @@ class Users::SessionsController < Devise::SessionsController
    protected
 
   def after_sign_in_path_for(resource)
-    my_profile_path(resource) if is_navigational_format?
+    profile_path(current_user) if is_navigational_format?
   end
 
   # If you have extra params to permit, append them to the sanitizer.

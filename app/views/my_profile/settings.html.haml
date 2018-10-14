@@ -12,8 +12,8 @@
     %div.admin-sidebar
       %ul
         %li
-          = link_to image_tag('ico-home.svg', alt: 'Icon'), my_profile_path
-          = link_to "Home", my_profile_path
+          = link_to image_tag('ico-home.svg', alt: 'Icon'), profile_path
+          = link_to "Home", profile_path
         %li.selected
           = link_to image_tag('ico-profile.svg', alt: 'Icon'), my_profile_settings_path
           = link_to "Perfil", my_profile_settings_path
@@ -25,40 +25,41 @@
           = link_to "Cuentas", my_profile_accounts_path
 
     %div.admin-content
+      = form_for(@my_profile, method: :patch) do |f|
+        %div.header
+          %h1 Perfil de Usuario
+          %div.separator
 
-      %div.header
-        %h1 Perfil de Usuario
-        %div.separator
-
-      %div.info
-        %div.card
-          %div.nested-section
+        %div.info
+          %div.card
+            %div.nested-section
+              %div.card-body
+                %h5.card-title Nombre y Apellido
+                = f.text_field :fullname, placeholder: "fullname"
+              %div.card-body
+                %h5.card-title Ocupación o Rol
+                = f.text_field :role, placeholder: "role"
             %div.card-body
-              %h5.card-title Nombre y Apellido
-              %input{placeholder: "fullname"}
+              %h5.card-title Biografía
+              = f.text_area :bio, placeholder: "bio"
+
+          %div.card
             %div.card-body
-              %h5.card-title Ocupación o Rol
-              %input{placeholder: "role"}
-          %div.card-body
-            %h5.card-title Biografía
-            %input{placeholder: "bio"}
-
-        %div.card
-          %div.card-body
-            %h5.card-title Monto de un café
-            %input{placeholder: "coffee_price"}
-          %div.card-body
-            %h5.card-title Símbolo de la moneda
-            %input{placeholder: "monetary_symbol"}
-          %div.card-body
-            %h5.card-title Multiplicadores
-            %p.card-text (a, b, c, d)
-            %div.nested-section.of-multipliers
-              %input{value: 1, type: "number", min: "1", max: "99", maxlength: "2", required: true}
-              %input{value: 2, type: "number", min: "1", max: "99", maxlength: "2", required: true}
-              %input{value: 3, type: "number", min: "1", max: "99", maxlength: "2", required: true}
-              %input{value: 5, type: "number", min: "1", max: "99", maxlength: "2", required: true}
-
-      %div.footer
-        %div.separator
-        %a.pinkbtn Guardar
+              %h5.card-title Monto de un café
+              = f.text_field :coffe_price, placeholder: "coffe_price"
+            %div.card-body
+              %h5.card-title Símbolo de la moneda
+              = f.text_field :monetary_symbol, placeholder: "monetary_symbol"
+            %div.card-body
+              %h5.card-title Multiplicadores
+              =#%p.card-text (a, b, c, d)
+              %div.nested-section.of-multipliers
+                = f.fields_for :multiplier do |fm|
+                  = fm.number_field :a 
+                  = fm.number_field :b 
+                  = fm.number_field :c 
+                  = fm.number_field :d 
+        %div.footer
+          %div.separator
+          .actions
+            = f.submit 'Guardar', :class => "pinkbtn"
