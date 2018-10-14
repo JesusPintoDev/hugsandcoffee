@@ -15,8 +15,8 @@
       %ul
         -# La clase .selected le dará color rosa al ícono y al texto.
         %li.selected
-          = link_to image_tag('ico-home.svg', alt: 'Icon'), my_profile_path
-          = link_to "Home", my_profile_path
+          = link_to image_tag('ico-home.svg', alt: 'Icon'), profile_path
+          = link_to "Home", profile_path
         %li
           = link_to image_tag('ico-profile.svg', alt: 'Icon'), my_profile_settings_path
           = link_to "Perfil", my_profile_settings_path
@@ -29,12 +29,12 @@
 
     -# Centro de la Vista --------------------------------------------------------------
     %div.admin-content        
-      = form_for(:profile, method: :patch) do |f|
+      = form_for @my_profile do |f|
         -# Header con el título.
         %div.header
           -# Estas dos líneas al inicio del header generarán un botón de retorno.
-          = link_to image_tag('ico-return.svg', alt: 'Icon'), my_profile_path
-          %a.returnbtn(href=my_profile_path) .returnbtn
+          = link_to image_tag('ico-return.svg', alt: 'Icon'), profile_path
+          %a.returnbtn(href=profile_path) .returnbtn
           -# El título tiene estilos automáticos gracias a la clase .header
           %h1 ¡Bienvenid@, #{@user}!
           -# Si es necesario, se puede poner un botón rosa al lado derecho del header.
@@ -79,7 +79,7 @@
               %h5.card-title .nested-section.of-multipliers
               -# Agregar este div generará una sección de botones en fila  estilizados.
               %div.nested-section.of-multipliers
-                = f.fields_for @multiplier do |fm|
+                = f.fields_for :multiplier do |fm|
                   = fm.number_field :a 
                   = fm.number_field :b 
                   = fm.number_field :c 
