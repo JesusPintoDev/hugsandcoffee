@@ -15,8 +15,8 @@
       %ul
         -# La clase .selected le dará color rosa al ícono y al texto.
         %li.selected
-          = link_to image_tag('ico-home.svg', alt: 'Icon'), my_profile_path
-          = link_to "Home", my_profile_path
+          = link_to image_tag('ico-home.svg', alt: 'Icon'), profile_path
+          = link_to "Home", profile_path
         %li
           = link_to image_tag('ico-profile.svg', alt: 'Icon'), my_profile_settings_path
           = link_to "Perfil", my_profile_settings_path
@@ -33,8 +33,8 @@
       -# Header con el título.
       %div.header
         -# Estas dos líneas al inicio del header generarán un botón de retorno.
-        = link_to image_tag('ico-return.svg', alt: 'Icon'), my_profile_path
-        %a.returnbtn(href=my_profile_path) .returnbtn
+        = link_to image_tag('ico-return.svg', alt: 'Icon'), profile_path
+        %a.returnbtn(href=profile_path) .returnbtn
         -# El título tiene estilos automáticos gracias a la clase .header
         %h1 ¡Bienvenid@, #{@user}!
         -# Si es necesario, se puede poner un botón rosa al lado derecho del header.

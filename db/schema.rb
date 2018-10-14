@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_11_003552) do
+ActiveRecord::Schema.define(version: 2018_10_14_190234) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer "profile_id"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2018_10_11_003552) do
     t.string "fullname"
     t.string "role"
     t.string "bio"
-    t.decimal "coffee_price"
+    t.decimal "coffee_price", precision: 10, scale: 2
     t.string "monetary_symbol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
