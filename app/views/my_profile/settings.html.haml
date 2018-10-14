@@ -55,10 +55,10 @@
               =#%p.card-text (a, b, c, d)
               %div.nested-section.of-multipliers
                 = f.fields_for :multiplier do |fm|
-                  = fm.number_field :a 
-                  = fm.number_field :b 
-                  = fm.number_field :c 
-                  = fm.number_field :d 
+                  = fm.number_field :a, min: "1", max: "99", maxlength: "2", required: true
+                  = fm.number_field :b, min: "1", max: "99", maxlength: "2", required: true
+                  = fm.number_field :c, min: "1", max: "99", maxlength: "2", required: true
+                  = fm.number_field :d, min: "1", max: "99", maxlength: "2", required: true
         %div.footer
           %div.separator
           .actions
