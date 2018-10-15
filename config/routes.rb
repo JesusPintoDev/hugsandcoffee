@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   get 'my_profile/:id/new_account' => "my_profile#new_account", as: 'my_profile_new_account'
   patch 'my_profile/:id' => "my_profile#update"
   patch 'my_profile/settings/:id' => "my_profile#update"
+
+get 'profiles/:id' => "profiles#show"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
