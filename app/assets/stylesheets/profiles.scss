@@ -15,8 +15,6 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   font-family: roboto-regular;
   .profile-navbar {
@@ -77,7 +75,7 @@
     display: flex;
     justify-content: center; 
     padding-bottom: 50px;
-    img {
+    .img {
       max-height: 196px;
       min-height: 196px;
       max-width: 100%;
@@ -114,6 +112,7 @@
 }
 
 .pcard {
+  text-align: left;
   margin-left: 20px;
   margin-right: 20px;
   padding: 12px;
@@ -127,9 +126,28 @@
   .pcard-header {
     display: flex;
     .pcard-title {
+      display: flex;
+      flex-direction: column;
       font-family: roboto-bold;
       font-size: 16px;
+      margin-bottom: 10px;
+      p {
+        margin: 0px;
+        margin: 0px;
+        &.subtitle {
+          font-size: 13px;
+          color: #8F8F8F;
+        }
+      }
+      img {
+        position: absolute;
+        max-height: 35px;
+        margin-left: 50%;
+      }
     }
+  }
+  .pcard-text {
+    font-size: 14px;
   }
 }
 
@@ -138,21 +156,6 @@
 }
 
 // margin 42
-
-// Font Family: Roboto
-// Font Style: Bold
-// Font Size: 16px
-// Line Height: 19px
-// Align: Left
-// #363636
-
-// Font Family: Roboto
-// Font Style: Light
-// Font Size: 13px
-// Line Height: 15px
-// Align: Left
-// #8F8F8F
-
 // Font Family: Roboto
 // Font Style: Light
 // Font Size: 14px

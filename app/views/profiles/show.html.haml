@@ -19,15 +19,15 @@
         -#   %li{"data-slide-to" => "2", "data-target" => "#carouselExampleIndicators"}
         %div.carousel-inner
           %div.carousel-item.active
-            %img.d-block.w-100.carousel-img{alt: "First slide", src: "https://www.dike.lib.ia.us/images/sample-2.jpg/image"}/
+            %img.d-block.w-100.carousel-img.img{alt: "First slide", src: "https://www.dike.lib.ia.us/images/sample-2.jpg/image"}/
             %div.carousel-caption
               %p Some good balloons xdxdxd
           %div.carousel-item
-            %img.d-block.w-100.carousel-img{alt: "Second slide", src: "https://www.dike.lib.ia.us/images/sample-2.jpg/image"}/
+            %img.d-block.w-100.carousel-img.img{alt: "Second slide", src: "https://www.dike.lib.ia.us/images/sample-2.jpg/image"}/
             %div.carousel-caption
               %p She falled after this photo lololol
           %div.carousel-item
-            %img.d-block.w-100.carousel-img{alt: "Third slide", src: "https://www.dike.lib.ia.us/images/sample-2.jpg/image"}
+            %img.d-block.w-100.carousel-img.img{alt: "Third slide", src: "https://www.dike.lib.ia.us/images/sample-2.jpg/image"}
             %div.carousel-caption
               %p wtf is dis shiet
         -# %a.carousel-control-prev{"data-slide" => "prev", href: "#carouselExampleIndicators", role: "button"}
@@ -44,7 +44,30 @@
             %div.pcard
               %div.pcard-body
                 %div.pcard-header
-                  %h4.pcard-title Card 3
+                  %div.pcard-title
+                    %p Full name
+                    %p.subtitle Role
+                  %div.pcard-title
+                    = image_tag 'coffee.svg', alt: 'coffees'
                 %p.pcard-text This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-  
+          %div.carousel-item
+            %div.pcard
+              %div.pcard-body
+                %div.pcard-header
+                  %div.pcard-title
+                    %p Full name
+                    %p.subtitle Role
+                  %div.pcard-title
+                    = image_tag 'coffee.svg', alt: 'coffees'
+                %p.pcard-text This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+          %div.carousel-item
+            %div.pcard
+              %div.pcard-body
+                %div.pcard-header
+                  %div.pcard-title
+                    %p Full name
+                    %p.subtitle Role
+                  %div.pcard-title
+                    = image_tag 'coffee.svg', alt: 'coffees'
+                %p.pcard-text This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
   %a.profile-footer(href="") Dar abrazos o café a #{@name}
