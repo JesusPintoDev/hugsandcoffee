@@ -239,6 +239,8 @@ div.card {
         color: #9C9A9A;
         font-size: 15px;
         max-width: 72.5%;
+        min-width: 90%;
+        max-width: 90%;
         &.imgpadding {
           padding-left: 65px;
           padding-right: 16px;
@@ -247,7 +249,7 @@ div.card {
     }
     .options {
       padding-top: 7px;
-      margin-left: 17.5%;
+      margin-left: 0%;
       &:hover {
         cursor: pointer;
         filter: brightness(120%);
@@ -258,9 +260,9 @@ div.card {
         }
       }
       .options-content {
+        display: none;
         font-family: roboto;
         font-size: 14px;
-        display: none;
         position: absolute;
         background-color: #f9f9f9;
         min-width: 160px;
@@ -268,6 +270,19 @@ div.card {
         left: -125px;
         padding-top: 7px;
         padding-bottom: 7px;
+        a {
+          text-decoration: none;
+          color: black;
+          padding-left: 10px;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          &:hover {
+            background-color: rgb(196, 196, 196);
+          }
+          &:active {
+            background-color: rgb(165, 165, 165);
+          }
+        }
         img {
           padding-left: 20px;
           float: left;

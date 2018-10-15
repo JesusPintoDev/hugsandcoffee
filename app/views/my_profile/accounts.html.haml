@@ -36,50 +36,22 @@
           %div.card-header
             %div.section Cuentas
           %div.card-list
-            %ul
-              %li.lpadding Esto es una observación de la venta. Esto no es ninguna observación de ninguna venta.
-              %div.options
-                = image_tag 'ico-options.svg', alt: 'options', class: ''
-                %div.options-content
-                  %span 
-                    Editar
-                    = image_tag 'ico-edit', alt: 'e', height: '10px', width: '12px'
-                  %span 
-                    Eliminar
-                    = image_tag 'ico-delete', alt: 'd'
-            %ul
-              %li.lpadding Esto es una observación de la venta. Esto no es ninguna observación de ninguna venta.
-              %div.options
-                = image_tag 'ico-options.svg', alt: 'options', class: ''
-                %div.options-content
-                  %span 
-                    Editar
-                    = image_tag 'ico-edit', alt: 'e', height: '10px', width: '12px'
-                  %span 
-                    Eliminar
-                    = image_tag 'ico-delete', alt: 'd'
-            %ul
-              %li.lpadding Esto es una observación de la venta. Esto no es ninguna observación de ninguna venta.
-              %div.options
-                = image_tag 'ico-options.svg', alt: 'options', class: ''
-                %div.options-content
-                  %span 
-                    Editar
-                    = image_tag 'ico-edit', alt: 'e', height: '10px', width: '12px'
-                  %span 
-                    Eliminar
-                    = image_tag 'ico-delete', alt: 'd'
-            %ul
-              %li.lpadding Esto es una observación de la venta. Esto no es ninguna observación de ninguna venta.
-              %div.options
-                = image_tag 'ico-options.svg', alt: 'options', class: ''
-                %div.options-content
-                  %span 
-                    Editar
-                    = image_tag 'ico-edit', alt: 'e', height: '10px', width: '12px'
-                  %span 
-                    Eliminar
-                    = image_tag 'ico-delete', alt: 'd'
+            - @accounts.each do |account|
+              - p account              
+              %ul
+                %li.lpadding= "Entidad: " + account.entity.to_s + ", e-mail: " + account.email.to_s + ", Numero de cuenta: " + account.account_number.to_s + ", CI_RIF: " + account.rif_ci.to_s + ", Tipo de cuenta:" + account.account_type.to_s
+                %div.options
+                  = image_tag 'ico-options.svg', alt: 'options', class: ''
+                  %div.options-content
+                    = link_to edit_accounts_path(account) do
+                      %span 
+                      Editar
+                      = image_tag 'ico-edit', alt: 'e', height: '10px', width: '12px'
+                    = link_to account, method: :delete, data: { confirm: 'Are you sure?' } do
+                      %span
+                      Eliminar
+                      = image_tag 'ico-delete', alt: 'd'
+            
 
       %div.footer
         %div.separator

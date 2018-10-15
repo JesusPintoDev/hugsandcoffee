@@ -4,5 +4,5 @@ class Profile < ApplicationRecord
   has_many :images
   has_many :testimonials
   has_one :multiplier
-  accepts_nested_attributes_for :multiplier
+  accepts_nested_attributes_for :accounts, :images, :testimonials, :multiplier
 end
