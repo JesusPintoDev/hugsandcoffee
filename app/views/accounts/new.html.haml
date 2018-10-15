@@ -31,8 +31,7 @@
         %a.returnbtn(href=my_profile_accounts_path) Listado de cuentas
         %h1 Agregar Cuenta
         %div.separator
-      = form_for(@my_profile, method: :patch) do |f|  
-        = f.fields_for :accounts do |fm|
+        = form_for @accounts do |fm|  
           %div.info
             %div.card
               %div.card-body
@@ -51,7 +50,7 @@
                 %div.card-body
                   %h5.card-title Tipo de Cuenta
                   = fm.text_field :account_type , placeholder: "account_type"
-
+  
         %div.footer
           %div.separator
           .actions
