@@ -1,3 +1,160 @@
 // Place all the styles related to the Profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bootstrap {
+  @import "bootstrap";
+}
+
+.profile-container {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: roboto-regular;
+  .profile-navbar {
+    min-height: 60px;
+    max-height: 60px;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+    filter: drop-shadow(0px 0px 3px rgba(0,0,0,.3));
+  }
+  .profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 26px;
+    background-color: #F9FBFD;
+    width: 100%;
+    font-size: 14px;
+    color: #363636;
+    .profile-description {
+      padding-left: 25px;
+      padding-right: 25px;
+      font-family: roboto;
+      .go-back {
+        font-family: roboto;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        a {
+          color: black;
+          // text-decoration: none;
+          font-size: 13.5px;
+        }
+      }
+    }
+  }
+  a.profile-footer {
+    padding-bottom: 12.5px;
+    padding-top: 12.5px;
+    width: 100%;
+    background-color:  #EE4380;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.carousel {
+  margin-top: 18px;
+  text-align: center;
+  max-width: 300px;
+  min-width: 300px;
+  .carousel-inner{
+    width:100%;
+    display: flex;
+    justify-content: center; 
+    padding-bottom: 50px;
+    img {
+      max-height: 196px;
+      min-height: 196px;
+      max-width: 100%;
+      min-width: 100%;
+      margin: 0 auto;
+      object-fit: contain;
+      // object-fit: cover;
+      border-radius: 5px;
+      filter: drop-shadow(0px 0px 1px rgba(0,0,0,.3))
+          drop-shadow(0px 0px 3px rgba(0,0,0,.3));
+    }
+  }
+}
+
+.carousel-caption {
+  top: 91%;
+  p {
+    color: #8F8F8F;
+    font-size: 13px;
+    font-family: roboto-italic;
+  }
+}
+
+.carousel-control-prev-icon{
+  background-image: url('https://apufpel.com.br/assets/img/seta_prim.png')
+}
+.carousel-control-next-icon{
+ background-image: url('https://apufpel.com.br/assets/img/seta_ult.png')
+}
+
+#myCarousel {
+  z-index: 1;
+  margin-top: -20px;
+}
+
+.pcard {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 12px;
+  padding-top: 11px;
+  padding-bottom: 13px;
+  background-color: white;
+  border-radius: 5px;
+  filter: drop-shadow(0px 0px 1px rgba(0,0,0,.3))
+  drop-shadow(0px 0px 3px rgba(0,0,0,.3));
+  font-family: roboto;
+  .pcard-header {
+    display: flex;
+    .pcard-title {
+      font-family: roboto-bold;
+      font-size: 16px;
+    }
+  }
+}
+
+#myCarousel.carousel {
+  margin-bottom: -30px;
+}
+
+// margin 42
+
+// Font Family: Roboto
+// Font Style: Bold
+// Font Size: 16px
+// Line Height: 19px
+// Align: Left
+// #363636
+
+// Font Family: Roboto
+// Font Style: Light
+// Font Size: 13px
+// Line Height: 15px
+// Align: Left
+// #8F8F8F
+
+// Font Family: Roboto
+// Font Style: Light
+// Font Size: 14px
+// Line Height: 18px
+// Align: Left

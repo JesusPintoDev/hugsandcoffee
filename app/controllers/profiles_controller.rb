@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @name = User.find(params[:id]).email
   end
 
   def set_profile
