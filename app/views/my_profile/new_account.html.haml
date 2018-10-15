@@ -31,28 +31,28 @@
         %a.returnbtn(href=my_profile_accounts_path) Listado de cuentas
         %h1 Agregar Cuenta
         %div.separator
+      = form_for(@my_profile, method: :patch) do |f|  
+        = f.fields_for :accounts do |fm|
+          %div.info
+            %div.card
+              %div.card-body
+                %h5.card-title Entidad
+                = fm.text_field :entity , placeholder: "entity"
+              %div.card-body
+                %h5.card-title Email
+                = fm.text_field :email , placeholder: "email"
+              %div.nested-section
+                %div.card-body
+                  %h5.card-title Nro de Cuenta
+                  = fm.text_field :account_number , placeholder: "account_number"
+                %div.card-body
+                  %h5.card-title RIF o Cédula
+                  = fm.text_field :rif_ci , placeholder: "rif_ci"
+                %div.card-body
+                  %h5.card-title Tipo de Cuenta
+                  = fm.text_field :account_type , placeholder: "account_type"
 
-      %div.info
-        %div.card
-          %div.card-body
-            %h5.card-title Entidad
-            %input{placeholder: "entity"}
-          %div.card-body
-            %h5.card-title Email
-            %input{placeholder: "email"}
-          %div.nested-section
-            %div.card-body
-              %h5.card-title Nro de Cuenta
-              %input{placeholder: "account_number"}
-            %div.card-body
-              %h5.card-title RIF o Cédula
-              %input{placeholder: "rif_ci"}
-            %div.card-body
-              %h5.card-title Tipo de Cuenta
-              %input{placeholder: "account_type"}
-
-      %div.footer
-        %div.separator
-        %a.pinkbtn Guardar
-        -# %a.pinkbtn .pinkbtn
-
+        %div.footer
+          %div.separator
+          .actions
+            = f.submit 'Guardar', :class => "pinkbtn"
