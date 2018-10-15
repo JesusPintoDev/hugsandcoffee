@@ -23,6 +23,7 @@ class MyProfileController < ApplicationController
   end
   
   def accounts
+    @accounts = Account.where(profile_id: current_user.id?)
   end
   
   def first_time
@@ -42,6 +43,7 @@ class MyProfileController < ApplicationController
   
   private
   
+
   def set_my_profile
     @my_profile = Profile.find_by(user_id: current_user.id)
     unless @my_profile
@@ -60,7 +62,7 @@ class MyProfileController < ApplicationController
   def my_profile_params
     params.require(:profile).permit(:fullname, :role, :bio, :coffee_price, :monetary_symbol, :user_id, 
       multiplier_attributes: [:id, :a, :b, :c, :d],
-      accounts_attributes: [:entity, :email, :account_number, :rif_ci, :account_type])
+      accounts_attributes: [:id, :entity, :email, :account_number, :rif_ci, :account_type])
   end
 
 end
