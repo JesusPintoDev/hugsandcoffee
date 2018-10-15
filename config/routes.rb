@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   post 'my_profile/:id/new_account' => "accounts#create", as: 'accounts'
   patch 'my_profile/:id' => "my_profile#update"
   patch 'my_profile/settings/:id' => "my_profile#update"
+
+get 'profiles/:id' => "profiles#show"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
