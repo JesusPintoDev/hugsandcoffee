@@ -1,2 +1,50 @@
-%h1 Profiles#show
-%p Find me in app/views/profiles/show.html.haml
+%div.profile-container
+
+  %div.profile-navbar This is a navbar
+
+  %div.profile-content
+
+    %div.profile-description
+      -# %div.go-back
+      -#   %a(href=my_profile_images_path) < Atrás
+      %p Comunicarme mediante la música es la única forma de expresarme que conozco.
+      %br/
+      %p Vivir tocando es mi proposito, si te gusta lo que escuchas, tu aprecio es lo que me alimenta.
+
+    %div.bootstrap
+      %div#carouselExampleIndicators.carousel.slide{"data-ride" => "carousel"}
+        -# %ol.carousel-indicators
+        -#   %li.active{"data-slide-to" => "0", "data-target" => "#carouselExampleIndicators"}
+        -#   %li{"data-slide-to" => "1", "data-target" => "#carouselExampleIndicators"}
+        -#   %li{"data-slide-to" => "2", "data-target" => "#carouselExampleIndicators"}
+        %div.carousel-inner
+          %div.carousel-item.active
+            %img.d-block.w-100.carousel-img{alt: "First slide", src: "https://www.dike.lib.ia.us/images/sample-2.jpg/image"}/
+            %div.carousel-caption
+              %p Some good balloons xdxdxd
+          %div.carousel-item
+            %img.d-block.w-100.carousel-img{alt: "Second slide", src: "https://www.dike.lib.ia.us/images/sample-2.jpg/image"}/
+            %div.carousel-caption
+              %p She falled after this photo lololol
+          %div.carousel-item
+            %img.d-block.w-100.carousel-img{alt: "Third slide", src: "https://www.dike.lib.ia.us/images/sample-2.jpg/image"}
+            %div.carousel-caption
+              %p wtf is dis shiet
+        %a.carousel-control-prev{"data-slide" => "prev", href: "#carouselExampleIndicators", role: "button"}
+          %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+          %span.sr-only Previous
+        %a.carousel-control-next{"data-slide" => "next", href: "#carouselExampleIndicators", role: "button"}
+          %span.carousel-control-next-icon{"aria-hidden" => "true"}
+          %span.sr-only Next
+
+    %div.bootstrap
+      %div#myCarousel.carousel.slide{"data-ride" => "carousel"}
+        %div.carousel-inner.row.w-100.mx-auto
+          %div.carousel-item.active
+            %div.pcard
+              %div.pcard-body
+                %div.pcard-header
+                  %h4.pcard-title Card 3
+                %p.pcard-text This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+  
+  %a.profile-footer(href="") Dar abrazos o café a #{@name}

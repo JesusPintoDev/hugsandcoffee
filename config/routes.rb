@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/index'
+get 'home/index'
   root 'home#index'
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions'}
   get 'my_profile/:id' => "my_profile#edit", as: 'profile'
