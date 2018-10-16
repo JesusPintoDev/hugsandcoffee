@@ -22,6 +22,12 @@ Rails.application.routes.draw do
   patch 'images/:id' => "images#update"
   post 'my_profile/:id/new_image' => "images#create", as: 'images'
 
+  get 'profiles/:id/reward' => "profiles#reward", as: 'profiles_reward'
+  get 'profiles/:id/coffee' => "profiles#coffee", as: 'profiles_coffee'
+  get 'profiles/:id/hug' => "profiles#hug", as: 'profiles_hug'
+  get 'profiles/:id/thanks' => "profiles#thanks", as: 'profiles_thanks'
+
+
   get 'profiles/:id' => "profiles#show"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

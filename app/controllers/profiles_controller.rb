@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  before_action :set_profile
+
   def index
   end
 
@@ -6,7 +8,10 @@ class ProfilesController < ApplicationController
     @name = User.find(params[:id]).email
   end
 
+  private
+
   def set_profile
+    @profile = Profile.find(params[:id])
   end
 
   def profile_params

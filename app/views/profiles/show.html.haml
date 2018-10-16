@@ -1,6 +1,13 @@
 %div.profile-container
 
-  %div.profile-navbar This is a navbar
+  %div.profile-navbar
+    %div.pavatar
+      %p Avatar
+    %div.puser
+      %h4 #{@profile.fullname}
+      %p #{@profile.role}
+    %div.plogo
+      = link_to image_tag( 'logo_temp.svg'), root_path
 
   %div.profile-content
 
@@ -19,17 +26,17 @@
         -#   %li{"data-slide-to" => "2", "data-target" => "#carouselExampleIndicators"}
         %div.carousel-inner
           %div.carousel-item.active
-            %img.d-block.w-100.carousel-img.img{alt: "First slide", src: "https://www.dike.lib.ia.us/images/sample-2.jpg/image"}/
+            %img.d-block.w-100.carousel-img.img{alt: "First slide", src: "https://www.dike.lib.ia.us/images/sample-1.jpg/image"}/
             %div.carousel-caption
-              %p Some good balloons xdxdxd
+              %p Sample text
           %div.carousel-item
-            %img.d-block.w-100.carousel-img.img{alt: "Second slide", src: "https://www.dike.lib.ia.us/images/sample-2.jpg/image"}/
+            %img.d-block.w-100.carousel-img.img{alt: "Second slide", src: "https://image.ibb.co/i3o45f/pic.png"}/
             %div.carousel-caption
-              %p She falled after this photo lololol
+              %p No hay lugar como el ahora
           %div.carousel-item
             %img.d-block.w-100.carousel-img.img{alt: "Third slide", src: "https://www.dike.lib.ia.us/images/sample-2.jpg/image"}
             %div.carousel-caption
-              %p wtf is dis shiet
+              %p Sample text
         -# %a.carousel-control-prev{"data-slide" => "prev", href: "#carouselExampleIndicators", role: "button"}
         -#   %span.carousel-control-prev-icon{"aria-hidden" => "true"}
         -#   %span.sr-only Previous

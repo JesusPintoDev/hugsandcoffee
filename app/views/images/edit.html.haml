@@ -29,7 +29,7 @@
       %div.header
         = link_to image_tag('ico-return.svg', alt: 'Icon'), my_profile_images_path
         %a.returnbtn(href=my_profile_images_path) Listado de imágenes
-        %h1 Agregar imagen
+        %h1 Editar imagen
         %div.separator
 
       = form_for @images do |f|
@@ -37,7 +37,7 @@
           %div.card.transparent
             %div.card-body
               %h5.card-title Imagen del carousel
-              %p.card-text Agregar imagen que se mostrará en el carousel del perfil público
+              %p.card-text Editar imagen que se mostrará en el carousel del perfil público
           %div.card
             %div.card-body
               %div.card-title Imagen principal
