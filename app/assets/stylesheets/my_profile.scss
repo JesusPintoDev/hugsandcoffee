@@ -238,18 +238,40 @@ div.card {
         font-family: roboto-regular;
         color: #9C9A9A;
         font-size: 15px;
-        max-width: 72.5%;
+        // max-width: 72.5%;
         min-width: 90%;
         max-width: 90%;
-        &.imgpadding {
-          padding-left: 65px;
-          padding-right: 16px;
+      }
+      p {
+        font-family: roboto;
+        font-size: 30px;
+        position: absolute;
+        margin-top: 25px;
+        margin-left: 22px;
+        color: rgb(195, 195, 195);
+        background-color: rgb(195, 195, 195);
+        border-radius: 10px;
+        &.show {
+          background-color: #EE4380;
+          color: #EE4380;
         }
+      }
+      div.img img {
+        margin-top: 15px;
+        margin-left: 55px;
+        margin-right: 16px;
+        max-height: 50px;
+        min-height: 50px;
+        border-radius: 5px;
       }
     }
     .options {
       padding-top: 7px;
       margin-left: 0%;
+      &.fixpos {
+        position: absolute;
+        margin-left: 65%;
+      }
       &:hover {
         cursor: pointer;
         filter: brightness(120%);

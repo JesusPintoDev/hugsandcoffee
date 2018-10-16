@@ -37,6 +37,15 @@
   src: url(Roboto-Medium.ttf);
 }
 
+@font-face {
+  font-family: roboto-italic;
+  src: url(Roboto-Italic.ttf);
+}
+@font-face {
+  font-family: roboto-bold;
+  src: url(Roboto-Bold.ttf);
+}
+
 .alert-error, #error_explanation {
   margin-top: 30px;
   font-size: 17.5px;

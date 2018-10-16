@@ -36,54 +36,26 @@
           %div.card-header
             %div.section Imágenes
           %div.card-list
-            %ul
-              %li.imgpadding Image
-              %li Esto es una observación de la venta. Esto no es ninguna observación de ninguna venta.
-              %div.options
-                = image_tag 'ico-options.svg', alt: 'options', class: ''
-                %div.options-content
-                  %span 
-                    Editar
-                    = image_tag 'ico-edit', alt: 'e', height: '10px', width: '12px'
-                  %span 
-                    Eliminar
-                    = image_tag 'ico-delete', alt: 'd'
-            %ul
-              %li.imgpadding Image
-              %li Esto es una observación de la venta. Esto no es ninguna observación de ninguna venta.
-              %div.options
-                = image_tag 'ico-options.svg', alt: 'options', class: ''
-                %div.options-content
-                  %span 
-                    Editar
-                    = image_tag 'ico-edit', alt: 'e', height: '10px', width: '12px'
-                  %span 
-                    Eliminar
-                    = image_tag 'ico-delete', alt: 'd'
-            %ul
-              %li.imgpadding Image
-              %li Esto es una observación de la venta. Esto no es ninguna observación de ninguna venta.
-              %div.options
-                = image_tag 'ico-options.svg', alt: 'options', class: ''
-                %div.options-content
-                  %span 
-                    Editar
-                    = image_tag 'ico-edit', alt: 'e', height: '10px', width: '12px'
-                  %span 
-                    Eliminar
-                    = image_tag 'ico-delete', alt: 'd'
-            %ul
-              %li.imgpadding Image
-              %li Esto es una observación de la venta. Esto no es ninguna observación de ninguna venta.
-              %div.options
-                = image_tag 'ico-options.svg', alt: 'options', class: ''
-                %div.options-content
-                  %span 
-                    Editar
-                    = image_tag 'ico-edit', alt: 'e', height: '10px', width: '12px'
-                  %span 
-                    Eliminar
-                    = image_tag 'ico-delete', alt: 'd'
+            - @images.each do |i|
+              %ul
+                %div.options.fixpos
+                  = image_tag 'ico-options.svg', alt: 'options', class: ''
+                  %div.options-content
+                    = link_to edit_images_path(i) do
+                      -# = link_to "" do
+                      %span 
+                      Editar
+                      = image_tag 'ico-edit', alt: 'e', height: '10px', width: '12px'
+                    = link_to images_path(i.id), method: :delete, data: { confirm: 'Are you sure?' } do
+                      %span
+                      Eliminar
+                      = image_tag 'ico-delete', alt: 'd'
+                .img=image_tag url_for(i.url)
+                %li #{i.description}
+                -if i.show == true
+                  %p.show *
+                -else
+                  %p *
       
       %div.footer
         %div.separator

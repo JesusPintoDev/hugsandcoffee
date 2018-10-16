@@ -16,8 +16,6 @@
 //= require_tree .
 //= require hugs.js
 //= require jquery
+//= require popper
 //= require dropify
-
-
-
-
+//= require bootstrap-sprockets
