@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :patch, :update, :destroy]
   before_action :set_profile, only: [:index, :new, :create]
+  protect_from_forgery
 
   # GET /images
   # GET /images.json
@@ -56,15 +57,15 @@ class ImagesController < ApplicationController
   end
   # Use callbacks to share common setup or constraints between actions.
   def set_image
-    @images = Image.find(params[:id])
-    puts @images.inspect
-    puts @images.inspect
-    puts @images.inspect
-    puts @images.inspect
-    puts @images.inspect
-    puts @images.inspect
-    puts @images.inspect
-    puts @images.inspect
+    @image = Image.find(params[:id])
+    # puts @images.inspect
+    # puts @images.inspect
+    # puts @images.inspect
+    # puts @images.inspect
+    # puts @images.inspect
+    # puts @images.inspect
+    # puts @images.inspect
+    # puts @images.inspect
   end
   # Never trust parameters from the scary internet, only allow the white list through.
   def image_params

@@ -19,8 +19,9 @@ Rails.application.routes.draw do
   get 'my_profile/:id/images' => "my_profile#images", as: 'my_profile_images'
   get 'my_profile/:id/new_image' => "images#new", as: 'my_profile_new_image'
   get 'my_profile/edit_image/:id' => "images#edit", as: 'edit_images'
-  patch 'images/:id' => "images#update"
+  patch 'my_profile/edit_image/:id' => "images#update"
   post 'my_profile/:id/new_image' => "images#create", as: 'images'
+  delete 'my_profile/:id/new_image' => "images#destroy"
 
   get 'profiles/:id' => "profiles#show"
 

@@ -41,15 +41,15 @@
                 %div.options.fixpos
                   = image_tag 'ico-options.svg', alt: 'options', class: ''
                   %div.options-content
-                    -# = link_to edit_images_path(i) do
-                    = link_to "" do
+                    = link_to edit_images_path(i) do
+                      -# = link_to "" do
                       %span 
                       Editar
                       = image_tag 'ico-edit', alt: 'e', height: '10px', width: '12px'
-                    -# = link_to i, method: :delete, data: { confirm: 'Are you sure?' } do
-                    -#   %span
-                    -#   Eliminar
-                    -#   = image_tag 'ico-delete', alt: 'd'
+                    = link_to images_path(i.id), method: :delete, data: { confirm: 'Are you sure?' } do
+                      %span
+                      Eliminar
+                      = image_tag 'ico-delete', alt: 'd'
                 .img=image_tag url_for(i.url)
                 %li #{i.description}
                 -if i.show == true
