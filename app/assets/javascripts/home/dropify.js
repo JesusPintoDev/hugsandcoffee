@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded',() => {
-    $('.dropify').dropify();
+    $(document).on("turbolinks:load", function()  {
+        $('.dropify').dropify();
+        console.log($)
+    })    
 })
 
