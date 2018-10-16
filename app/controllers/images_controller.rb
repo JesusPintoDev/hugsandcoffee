@@ -21,6 +21,8 @@ class ImagesController < ApplicationController
 
   # GET /images/1/edit
   def edit
+    p 'ffffffffffffffffffffffffffff'
+    p @image
   end
 
   # POST /images

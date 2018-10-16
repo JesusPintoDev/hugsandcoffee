@@ -42,7 +42,7 @@
             %div.card-body.rpad
               %div.card-title Imagen principal
               -# %p.card-text url
-              .dropify#input-file-now= f.file_field :url, required: true
+              = image_tag url_for(@image.url), alt: 'imagen', height: '350px', width: 'auto'
         %div.info
           %div.card.transparent
             %div.card-body
