@@ -71,3 +71,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise", "~> 4.5"
 
 gem "activerecord", "~> 5.2"
+
+gem "dropify-rails", "~> 0.1.0"

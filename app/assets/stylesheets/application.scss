@@ -12,7 +12,10 @@
 *
 *= require_tree .
 *= require_self
+*= require dropify.css
 */
+
+@import 'dropify.css';
 
  @font-face {
   font-family: happyMonkey;

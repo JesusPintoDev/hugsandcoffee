@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :accounts, only: [:destroy]
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions'}
+  get 'hugs/' => "hugs#hugs", as: 'hugs'
   get 'my_profile/:id' => "my_profile#edit", as: 'profile'
   get 'my_profile/:id/settings/' => "my_profile#settings", as: 'my_profile_settings'
   get 'my_profile/:id/images' => "my_profile#images", as: 'my_profile_images'
