@@ -46,6 +46,10 @@
 
     %div.bootstrap
       %div#myCarousel.carousel.slide{"data-ride" => "carousel"}
+        %ol.carousel-indicators
+          %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+          %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+          %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
         %div.carousel-inner.row.w-100.mx-auto
           %div.carousel-item.active
             %div.pcard
@@ -55,7 +59,7 @@
                     %p Full name
                     %p.subtitle Role
                   %div.pcard-title
-                    = image_tag 'coffee.svg', alt: 'coffees'
+                    = image_tag 'coffee.svg', alt: 'coffee'
                 %p.pcard-text This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
           %div.carousel-item
             %div.pcard
@@ -65,7 +69,7 @@
                     %p Full name
                     %p.subtitle Role
                   %div.pcard-title
-                    = image_tag 'coffee.svg', alt: 'coffees'
+                    = image_tag 'hug.svg', alt: 'hug'
                 %p.pcard-text This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
           %div.carousel-item
             %div.pcard
@@ -75,7 +79,7 @@
                     %p Full name
                     %p.subtitle Role
                   %div.pcard-title
-                    = image_tag 'coffee.svg', alt: 'coffees'
+                    = image_tag 'coffee.svg', alt: 'coffee'
                 %p.pcard-text This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
   %div.profile-footer
     %a(href="http://google.com") Dar abrazos o café a #{@name}
