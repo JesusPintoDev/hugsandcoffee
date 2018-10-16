@@ -345,6 +345,13 @@ div.card {
   padding-bottom: 3px;
 }
 
+.card-img {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  filter: grayscale(100%);
+}
+
 .pinkbtn {
   margin-top: -60px;
   margin-right: 63px;

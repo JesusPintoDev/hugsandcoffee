@@ -37,12 +37,38 @@
           -# %a.returnbtn(href=profile_path) .returnbtn
           -# El título tiene estilos automáticos gracias a la clase .header
           %h1 ¡Hola, #{@user}! Bienvenid@ a Abrazos y Café
+          %div.separator
+
         %div.info
           %div.card
             %div.card-body
-              %h5.card-title Datos de la cuenta
-              %p.card-text Ingreso de datos de la cuenta bancaria que estará aninada a su cuenta de "Abrazos y Café".
-              %p.card-text
+              %h5.card-title Acerca de
+              %p.card-text Abrazos y Café es una aplicación que te ayudará a crear una página sin necesidad de conocimientos técnios, donde la gente podrá apoyarte y hacer donaciones.
+        %div.info
+          %div.card
+            %div.card-body
+              %h5.card-title Perfil
+              %p.card-text En tu perfil puedes ingresar tus datos básicos, como tu nombre, biografía, monto del café, etc.
+              %div.card-img
+                = image_tag 'ico-profile', alt: '', height: '75px', width: '', class: ''
+          %div.card
+            %div.card-body
+              %h5.card-title Imágenes
+              %p.card-text En la sección de imágenes podrás guardar estas que querrás mostrar en el carrusel de tu perfil.
+              %div.card-img
+                = image_tag 'ico-images', alt: '', height: '75px', width: '', class: ''
+          %div.card
+            %div.card-body
+              %h5.card-title Cuentas
+              %p.card-text Sincroniza tus cuentas bancarias a tu perfil para recibir las donaciones de tus seguidores.
+              %div.card-img
+                = image_tag 'ico-accounts', alt: '', height: '75px', width: '', class: ''
+      %div.separator
+        %div.info
+          %div.card.transparent
+            %div.card-body
+              %h5.card-title Recuerda:
+              %p.card-text Mantén tu información y tus imágenes concisas, de tal modo que los donadores tengan un acceso fácil.
         -#   -# Si es necesario, se puede poner un botón rosa al lado derecho del header.
         -#   %a.pinkbtn .pinkbtn
         -#   -# Se puede poner un div.separator para generar una pequeña línea horizontal.
