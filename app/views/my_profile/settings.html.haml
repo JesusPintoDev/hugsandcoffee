@@ -26,6 +26,11 @@
 
     %div.admin-content
       = form_for(@my_profile, method: :patch) do |f|
+        - if flash.notice
+          %div.alert-notice
+            %ul
+              %li #{flash.notice}        
+    
         %div.header
           %h1 Perfil de Usuario
           %div.separator
