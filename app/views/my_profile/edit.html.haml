@@ -33,88 +33,94 @@
         -# Header con el título.
         %div.header
           -# Estas dos líneas al inicio del header generarán un botón de retorno.
-          = link_to image_tag('ico-return.svg', alt: 'Icon'), profile_path
-          %a.returnbtn(href=profile_path) .returnbtn
+          -# = link_to image_tag('ico-return.svg', alt: 'Icon'), profile_path
+          -# %a.returnbtn(href=profile_path) .returnbtn
           -# El título tiene estilos automáticos gracias a la clase .header
-          %h1 ¡Bienvenid@, #{@user}!
-          -# Si es necesario, se puede poner un botón rosa al lado derecho del header.
-          %a.pinkbtn .pinkbtn
-          -# Se puede poner un div.separator para generar una pequeña línea horizontal.
-          %div.separator
-
-        -# Contenido central. Automáticamente colocará elementos en flex-row
+          %h1 ¡Hola, #{@user}! Bienvenid@ a Abrazos y Café
         %div.info
-          -# Card Izquierdo. La clase card colocará su contenido en flex-column
           %div.card
-            -# Div para controlar una sección aninada. Se forza un flex-row
-            %div.nested-section
-              -# Contenido 1 del card
-              %div.card-body
-                %h5.card-title Nombre y Apellido
-                = f.text_field :fullname, placeholder: "fullname"
-              -# Contenido 2 del card
-              %div.card-body
-                %h5.card-title Ocupación o Rol
-                = f.text_field :role, placeholder: "role"
-            -# Ahora el contenido estará fuera del .nested-section, así usando flex-column
-            -# Contenido 3 del card
             %div.card-body
-              %h5.card-title Biografía
-              = f.text_area :bio, placeholder: "bio"
+              %h5.card-title Datos de la cuenta
+              %p.card-text Ingreso de datos de la cuenta bancaria que estará aninada a su cuenta de "Abrazos y Café".
+              %p.card-text
+        -#   -# Si es necesario, se puede poner un botón rosa al lado derecho del header.
+        -#   %a.pinkbtn .pinkbtn
+        -#   -# Se puede poner un div.separator para generar una pequeña línea horizontal.
+        -#   %div.separator
 
-          -# Card derecho
-          %div.card
-            -# Contenido 1
-            %div.card-body
-              %h5.card-title Monto de un café
-              = f.text_field :coffee_price, placeholder: "coffee_price", step: "any"
-            %div.card-body
-              %h5.card-title Símbolo de la moneda
-              = f.text_field :monetary_symbol, placeholder: "monetary_symbol"
-            -# Contenido 2
-            %div.card-body
-              %h5.card-title .nested-section.of-multipliers
-              -# Agregar este div generará una sección de botones en fila  estilizados.
-              %div.nested-section.of-multipliers
-                = f.fields_for :multiplier do |fm|
-                  = fm.number_field :a 
-                  = fm.number_field :b 
-                  = fm.number_field :c 
-                  = fm.number_field :d 
-        -# Usando otro div con la clase .info creará un nuevo row de cards!
-        %div.info
-          -# Ponerle la clase .transparent a un card adaptará esta para hacer descripciones.
-          %div.card.transparent
-            %div.card-body
-              %h5.card-title Este card usa la clase .transparent
-              %p.card-text Ahora se pueden hacer descripciones geniales. Tres tristes tigres comían trigo en un trigal.
-          -# Otros cards de muestra.
-          %div.card
-            %div.card-body
-              %h5.card-title .card-title
-              %p.card-text .card-text
-              %input
-              %div.checkbox
-                %input(type="checkbox")
-                %p div.checkbox
-          %div.card
-            %div.card-body
-              %h5.card-title .card-title
-              %p.card-text .card-text
-              %input
-              %div.checkbox
-                %input(type="checkbox")
-                %p div.checkbox
-              %div.checkbox
-                %input(type="checkbox")
-                %p div.checkbox
-        -# -------------------------------------------------------------------------
+        -# -# Contenido central. Automáticamente colocará elementos en flex-row
+        -# %div.info
+        -#   -# Card Izquierdo. La clase card colocará su contenido en flex-column
+        -#   %div.card
+        -#     -# Div para controlar una sección aninada. Se forza un flex-row
+        -#     %div.nested-section
+        -#       -# Contenido 1 del card
+        -#       %div.card-body
+        -#         %h5.card-title Nombre y Apellido
+        -#         = f.text_field :fullname, placeholder: "fullname"
+        -#       -# Contenido 2 del card
+        -#       %div.card-body
+        -#         %h5.card-title Ocupación o Rol
+        -#         = f.text_field :role, placeholder: "role"
+        -#     -# Ahora el contenido estará fuera del .nested-section, así usando flex-column
+        -#     -# Contenido 3 del card
+        -#     %div.card-body
+        -#       %h5.card-title Biografía
+        -#       = f.text_area :bio, placeholder: "bio"
 
-        %div.footer
-          %div.separator
-          .actions
-            = f.submit 'Guardar', :class => "pinkbtn"
-          %p.notice Esta vista aún está siendo usada para probar cosas.
+        -#   -# Card derecho
+        -#   %div.card
+        -#     -# Contenido 1
+        -#     %div.card-body
+        -#       %h5.card-title Monto de un café
+        -#       = f.text_field :coffee_price, placeholder: "coffee_price", step: "any"
+        -#     %div.card-body
+        -#       %h5.card-title Símbolo de la moneda
+        -#       = f.text_field :monetary_symbol, placeholder: "monetary_symbol"
+        -#     -# Contenido 2
+        -#     %div.card-body
+        -#       %h5.card-title .nested-section.of-multipliers
+        -#       -# Agregar este div generará una sección de botones en fila  estilizados.
+        -#       %div.nested-section.of-multipliers
+        -#         = f.fields_for :multiplier do |fm|
+        -#           = fm.number_field :a 
+        -#           = fm.number_field :b 
+        -#           = fm.number_field :c 
+        -#           = fm.number_field :d 
+        -# -# Usando otro div con la clase .info creará un nuevo row de cards!
+        -# %div.info
+        -#   -# Ponerle la clase .transparent a un card adaptará esta para hacer descripciones.
+        -#   %div.card.transparent
+        -#     %div.card-body
+        -#       %h5.card-title Este card usa la clase .transparent
+        -#       %p.card-text Ahora se pueden hacer descripciones geniales. Tres tristes tigres comían trigo en un trigal.
+        -#   -# Otros cards de muestra.
+        -#   %div.card
+        -#     %div.card-body
+        -#       %h5.card-title .card-title
+        -#       %p.card-text .card-text
+        -#       %input
+        -#       %div.checkbox
+        -#         %input(type="checkbox")
+        -#         %p div.checkbox
+        -#   %div.card
+        -#     %div.card-body
+        -#       %h5.card-title .card-title
+        -#       %p.card-text .card-text
+        -#       %input
+        -#       %div.checkbox
+        -#         %input(type="checkbox")
+        -#         %p div.checkbox
+        -#       %div.checkbox
+        -#         %input(type="checkbox")
+        -#         %p div.checkbox
+        -# -# -------------------------------------------------------------------------
+
+        -# %div.footer
+        -#   %div.separator
+        -#   .actions
+        -#     = f.submit 'Guardar', :class => "pinkbtn"
+        -#   %p.notice Esta vista aún está siendo usada para probar cosas.
 
 -# - if flash.notice
 -#   %div.notice-error
