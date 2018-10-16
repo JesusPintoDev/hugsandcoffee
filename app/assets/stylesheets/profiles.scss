@@ -44,25 +44,20 @@
       justify-content: center;
     }
     .puser {
-      background-color: darkcyan;
       width: 100%;
       align-items: center;
       padding-left: 10px;
       padding-top: 11px;
       h4 {
-        // Font Family: Roboto
-        // Font Style: Bold
-        // Font Size: 16px
-        // Line Height: 19px
-        // Align: Left
+        font-family: roboto-bold;
+        font-size: 16px;
+        font-weight: normal;
       }
       p {
         margin-top: 2px; 
-        // Font Family: Roboto
-        // Font Style: Light
-        // Font Size: 16px
-        // Line Height: 19px
-        // Align: Left
+        font-family: roboto;
+        font-size: 16px;
+        color: #8F8F8F;
       }
     }
     .plogo {

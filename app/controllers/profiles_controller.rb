@@ -8,6 +8,15 @@ class ProfilesController < ApplicationController
     @name = User.find(params[:id]).email
   end
 
+  def hug
+  end
+
+  def coffee
+  end
+
+  def thanks
+  end
+
   private
 
   def set_profile
