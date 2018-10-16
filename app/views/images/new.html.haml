@@ -43,7 +43,7 @@
             %div.card-body.rpad
               %div.card-title Imagen principal
               -# %p.card-text url
-              .dropify#input-file-now= f.file_field :url, required: true
+              = f.file_field :url, required: true, class: 'dropify', id: "input-file-now"
   
         %div.info
           %div.card.transparent
