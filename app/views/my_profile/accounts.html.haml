@@ -37,7 +37,6 @@
             %div.section Cuentas
           %div.card-list
             - @accounts.each do |account|
-              - p account              
               %ul
                 %li.lpadding= "Entidad: " + account.entity.to_s + ", e-mail: " + account.email.to_s + ", Numero de cuenta: " + account.account_number.to_s + ", CI_RIF: " + account.rif_ci.to_s + ", Tipo de cuenta:" + account.account_type.to_s
                 %div.options

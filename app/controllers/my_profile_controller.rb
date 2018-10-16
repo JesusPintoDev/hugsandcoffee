@@ -25,6 +25,10 @@ class MyProfileController < ApplicationController
   def accounts
     @accounts = Account.where(profile_id: current_user.id?)
   end
+
+  def images
+    @images = Image.where(profile_id: current_user.id)
+  end
   
   def first_time
     @my_profile = Profile.new(user_id: current_user.id)
@@ -62,7 +66,8 @@ class MyProfileController < ApplicationController
   def my_profile_params
     params.require(:profile).permit(:fullname, :role, :bio, :coffee_price, :monetary_symbol, :user_id, 
       multiplier_attributes: [:id, :a, :b, :c, :d],
-      accounts_attributes: [:id, :entity, :email, :account_number, :rif_ci, :account_type])
+      accounts_attributes: [:id, :entity, :email, :account_number, :rif_ci, :account_type],
+      images_attributes: [:id, :url, :description,])
   end
 
 end
