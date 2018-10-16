@@ -32,7 +32,7 @@
         %h1 Agregar imagen
         %div.separator
 
-      = form_for @images do |f|
+      = form_for @image, url: "" do |f|
         %div.info
           %div.card.transparent
             %div.card-body
@@ -41,7 +41,6 @@
           %div.card
             %div.card-body
               %div.card-title Imagen principal
-              %p.card-text url
               = f.file_field :url, required: true
   
         %div.info
@@ -56,7 +55,6 @@
               %div.checkbox
                 = f.check_box :show, {}, 1, 0
                 %p Mostrar esta imagen en el perfil público
-              %p.card-text show
          
         %div.footer
           .actions
