@@ -39,10 +39,10 @@
               %h5.card-title Imagen del carousel
               %p.card-text Editar imagen que se mostrará en el carousel del perfil público
           %div.card
-            %div.card-body.rpad
+            %div.card-body
               %div.card-title Imagen principal
-              -# %p.card-text url
-              .dropify#input-file-now= f.file_field :url, required: true
+              = f.file_field :url, required: true
+  
         %div.info
           %div.card.transparent
             %div.card-body

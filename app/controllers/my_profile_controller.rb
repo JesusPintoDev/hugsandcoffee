@@ -47,7 +47,6 @@ class MyProfileController < ApplicationController
   
   private
   
-
   def set_my_profile
     @my_profile = Profile.find_by(user_id: current_user.id)
     unless @my_profile
