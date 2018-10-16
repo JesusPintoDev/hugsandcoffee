@@ -50,18 +50,23 @@
       }
     }
   }
-  a.profile-footer {
+  .profile-footer {
     padding-bottom: 12.5px;
     padding-top: 12.5px;
     width: 100%;
-    background-color:  #EE4380;
     text-align: center;
-    color: white;
-    font-size: 18px;
-    text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color:  #EE4380;
+    &:hover {
+      cursor: pointer;
+    }
+    a {
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+    }
   }
 }
 
