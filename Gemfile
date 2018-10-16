@@ -9,6 +9,7 @@ gem 'jquery-rails'
 require "rubygems"
 gem "autoprefixer-rails"
 require "autoprefixer-rails"
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'

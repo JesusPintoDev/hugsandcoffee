@@ -52,7 +52,7 @@
               = f.text_field :monetary_symbol, placeholder: "monetary_symbol"
             %div.card-body
               %h5.card-title Multiplicadores
-              =#%p.card-text (a, b, c, d)
+              -# =#%p.card-text (a, b, c, d)
               %div.nested-section.of-multipliers
                 = f.fields_for :multiplier do |fm|
                   = fm.number_field :a, min: "1", max: "99", maxlength: "2", required: true
