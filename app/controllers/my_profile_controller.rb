@@ -18,7 +18,7 @@ class MyProfileController < ApplicationController
   
   def update
     if @my_profile.update(my_profile_params)
-      redirect_to profile_path(current_user), notice: 'Profile was successfully updated.' 
+      redirect_to my_profile_settings_path(current_user), notice: 'Perfil actualizado satisfactoriamente!' 
     end
   end
   
