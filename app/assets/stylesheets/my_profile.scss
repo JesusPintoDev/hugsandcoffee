@@ -141,6 +141,9 @@ div.card {
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
   transition: 0.3s;
   width: 100%;
+  &.bmargin {
+    padding-bottom:10px;
+  }
   &.transparent {
     background-color: transparent;
     box-shadow: 0 0px 0px 0 rgba(0,0,0,0.0);
@@ -241,6 +244,10 @@ div.card {
         // max-width: 72.5%;
         min-width: 90%;
         max-width: 90%;
+        &.nothingfound {
+          margin-top: 10px;
+          margin-bottom: -25px;
+        }
       }
       p {
         font-family: roboto;

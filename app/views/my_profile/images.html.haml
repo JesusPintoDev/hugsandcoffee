@@ -32,10 +32,13 @@
         %div.separator
       
       %div.info
-        %div.card
+        %div.card.bmargin
           %div.card-header
             %div.section Imágenes
           %div.card-list
+            - unless @my_profile.images.last
+              %ul
+                %li.lpadding.nothingfound No tienes ninguna imagen en tu perfil. ¡Agregar una!
             - @images.each do |i|
               %ul
                 %div.options.fixpos
