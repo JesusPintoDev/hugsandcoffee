@@ -46,7 +46,9 @@
                 = f.text_field :role, placeholder: "role"
             %div.card-body
               %h5.card-title Biografía
-              = f.text_area :bio, placeholder: "bio"
+              %div.trix
+                = f.trix_editor :bio
+              -# = f.text_area :bio, placeholder: "bio"
 
           %div.card
             %div.card-body
