@@ -17,6 +17,9 @@ class ProfilesController < ApplicationController
   def thanks
   end
 
+  def reward
+  end
+
   private
 
   def set_profile
