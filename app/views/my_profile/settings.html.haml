@@ -40,10 +40,10 @@
             %div.nested-section
               %div.card-body
                 %h5.card-title Nombre y Apellido
-                = f.text_field :fullname, placeholder: "fullname"
+                = f.text_field :fullname
               %div.card-body
                 %h5.card-title Ocupación o Rol
-                = f.text_field :role, placeholder: "role"
+                = f.text_field :role
             %div.card-body
               %h5.card-title Biografía
               %div.trix
@@ -53,10 +53,10 @@
           %div.card
             %div.card-body
               %h5.card-title Monto de un café
-              = f.text_field :coffee_price, placeholder: "coffee_price", step: "any"
+              = f.text_field :coffee_price, step: "any"
             %div.card-body
               %h5.card-title Símbolo de la moneda
-              = f.text_field :monetary_symbol, placeholder: "monetary_symbol"
+              = f.text_field :monetary_symbol
             %div.card-body
               %h5.card-title Multiplicadores
               -# =#%p.card-text (a, b, c, d)
@@ -66,6 +66,23 @@
                   = fm.number_field :b, min: "1", max: "99", maxlength: "2", required: true
                   = fm.number_field :c, min: "1", max: "99", maxlength: "2", required: true
                   = fm.number_field :d, min: "1", max: "99", maxlength: "2", required: true
+        %div.separator
+        %div.info
+          %div.card.transparent
+            %div.card-body
+              %div.card-title Foto de Perfil
+              %div.card-text ¡Añade una foto para que las personas que quieran apoyarte puedan reconocerte a primera vista!
+            -if @my_profile.avatar.attached?
+              %div.card-body
+                %div.card-title Foto actual:
+                =image_tag @my_profile.avatar, class: "preview" 
+
+
+          %div.card
+            %div.card-body.rpad
+              %div.card-title Agregar foto
+              = f.file_field :avatar, class: 'dropify', id: "input-file-now"
+
         %div.footer
           %div.separator
           .actions
