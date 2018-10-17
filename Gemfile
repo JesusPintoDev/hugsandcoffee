@@ -11,6 +11,8 @@ gem "autoprefixer-rails"
 require "autoprefixer-rails"
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-turbolinks'
+gem 'trix-gem'
+gem "trix"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'

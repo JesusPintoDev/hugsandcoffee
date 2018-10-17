@@ -439,3 +439,9 @@ input::-webkit-inner-spin-button {
 .rpad {
   padding-right: 30px; 
 }
+
+.trix-content {
+  max-width: 525px !important;
+  overflow-y: auto;
+  font-family: roboto;
+}
