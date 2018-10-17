@@ -31,11 +31,7 @@
     %div.admin-content        
       = form_for @my_profile do |f|
         -# Header con el título.
-        %div.header
-          - if flash.notice
-            %div.alert-notice
-              %ul
-                %li #{flash.notice}        
+        %div.header       
           -# Estas dos líneas al inicio del header generarán un botón de retorno.
           -# = link_to image_tag('ico-return.svg', alt: 'Icon'), profile_path
           -# %a.returnbtn(href=profile_path) .returnbtn
