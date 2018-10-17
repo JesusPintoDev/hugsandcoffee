@@ -14,8 +14,7 @@
     %div.profile-description
       -# %div.go-back
       -#   %a(href=my_profile_images_path) < Atrás
-      %p#bio
-        %script document.getElementById("bio").innerHTML = "<strong>Hello</strong>";
+      = raw @profile.bio
 
     -if @profile.images.last != nil
       %div.bootstrap
