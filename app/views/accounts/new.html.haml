@@ -1,7 +1,7 @@
 %div.admin-container
   %div.admin-navbar
     %div.logo
-      = image_tag("logo_temp.svg", alt: "Logo")
+      = link_to image_tag('logo_temp.svg', alt: 'Logo'), root_path
     %div.bar
       %input.disabled
       %p #{@user_email}

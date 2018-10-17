@@ -1,7 +1,7 @@
 %div.admin-container
   %div.admin-navbar
     %div.logo
-      = image_tag("logo_temp.svg", alt: "Logo")
+      = link_to image_tag('logo_temp.svg', alt: 'Logo'), root_path
     %div.bar
       %input.disabled
       %p #{@user_email}
@@ -41,13 +41,8 @@
           %div.card
             %div.card-body
               %div.card-title Imagen principal
-<<<<<<< HEAD
-              = f.file_field :url, required: true
-  
-=======
               -# %p.card-text url
               = image_tag url_for(@image.url), alt: 'imagen', height: '350px', width: 'auto'
->>>>>>> 3003eb131a47c5799cb52604f6630b9cb4b3294a
         %div.info
           %div.card.transparent
             %div.card-body
