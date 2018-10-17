@@ -1,7 +1,7 @@
 %div.admin-container
   %div.admin-navbar
     %div.logo
-      = image_tag("logo_temp.svg", alt: "Logo")
+      = link_to image_tag('logo_temp.svg', alt: 'Logo'), root_path
     %div.bar
       %input.disabled
       %p #{@user_email}
@@ -25,6 +25,10 @@
           = link_to "Cuentas", my_profile_accounts_path
 
     %div.admin-content
+      - if flash.notice && flash.notice != "¡Hola <Usuario>! Bienvenido a Abrazos y Café"
+        %div.alert-admin
+          %ul
+            %li #{flash.notice} 
 
       %div.header
         %h1 Cuentas Bancarias
@@ -32,11 +36,14 @@
         %div.separator
 
       %div.info
-        %div.card
+        %div.card.bmargin
           %div.card-header
             %div.section Cuentas
           %div.card-list
-            - @accounts.each do |account|
+            - unless @my_profile.accounts.last
+              %ul
+                %li.lpadding.nothingfound No tienes ninguna cuenta bancaria vinculada a tu perfil. ¡Agrega una!
+            - @my_profile.accounts.each do |account|
               %ul
                 %li.lpadding= "Entidad: " + account.entity.to_s + ", e-mail: " + account.email.to_s + ", Numero de cuenta: " + account.account_number.to_s + ", CI_RIF: " + account.rif_ci.to_s + ", Tipo de cuenta:" + account.account_type.to_s
                 %div.options

@@ -21,6 +21,8 @@ class ImagesController < ApplicationController
 
   # GET /images/1/edit
   def edit
+    p 'ffffffffffffffffffffffffffff'
+    p @image
   end
 
   # POST /images
@@ -29,16 +31,18 @@ class ImagesController < ApplicationController
     @image = @profile.images.build(image_params)
     
     if @image.save
-      redirect_to my_profile_images_url, notice: 'Image was successfully created.' 
+      redirect_to my_profile_images_path, notice: '¡Imagen creada exitosamente!' 
     end
   end
 
   # PATCH/PUT /images/1
   # PATCH/PUT /images/1.json
   def update
-      if @image.update(image_params)
-        redirect_to my_profile_images_path(@image.profile_id), notice: 'Image was successfully updated.'
+    if @image.update(image_params)
+      respond_to do |format|
+        format.html { redirect_to my_profile_images_path(@image.profile_id), notice: '¡Imagen editada exitosamente!' }
       end
+    end
   end
 
   # DELETE /images/1
@@ -46,13 +50,14 @@ class ImagesController < ApplicationController
   def destroy
     @image.destroy
     respond_to do |format|
-      format.html { redirect_to my_profile_images_url, notice: 'Image was successfully destroyed.' }
+      format.html { redirect_to my_profile_images_path(@image.profile_id), notice: 'Imagen eliminada exitosamente.' }
     end
   end
 
   private
 
   def set_profile
+    @user_email = current_user.email
     @profile = Profile.find(params[:id])
   end
   # Use callbacks to share common setup or constraints between actions.

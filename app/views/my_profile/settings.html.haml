@@ -1,7 +1,7 @@
 %div.admin-container
   %div.admin-navbar
     %div.logo
-      = image_tag("logo_temp.svg", alt: "Logo")
+      = link_to image_tag('logo_temp.svg', alt: 'Logo'), root_path
     %div.bar
       %input.disabled
       %p #{@user_email}
@@ -26,6 +26,11 @@
 
     %div.admin-content
       = form_for(@my_profile, method: :patch) do |f|
+        - if flash.notice && flash.notice != "¡Hola <Usuario>! Bienvenido a Abrazos y Café"
+          %div.alert-admin
+            %ul
+              %li #{flash.notice}        
+    
         %div.header
           %h1 Perfil de Usuario
           %div.separator

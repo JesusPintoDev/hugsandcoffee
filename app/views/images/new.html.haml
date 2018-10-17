@@ -1,7 +1,7 @@
 %div.admin-container
   %div.admin-navbar
     %div.logo
-      = image_tag("logo_temp.svg", alt: "Logo")
+      = link_to image_tag('logo_temp.svg', alt: 'Logo'), root_path
     %div.bar
       %input.disabled
       %p #{@user_email}
@@ -40,10 +40,10 @@
               %h5.card-title Imagen del carousel
               %p.card-text Agregar imagen que se mostrará en el carousel del perfil público
           %div.card
-            %div.card-body
+            %div.card-body.rpad
               %div.card-title Imagen principal
-              %p.card-text url
-              = f.file_field :url, required: true
+              -# %p.card-text url
+              = f.file_field :url, required: true, class: 'dropify', id: "input-file-now"
   
         %div.info
           %div.card.transparent
@@ -53,11 +53,11 @@
           %div.card
             %div.card-body
               %h5.card-title Subtítulo
-              = f.text_field :description , placeholder: "description"
+              = f.text_field :description
               %div.checkbox
                 = f.check_box :show, {}, 1, 0
                 %p Mostrar esta imagen en el perfil público
-              %p.card-text show
+              -# %p.card-text show
          
         %div.footer
           .actions

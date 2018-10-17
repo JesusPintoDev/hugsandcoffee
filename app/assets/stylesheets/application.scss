@@ -12,7 +12,10 @@
 *
 *= require_tree .
 *= require_self
+*= require dropify.css
 */
+
+@import 'dropify.css';
 
  @font-face {
   font-family: happyMonkey;
@@ -83,4 +86,21 @@
 
 br {
   padding: 0px;
+}
+
+.alert-admin {
+  position: absolute;
+  font-family: roboto;
+  list-style-type: none;
+  background-color: rgb(230, 230, 230);
+  text-align: center; 
+  margin-left: -30px;
+  padding: 7px;
+  font-size: 18px;
+  width: 80%;
+  ul {
+    li {
+      list-style-type: none;
+    }
+  }
 }

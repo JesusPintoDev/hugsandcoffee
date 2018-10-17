@@ -10,6 +10,7 @@ require "rubygems"
 gem "autoprefixer-rails"
 require "autoprefixer-rails"
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'jquery-turbolinks'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
@@ -72,3 +73,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise", "~> 4.5"
 
 gem "activerecord", "~> 5.2"
+
+gem "dropify-rails", "~> 0.1.0"

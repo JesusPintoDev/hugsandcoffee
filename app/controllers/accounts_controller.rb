@@ -27,7 +27,7 @@ class AccountsController < ApplicationController
     def create
       @account = @profile.accounts.build(account_params)
       if @account.save
-        redirect_to my_profile_accounts_url, notice: 'Account was successfully created.' 
+        redirect_to my_profile_accounts_url, notice: '¡Cuenta añadida satisfactoriamente!' 
       end
     end
   
@@ -35,7 +35,7 @@ class AccountsController < ApplicationController
     # PATCH/PUT /accounts/1.json
     def update
         if @account.update(account_params)
-          redirect_to my_profile_accounts_path(@account.profile_id), notice: 'Account was successfully updated.'
+          redirect_to my_profile_accounts_path(@account.profile_id), notice: '¡Cuenta editada satisfactoriamente!'
         end
     end
   
@@ -44,13 +44,14 @@ class AccountsController < ApplicationController
     def destroy
       @account.destroy
       respond_to do |format|
-        format.html { redirect_to my_profile_accounts_url, notice: 'Account was successfully destroyed.' }
+        format.html { redirect_to my_profile_accounts_path(@account.profile_id), notice: 'Cuenta eliminada satisfactoriamente.' }
       end
     end
   
     private
 
     def set_profile
+      @user_email = current_user.email
       @profile = Profile.find(params[:id])
     end
       # Use callbacks to share common setup or constraints between actions.

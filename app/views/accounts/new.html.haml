@@ -1,7 +1,7 @@
 %div.admin-container
   %div.admin-navbar
     %div.logo
-      = image_tag("logo_temp.svg", alt: "Logo")
+      = link_to image_tag('logo_temp.svg', alt: 'Logo'), root_path
     %div.bar
       %input.disabled
       %p #{@user_email}
@@ -33,23 +33,29 @@
         %div.separator
         = form_for @account do |f| 
           %div.info
+            %div.card.transparent
+              %div.card-body
+                %h5.card-title Datos de la cuenta
+                %p.card-text Ingreso de datos de la cuenta bancaria que estará aninada a su cuenta de "Abrazos y Café".
+                %p.card-text
+                %p.card-text Todos los datos son opcionales. Aquellos sin rellenar no se mostrarán en el perfil.
             %div.card
               %div.card-body
                 %h5.card-title Entidad
-                = f.text_field :entity , placeholder: "entity"
+                = f.text_field :entity 
               %div.card-body
                 %h5.card-title Email
-                = f.text_field :email , placeholder: "email"
-              %div.nested-section
-                %div.card-body
-                  %h5.card-title Nro de Cuenta
-                  = f.text_field :account_number , placeholder: "account_number"
-                %div.card-body
-                  %h5.card-title RIF o Cédula
-                  = f.text_field :rif_ci , placeholder: "rif_ci"
-                %div.card-body
-                  %h5.card-title Tipo de Cuenta
-                  = f.text_field :account_type , placeholder: "account_type"
+                = f.text_field :email
+              -# %div.nested-section
+              %div.card-body
+                %h5.card-title Nro de Cuenta
+                = f.text_field :account_number
+              %div.card-body
+                %h5.card-title RIF o Cédula
+                = f.text_field :rif_ci
+              %div.card-body
+                %h5.card-title Tipo de Cuenta
+                = f.text_field :account_type
   
           %div.footer
             %div.separator

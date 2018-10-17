@@ -1,7 +1,7 @@
 %div.admin-container
   %div.admin-navbar
     %div.logo
-      = image_tag("logo_temp.svg", alt: "Logo")
+      = link_to image_tag('logo_temp.svg', alt: 'Logo'), root_path
     %div.bar
       %input.disabled
       %p #{@user_email}
@@ -25,6 +25,10 @@
           = link_to "Cuentas", my_profile_accounts_path
 
     %div.admin-content
+      - if flash.notice && flash.notice != "¡Hola <Usuario>! Bienvenido a Abrazos y Café"
+        %div.alert-admin
+          %ul
+            %li #{flash.notice} 
 
       %div.header
         %h1 Carousel de Imágenes
@@ -32,10 +36,13 @@
         %div.separator
       
       %div.info
-        %div.card
+        %div.card.bmargin
           %div.card-header
             %div.section Imágenes
           %div.card-list
+            - unless @my_profile.images.last
+              %ul
+                %li.lpadding.nothingfound No tienes ninguna imagen en tu perfil. ¡Agregar una!
             - @images.each do |i|
               %ul
                 %div.options.fixpos
