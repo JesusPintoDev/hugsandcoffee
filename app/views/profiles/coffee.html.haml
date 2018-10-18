@@ -1,1 +1,75 @@
-Coffee
+= form_for @testimonial do |f|
+  %div.profile-container
+
+    %div.profile-navbar
+      %div.pavatar
+        - if @profile.avatar.attached?
+          = image_tag url_for(@profile.avatar), alt: 'avatar', class: 'avatar'
+        - else
+          = image_tag 'https://www.manufacturingusa.com/sites/prod/files/default.png', alt: 'avatar', class: 'avatar'
+      %div.puser
+        %h4 #{@profile.fullname}
+        - if @profile.fullname == (nil || "")
+          %h4 #{@profile.user.email}
+        %p #{@profile.role}
+        - if @profile.role == (nil || "")
+          %p Usuari@
+      %div.plogo
+        = link_to image_tag( 'logo_temp.svg'), root_path
+
+    %div.profile-content
+
+      %div.profile-description
+        %div.miniheader.coffeev
+          %div.go-back
+            %a(href=profiles_reward_path) < Atrás
+          %div.options-title
+            %p ¿Cuántos cafés?
+
+      %div.pform
+        %div.minicard
+          -if @profile.fullname == (nil || "")
+            %h3 Datos de #{@name}
+          -else
+            %h3 Datos de #{@profile.fullname.split(" ")[0]}
+            - index = 0
+          - @profile.accounts.each do |i|
+            - if index != 0 
+              %div.miniseparator
+            -if i.entity != (nil || "")
+              %div.accountli
+                %span Entidad:
+                %span #{i.entity}
+            -if i.email != (nil || "")
+              %div.accountli
+                %span Email:
+                %span #{i.email}     
+            -if i.account_number != (nil)
+              %div.accountli
+                %span Nro de cuenta:
+                %span #{i.account_number}
+            -if i.rif_ci != (nil || "")
+              %div.accountli
+                %span RIF o cédula:
+                %span #{i.rif_ci}
+            -if i.account_type != (nil || "")
+              %div.accountli
+                %span Tipo de cuenta:
+                %span #{i.account_type}
+            - index += 1
+
+        %div.minicard
+          %h3 Tus datos
+          %p Nombre
+          = f.text_field :fullname
+          %p Ocupación
+          = f.text_field :role
+          %p Mensaje de agradecimiento
+          = f.text_field :message
+          = f.hidden_field :appreciation, :value => true
+
+    .actions
+      -if @profile.fullname == (nil || "")
+        = f.submit '¡Listo! Notificar a ' + @name, class: 'profile-footer'
+      -else
+        = f.submit '¡Listo! Notificar a ' + @profile.fullname.split(" ")[0], class: 'profile-footer'

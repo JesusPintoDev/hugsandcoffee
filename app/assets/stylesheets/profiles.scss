@@ -84,8 +84,6 @@
         font-family: roboto;
         margin-top: -10px;
         margin-bottom: 7px;
-        position: relative;
-        left: -16%;
         &.to-profile {
           position: absolute;
           left: 8%
@@ -111,6 +109,8 @@
     font-size: 18px;
     text-decoration: none;
     z-index: 1;
+    border-style: none;
+    border-width: 0px;
     &:hover {
       cursor: pointer;
     }
@@ -231,11 +231,16 @@
       position: absolute;
     }
     &.coffee {
-      border-color: #EE4380;
       background-color: white;
       border-style: solid;
+      border-color: #EE4380;
       border-width: 1px;
-      border-radius: 50%;
+      padding: 1px;
+      border-radius: 100%;
+      text-align: center;
+      text-justify: center;
+      max-width: 18.5px;
+      min-width: 18.5px;
       left: 90%;
       top: 5px;
     }
@@ -283,6 +288,16 @@ div.centered {
 .hug-margin {
     left: 0px;
     top: 4px;
+}
+
+.miniheader {
+  position: relative;
+  &.coffeev {
+    left: -79%;
+  }
+  &.rewardv {
+    left: -19%;
+  }
 }
 
 // margin 42
