@@ -82,10 +82,12 @@
       .go-back {
         font-family: roboto;
         margin-top: -10px;
-        margin-bottom: 10px;
+        margin-bottom: 7px;
+        position: relative;
+        left: -16%;
         a {
           color: black;
-          // text-decoration: none;
+          text-decoration: none;
           font-size: 13.5px;
         }
       }
@@ -95,8 +97,8 @@
     padding-bottom: 12.5px;
     padding-top: 12.5px;
     width: 100%;
-    text-align: center;
     display: flex;
+    text-align: center;
     flex-direction: column;
     align-items: center;
     background-color:  #EE4380;
@@ -107,6 +109,20 @@
     &:hover {
       cursor: pointer;
     }
+  }
+  p.profile-minifooter {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: roboto;
+    font-weight: thin;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.671);
+    background-color: #EE4380;
+    width: 100%;
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
 }
 
@@ -255,7 +271,6 @@ div.centered {
   border-style: solid;
   border-color: #EE4380;
   border-width: 2px;
-
   object-fit: cover;
   object-position: center right;
 }

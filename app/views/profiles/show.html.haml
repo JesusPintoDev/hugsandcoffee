@@ -20,7 +20,7 @@
 
     %div.profile-description
       -# %div.go-back
-      -#   %a(href=my_profile_images_path) < Atrás
+        -# %a(href=my_profile_images_path) < Atrás
       = raw @profile.bio
 
     -if @profile.images.last != nil
@@ -131,7 +131,10 @@
           %div.centered
             %p ¡Sé la primera persona en apoyarle!
 
-  -if @profile.fullname != (nil || "")
-    %a.profile-footer(href=profiles_reward_path) Dar abrazos o café a #{@profile.fullname.split(" ")[0]}
-  -else
+  -if @profile.fullname == (nil || "")
     %a.profile-footer(href=profiles_reward_path) Dar abrazos o café a #{@name}
+  -else
+    %a.profile-footer(href=profiles_reward_path) Dar abrazos o café a #{@profile.fullname.split(" ")[0]}
+
+:javascript
+  $('.carousel').bcSwipe({ threshold: 50 });
