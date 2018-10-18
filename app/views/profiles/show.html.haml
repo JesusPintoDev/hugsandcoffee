@@ -78,15 +78,15 @@
                             = image_tag 'ico-hug.svg', alt: 'hug', class: "hug-margin"
                             %div.pcard-text.hug.count #{t.quantity} seg.
                         %div.pcard-title
-                          - if t.fullname != nil
+                          - if t.fullname != (nil || "")
                             %p #{t.fullname}
                           - else
                             %p Anónimo
-                          - if t.role != nil
+                          - if t.role != (nil || "")
                             %p.subtitle #{t.role}
                           - else
                             %p.subtitle Sin rol
-                      - if t.message != nil
+                      - if t.message != (nil || "")
                         %p.pcard-text #{t.message}
                       - else
                         %div.centered
@@ -106,15 +106,15 @@
                             = image_tag 'ico-hug.svg', alt: 'hug', class: "hug-margin"
                             %div.pcard-text.hug.count #{t.quantity} seg.
                         %div.pcard-title
-                          - if t.fullname != nil
+                          - if t.fullname != (nil || "")
                             %p #{t.fullname}
                           - else
                             %p Anónimo
-                          - if t.role != nil
+                          - if t.role != (nil || "")
                             %p.subtitle #{t.role}
                           - else
                             %p.subtitle Sin rol
-                      - if t.message != nil
+                      - if t.message != (nil || "")
                         %p.pcard-text #{t.message}
                       - else
                         %div.centered

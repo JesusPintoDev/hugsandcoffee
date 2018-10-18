@@ -19,13 +19,14 @@
   %div.profile-content
 
     %div.profile-description
-      %div.go-back
-        %a(href=profiles_path) < Atrás
-      %div.options-title
-        - if @profile.fullname != (nil || "")
-          %p Formas de reconocer a #{@profile.fullname.split(" ")[0]}
-        - else
-          %p Formas de reconocer a #{@name}
+      %div.miniheader.rewardv
+        %div.go-back
+          %a(href=profiles_path) < Atrás
+        %div.options-title
+          - if @profile.fullname != (nil || "")
+            %p Formas de reconocer a #{@profile.fullname.split(" ")[0]}
+          - else
+            %p Formas de reconocer a #{@name}
     %div.options-container
       %a.option-card(href=profiles_coffee_path)
         = image_tag 'coffee.svg'
