@@ -50,7 +50,7 @@
   flex-direction: column;
   max-width: 75%;
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 42px;
   p {
     margin-top: 25px;
     font-family: roboto-lightItalic;
@@ -58,9 +58,40 @@
     color: black;
     text-align: center;
   }
+  h1 {
+    font-family: happyMonkey;
+    margin-top: 15px;
+    font-weight: normal;
+    font-size: 40px;
+  }
+}
+
+.thanks-heart {
+  margin-top: 90px;
+  position: relative;
+}
+
+.thanks-coffees {
+  position: relative;
+  bottom: 205px;
+}
+
+.thanks-message {
+  position: relative;
+  bottom: 190px;
+  text-align: center;
+  margin-bottom: -127px;
 }
 
 // Font Family: Roboto
 // Font Style: Light Italic
 // Font Size: 14px
 // Line Height: 16px
+
+// coffees
+// W: 170px
+// H: 205px
+
+// heart
+// W: 269px
+// H: 230px
