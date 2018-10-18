@@ -51,8 +51,8 @@ class HugsController < ApplicationController
     private
 
     def set_profile
-      @user_email = current_user.email
       @profile = Profile.find(params[:id])
+      @user_email = @profile.user.email
     end
       # Use callbacks to share common setup or constraints between actions.
       def set_hug

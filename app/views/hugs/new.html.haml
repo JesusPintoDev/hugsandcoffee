@@ -15,9 +15,10 @@
         %div
           %div#pressed{onmousedown: "cargar()", onmouseup: 'detener()'}
             #contenedor
+              %div#transparent
               = image_tag("hug.svg", alt: "hugs")
             %div#myProgress
-            %div#myBar 0%
+            %div#myBar
       .half   
         %div#hugMessage
           Abrazo de 0.00 segundos
@@ -25,9 +26,10 @@
         %p Mientras mas tiempo lo presiones mayor sera el abrazo
 
       .half  
-      %div.profile-footer
-        %button{onClick: "cargar()"} 
-          siguiente
+      %div.profile-footer{onmousedown: "cargar()", onmouseup: 'detener()'} 
+        .half
+        'siguiente'
+
     %div#form2
       %p <Atras    
       %p Enviando un abrazo de 0.0 %seg
@@ -45,6 +47,6 @@
         %h5.card-title quantity
         = t.text_field :quantity, class: "seconds"   
 
-    %div.profile-footer
-      .actions
-        = t.submit 'Listo! Notificar a ###Usuario-feo##'
+      %div.profile-footer
+        .actions
+          = t.submit 'Listo! Notificar a ###Usuario-feo##'
