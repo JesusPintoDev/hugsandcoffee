@@ -73,8 +73,10 @@
                         %div.pcard-title
                           - if t.appreciation == true
                             = image_tag 'coffee.svg', alt: 'coffee'
+                            %div.pcard-text.coffee.count #{t.quantity}
                           - else
-                            = image_tag 'hug.svg', alt: 'hug'
+                            = image_tag 'ico-hug.svg', alt: 'hug', class: "hug-margin"
+                            %div.pcard-text.hug.count #{t.quantity} seg.
                         %div.pcard-title
                           - if t.fullname != nil
                             %p #{t.fullname}
@@ -99,8 +101,10 @@
                         %div.pcard-title
                           - if t.appreciation == true
                             = image_tag 'coffee.svg', alt: 'coffee'
+                            %div.pcard-text.coffee.count #{t.quantity}
                           - else
-                            = image_tag 'hug.svg', alt: 'hug'
+                            = image_tag 'ico-hug.svg', alt: 'hug', class: "hug-margin"
+                            %div.pcard-text.hug.count #{t.quantity} seg.
                         %div.pcard-title
                           - if t.fullname != nil
                             %p #{t.fullname}
