@@ -27,6 +27,24 @@
             %p ¿Cuántos cafés?
 
       %div.pform
+
+        %div.minicard.flexc-r
+          %div.flexc-c
+            = image_tag 'coffee.svg', alt: 'coffee', height: '45px'
+            %p.coffeemount #{@profile.coffee_price} #{@profile.monetary_symbol}
+          = image_tag 'ico-x.svg', alt: 'X', height: '', width: '', class: 'x'
+          %div.flexc-c
+            %div.flexc-r.inline
+              = f.radio_button :quantity, @profile.multiplier.a, :checked => true
+              %p #{@profile.multiplier.a}
+              = f.radio_button :quantity, @profile.multiplier.b
+              %p #{@profile.multiplier.b}
+              = f.radio_button :quantity, @profile.multiplier.c
+              %p #{@profile.multiplier.c}
+              = f.radio_button :quantity, @profile.multiplier.d
+              %p #{@profile.multiplier.d}
+            %p.coffeetotal Total: [javascript] #{@profile.monetary_symbol} 
+
         %div.minicard
           -if @profile.fullname == (nil || "")
             %h3 Datos de #{@name}
@@ -38,33 +56,33 @@
               %div.miniseparator
             -if i.entity != (nil || "")
               %div.accountli
-                %span Entidad:
-                %span #{i.entity}
+                %span.datatitle Entidad:
+                %span.data #{i.entity}
             -if i.email != (nil || "")
               %div.accountli
-                %span Email:
-                %span #{i.email}     
+                %span.datatitle Email:
+                %span.data #{i.email}     
             -if i.account_number != (nil)
               %div.accountli
-                %span Nro de cuenta:
-                %span #{i.account_number}
+                %span.datatitle Nro de cuenta:
+                %span.data #{i.account_number}
             -if i.rif_ci != (nil || "")
               %div.accountli
-                %span RIF o cédula:
-                %span #{i.rif_ci}
+                %span.datatitle RIF o cédula:
+                %span.data #{i.rif_ci}
             -if i.account_type != (nil || "")
               %div.accountli
-                %span Tipo de cuenta:
-                %span #{i.account_type}
+                %span.datatitle Tipo de cuenta:
+                %span.data #{i.account_type}
             - index += 1
 
         %div.minicard
           %h3 Tus datos
-          %p Nombre
+          %p.data.field Nombre
           = f.text_field :fullname
-          %p Ocupación
+          %p.data.field Ocupación
           = f.text_field :role
-          %p Mensaje de agradecimiento
+          %p.data.field Mensaje de agradecimiento
           = f.text_field :message
           = f.hidden_field :appreciation, :value => true
 
