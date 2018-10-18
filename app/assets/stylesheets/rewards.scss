@@ -1,0 +1,66 @@
+// Place all the styles related to the Images controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.options-title {
+  font-family: roboto-bold;
+  font-weight: normal;
+  text-justify: left;
+  font-size: 16px;
+  position: relative;
+  left: -16%;
+}
+
+.options-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 95%;
+  margin-top: 12.5px;
+  margin-bottom: 12.5px;
+  width: 100%;
+  a.option-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    transition: 0.3s;
+    height: 135px;
+    width: 135px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    p {
+      font-family: roboto;
+      font-size: 16px;
+      color: #8F8F8F;
+      margin-top: 7px;
+    }
+    &:hover, &:active {
+      background-color: #EE4380;
+      p {
+        color: white;
+      }
+    }
+  }
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  p {
+    margin-top: 25px;
+    font-family: roboto-lightItalic;
+    font-size: 13.5px;
+    color: black;
+    text-align: center;
+  }
+}
+
+// Font Family: Roboto
+// Font Style: Light Italic
+// Font Size: 14px
+// Line Height: 16px

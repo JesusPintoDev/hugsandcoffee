@@ -31,8 +31,7 @@ class MyProfileController < ApplicationController
   end
   
   def first_time
-    @my_profile = Profile.new(user_id: current_user.id)
-    @my_profile.save
+    @my_profile = Profile.create(user_id: current_user.id, fullname: "", role: "", bio: "")
     Multiplier.create(profile_id: current_user.id, a: 1, b: 2, c: 3, d: 5)
   end
   
