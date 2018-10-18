@@ -38,7 +38,7 @@
     z-index: 1;
     filter: drop-shadow(0px 0px 3px rgba(0,0,0,.3));
     .pavatar {
-      width: 30%;
+      width: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -46,7 +46,7 @@
     .puser {
       width: 100%;
       align-items: center;
-      padding-left: 10px;
+      margin-left: -5px;
       padding-top: 11px;
       h4 {
         font-family: roboto-bold;
@@ -91,7 +91,7 @@
       }
     }
   }
-  a.profile-footer {
+  .profile-footer {
     padding-bottom: 12.5px;
     padding-top: 12.5px;
     width: 100%;
@@ -168,6 +168,9 @@
   filter: drop-shadow(0px 0px 1px rgba(61, 61, 61, 0.2))
   drop-shadow(0px 0px 2px rgba(109, 109, 109, 0.2));
   font-family: roboto;
+  &.not {
+    margin-bottom: 25px;
+  }
   &.minheight {
     min-height: 155px;
   }
@@ -183,7 +186,7 @@
         margin: 0px;
         margin: 0px;
         &.subtitle {
-          font-size: 13px;
+          font-size: 13.5px;
           color: #8F8F8F;
           font-family: roboto;
         }
@@ -197,6 +200,28 @@
   }
   .pcard-text {
     font-size: 14px;
+    &.count {
+      font-family: roboto;
+      color: #363636;
+      font-size: 12px;
+      padding: 5px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      position: absolute;
+    }
+    &.coffee {
+      border-color: #EE4380;
+      background-color: white;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 50%;
+      left: 90%;
+      top: 5px;
+    }
+    &.hug {
+      left: 76%;
+      top: 40px;
+    }
   }
 }
 
@@ -216,6 +241,28 @@ div.centered {
     justify-content: center;
     margin-bottom: 10px;
   }
+}
+
+.grayfilter {
+  filter: grayscale(100%)
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 20px;
+  border-style: solid;
+  border-color: #EE4380;
+  border-width: 2px;
+
+  object-fit: cover;
+  object-position: center right;
+}
+
+.hug-margin {
+    left: 0px;
+    top: 4px;
 }
 
 // margin 42
