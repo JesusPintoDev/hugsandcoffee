@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get 'profiles/:id/thanks' => "profiles#thanks", as: 'profiles_thanks'
 
 
-  get 'profiles/:id' => "profiles#show"
+  get 'profiles/:id' => "profiles#show", as: "profiles"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

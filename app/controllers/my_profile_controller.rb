@@ -31,8 +31,7 @@ class MyProfileController < ApplicationController
   end
   
   def first_time
-    @my_profile = Profile.new(user_id: current_user.id)
-    @my_profile.save
+    @my_profile = Profile.create(user_id: current_user.id, fullname: "", role: "", bio: "")
     Multiplier.create(profile_id: current_user.id, a: 1, b: 2, c: 3, d: 5)
   end
   
@@ -63,7 +62,7 @@ class MyProfileController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
 
   def my_profile_params
-    params.require(:profile).permit(:fullname, :role, :bio, :coffee_price, :monetary_symbol, :user_id, 
+    params.require(:profile).permit(:fullname, :role, :bio, :coffee_price, :monetary_symbol, :user_id, :avatar,
       multiplier_attributes: [:id, :a, :b, :c, :d],
       accounts_attributes: [:id, :entity, :email, :account_number, :rif_ci, :account_type],
       images_attributes: [:id, :url, :description,])

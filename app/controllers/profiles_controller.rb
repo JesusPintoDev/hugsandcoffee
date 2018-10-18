@@ -5,7 +5,6 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @name = User.find(params[:id]).email
   end
 
   def hug
@@ -17,10 +16,14 @@ class ProfilesController < ApplicationController
   def thanks
   end
 
+  def reward
+  end
+
   private
 
   def set_profile
     @profile = Profile.find(params[:id])
+    @name = @profile.user.email
   end
 
   def profile_params
