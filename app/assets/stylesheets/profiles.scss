@@ -75,6 +75,7 @@
     width: 100%;
     font-size: 14px;
     color: #363636;
+    // min-height: 560px;
     .profile-description {
       padding-left: 25px;
       padding-right: 25px;
@@ -85,6 +86,10 @@
         margin-bottom: 7px;
         position: relative;
         left: -16%;
+        &.to-profile {
+          position: absolute;
+          left: 8%
+        }
         a {
           color: black;
           text-decoration: none;
