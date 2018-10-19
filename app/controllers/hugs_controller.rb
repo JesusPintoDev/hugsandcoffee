@@ -3,9 +3,9 @@ class HugsController < ApplicationController
   
     # GET /hugs 
     # GET /hugs.json
-    def index
-      @hugs = Testimonial.all
-    end
+    #def index
+    #  @hugs = Testimonial.all
+    #end
   
     # GET /hugs/1
     # GET /hugs/1.json
@@ -24,7 +24,7 @@ class HugsController < ApplicationController
     # POST /hugs
     # POST /hugs.json
     def create
-      @hug = @profile.testimonial.build(hug_params)
+      @hug = @profile.testimonials.build(hug_params)
       @hug[:appreciation] = false
       if @hug.save
         redirect_to profiles_path(@hug.profile_id), notice: '¡Cuenta añadida satisfactoriamente!' 
