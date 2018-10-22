@@ -43,7 +43,11 @@
               %p #{@profile.multiplier.c}
               = f.radio_button :quantity, @profile.multiplier.d, onclick: "multiplicar()"
               %p #{@profile.multiplier.d}
-            %p.coffeetotal#quantityCoffee Total: [javascript] #{@profile.monetary_symbol} 
+              %div(hidden='')  
+                %input{id: 'coffee_price', value: @profile[:coffee_price]}+
+            %div.coffeetotal
+              %span.coffeetotal#quantityCoffee Total: #{@profile.coffee_price * @profile.multiplier.a.to_f}
+              %span.coffeetotal #{@profile.monetary_symbol}
 
         %div.minicard
           -if @profile.fullname == (nil || "")
