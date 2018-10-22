@@ -1,5 +1,4 @@
-
-document.addEventListener('DOMContentLoaded',() => {
+document.addEventListener('turbolinks:load',function () {
     elem = document.getElementById("myBar"); 
     elem2 = document.getElementById("myProgress");
     elem3 = document.getElementById("hugMessage");

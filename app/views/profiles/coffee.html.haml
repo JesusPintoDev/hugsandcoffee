@@ -46,7 +46,7 @@
               %div(hidden='')  
                 %input{id: 'coffee_price', value: @profile[:coffee_price]}+
             %div.coffeetotal
-              %span.coffeetotal#quantityCoffee Total: #{@profile.coffee_price * @profile.multiplier.a.to_f}
+              %span.coffeetotal#quantityCoffee Total: #{(@profile.coffee_price * @profile.multiplier.a.to_f).to_d.round(2)}
               %span.coffeetotal #{@profile.monetary_symbol}
 
         %div.minicard
@@ -95,9 +95,3 @@
         = f.submit '¡Listo! Notificar a ' + @name, class: 'profile-footer'
       -else
         = f.submit '¡Listo! Notificar a ' + @profile.fullname.split(" ")[0], class: 'profile-footer'
-
-:javascript
-  document.addEventListener("turbolinks:before-cache", function() {
-  var quantityCoffee  = document.getElementById("quantityCoffee");
-  })
-  
