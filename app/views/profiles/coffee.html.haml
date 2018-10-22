@@ -35,15 +35,15 @@
           = image_tag 'ico-x.svg', alt: 'X', height: '', width: '', class: 'x'
           %div.flexc-c
             %div.flexc-r.inline
-              = f.radio_button :quantity, @profile.multiplier.a, :checked => true
+              = f.radio_button :quantity, @profile.multiplier.a, onclick: "multiplicar()", :checked => true
               %p #{@profile.multiplier.a}
-              = f.radio_button :quantity, @profile.multiplier.b
+              = f.radio_button :quantity, @profile.multiplier.b, onclick: "multiplicar()"
               %p #{@profile.multiplier.b}
-              = f.radio_button :quantity, @profile.multiplier.c
+              = f.radio_button :quantity, @profile.multiplier.c, onclick: "multiplicar()"
               %p #{@profile.multiplier.c}
-              = f.radio_button :quantity, @profile.multiplier.d
+              = f.radio_button :quantity, @profile.multiplier.d, onclick: "multiplicar()"
               %p #{@profile.multiplier.d}
-            %p.coffeetotal Total: [javascript] #{@profile.monetary_symbol} 
+            %p.coffeetotal#quantityCoffee Total: [javascript] #{@profile.monetary_symbol} 
 
         %div.minicard
           -if @profile.fullname == (nil || "")
