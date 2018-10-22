@@ -95,3 +95,9 @@
         = f.submit '¡Listo! Notificar a ' + @name, class: 'profile-footer'
       -else
         = f.submit '¡Listo! Notificar a ' + @profile.fullname.split(" ")[0], class: 'profile-footer'
+
+:javascript
+  document.addEventListener("turbolinks:before-cache", function() {
+  var quantityCoffee  = document.getElementById("quantityCoffee");
+  })
+  

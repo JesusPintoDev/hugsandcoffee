@@ -47,16 +47,10 @@ function multiplicar() {
     for(var i=0;i < questions.length; i++) {
         if (questions[i].type == "radio" && questions[i].checked) total += Number(questions[i].value)*Number(coffeePrice.value);
     }
-    console.log(total);
     quantityCoffee.innerHTML = 'Total: ' + total.toFixed(2);
     quantityCoffee2.innerHTML = 'Total: ' + total;
     coffees.value = total/Number(coffeePrice.value)
 }
-
-
-
-
-
 
 function ocultar() {
     console.log(elem4)
