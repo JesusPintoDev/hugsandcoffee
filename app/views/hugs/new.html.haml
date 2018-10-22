@@ -45,7 +45,10 @@
         = t.text_field :message , placeholder: "Ejemplo: Tu trabajo es excelente!!!" 
       %div.card-body(hidden='')
         %h5.card-title quantity
-        = t.text_field :quantity, value: 0, id: "seconds"   
+        = t.text_field :quantity, value: 0, id: "seconds"  
+      %div.card-body(hidden='')
+        %h5.card-title quantity
+        = t.text_field :appreciation, value: 0  
 
       %div.profile-footer
         .actions

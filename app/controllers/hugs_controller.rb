@@ -25,9 +25,8 @@ class HugsController < ApplicationController
     # POST /hugs.json
     def create
       @hug = @profile.testimonials.build(hug_params)
-      @hug[:appreciation] = false
       if @hug.save
-        redirect_to profiles_path(@hug.profile_id), notice: '¡Cuenta añadida satisfactoriamente!' 
+        redirect_to profiles_path(@hug.profile_id), notice: 'Abrazo enviado satisfactoriamente!' 
       end
     end
   
@@ -35,7 +34,7 @@ class HugsController < ApplicationController
     # PATCH/PUT /hugs/1.json
     def update
         if @hug.update(hug_params)
-          redirect_to profiles_path(@hug.profile_id), notice: '¡Cuenta editada satisfactoriamente!'
+          redirect_to profiles_path(@hug.profile_id)
         end
     end
   
@@ -44,7 +43,7 @@ class HugsController < ApplicationController
     def destroy
       @hug.destroy
       respond_to do |format|
-        format.html { redirect_to profiles_path(@hug.profile_id), notice: 'Cuenta eliminada satisfactoriamente.' }
+        format.html { redirect_to profiles_path(@hug.profile_id) }
       end
     end
   

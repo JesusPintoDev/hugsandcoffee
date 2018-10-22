@@ -1,0 +1,72 @@
+
+%div.profile-container
+
+  %div.profile-navbar
+    %div.pavatar
+      %p Avatar
+    %div.puser
+      %h4 #{@profile.fullname}
+      %p #{@profile.role}
+    %div.plogo
+      = link_to image_tag( 'logo_temp.svg'), root_path
+  %div#form1
+    %div.profile-content
+      %a(href=profiles_path) < Atras
+      %div.card-body
+        %h5.card-title Seleccione la cantidad de cafes a enviar
+        -#Agregar este div generará una sección de botones en fila  estilizados.
+        %div.nested-section.of-multipliers
+          %input{value: @profile.multiplier[:a], type: "radio", name: 'multiplier', onclick: "multiplicar()"}
+            =@profile.multiplier[:a]
+          %input{value: @profile.multiplier[:b], type: "radio", name: 'multiplier', onclick: "multiplicar()"}
+            =@profile.multiplier[:b]
+          %input{value: @profile.multiplier[:c], type: "radio", name: 'multiplier', onclick: "multiplicar()" }
+            =@profile.multiplier[:c]
+          %input{value: @profile.multiplier[:d], type: "radio", name: 'multiplier', onclick: "multiplicar()"}
+            =@profile.multiplier[:d]
+          %div(hidden='')  
+            %input{id: 'coffee_price', value: @profile[:coffee_price]}
+    .half   
+      %div#coffeeMessage
+        %div#quantityCoffee
+          Enviando 0 cafes, equivalente a 0 
+        %div#space
+          ='_' 
+        %div#monetary_symbol
+          = @profile[:monetary_symbol]
+
+    .half  
+    %div.profile-footer{onclick: "ocultar()"} 
+      Siguiente
+  %div#form2(hidden="")
+    = form_for @hug do |t|
+      %p{onclick: "regresar()"}   
+        < Atras
+      %div#coffeeMessage
+        %div#quantityCoffee2
+          Enviando 0 cafes, equivalente a 0 
+        %div#space
+          ='_' 
+        %div#monetary_symbol
+          = @profile[:monetary_symbol]
+  
+      %div.card-body
+        %h5.card-title Nombre
+        = t.text_field :fullname , placeholder: "Ejemplo: Jose De Arimatea" 
+      %div.card-body
+        %h5.card-title Rol
+        = t.text_field :role , placeholder: "Ejemplo: Carpintero" 
+      %div.card-body
+        %h5.card-title Mensaje
+        = t.text_field :message , placeholder: "Ejemplo: Tu trabajo es excelente!!!" 
+      %div.card-body(hidden='')
+        %h5.card-title quantity
+        = t.text_field :quantity, value: 0, id: "coffees" 
+      %div.card-body(hidden='')
+        %h5.card-title quantity
+        = t.text_field :appreciation, value: 1  
+
+
+      %div.profile-footer
+        .actions
+          = t.submit 'Listo! Notificar a ###Usuario-feo##'

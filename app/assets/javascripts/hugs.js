@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded',() => {
     elem5 = document.getElementById("hugMessage2");
     elem6 = document.getElementById("form1");
     elem7 = document.getElementById("form2");
+    coffeePrice = document.getElementById("coffee_price");
+    questions = document.getElementsByTagName("input");
+    quantityCoffee  = document.getElementById("quantityCoffee");
+    quantityCoffee2  = document.getElementById("quantityCoffee2");
+    coffees = document.getElementById("coffees");
+    
     
     limit = elem2.clientWidth;
     padding = limit;
@@ -26,6 +32,31 @@ var padding;
 var pressed = false;
 var limit;
 var number;
+
+
+
+
+let questions;
+let coffeePrice;
+let quantityCoffee;
+let quantityCoffee2;
+let coffees;
+
+function multiplicar() {
+    var total = 0;
+    for(var i=0;i < questions.length; i++) {
+        if (questions[i].type == "radio" && questions[i].checked) total += Number(questions[i].value)*Number(coffeePrice.value);
+    }
+    console.log(total);
+    quantityCoffee.innerHTML = 'Enviando ' + total/Number(coffeePrice.value) + ' cafes, equivalentes a ' + total;
+    quantityCoffee2.innerHTML = 'Enviando ' + total/Number(coffeePrice.value) + ' cafes, equivalentes a ' + total;
+    coffees.value = total/Number(coffeePrice.value)
+}
+
+
+
+
+
 
 function ocultar() {
     console.log(elem4)
