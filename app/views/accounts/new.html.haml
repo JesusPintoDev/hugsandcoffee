@@ -5,14 +5,14 @@
     %div.bar
       %input.disabled{disabled: true}
       - if @profile.fullname == (nil || "")
-        %p #{@profile.user.email}
+        %p.name #{@profile.user.email}
       - else
         %p.name #{@profile.fullname}
       %div.pavatar
         - if @profile.avatar.attached?
           = image_tag url_for(@profile.avatar), alt: 'avatar', class: 'my_profile_avatar'
         - else
-          = image_tag 'https://www.manufacturingusa.com/sites/prod/files/default.png', alt: 'avatar', class: 'my_profile_avatar'
+          = image_tag 'ico-blankuser.png', alt: 'avatar', class: 'my_profile_avatar'
 
   %div.admin-view
 

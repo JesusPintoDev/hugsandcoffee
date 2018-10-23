@@ -72,6 +72,10 @@ a {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
   list-style-type: none;
   z-index: 1;
+  background-color: white;
+  &.fixed {
+    position: fixed;
+  }
   ul {
     list-style-type: none;
     li {
@@ -81,7 +85,7 @@ a {
         padding-left: 20px;
         // padding-right: 35px;
       }
-      a {
+      .log {
         border-style: solid;
         margin-right: 27px;
         float: right;
@@ -203,4 +207,12 @@ form input.button {
 
 input.button:hover {
   background-color: #ff5590;
+}
+
+div.homepadding {
+  margin-bottom: 75px;
+}
+
+.smpad {
+  margin-left: 8%;
 }

@@ -38,20 +38,16 @@ class MyProfileController < ApplicationController
   def define_user
     @user_email = current_user.email
     @user = current_user.email.split("@")[0].capitalize
-    p '/////////////////////////////'
-    p @my_profile
-    p params
-    p '/////////////////////////////'
   end
   
   private
   
   def set_my_profile
     @my_profile = Profile.find_by(user_id: current_user.id)
-    @profile = Profile.find(params[:id])
     unless @my_profile
-      first_time()
+      first_time
     end 
+    @profile = Profile.find(params[:id])
     #@multiplier = @my_profile.multiplier
   end
 

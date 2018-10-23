@@ -4,7 +4,7 @@
       - if @profile.avatar.attached?
         = image_tag url_for(@profile.avatar), alt: 'avatar', class: 'avatar'
       - else
-        = image_tag 'https://www.manufacturingusa.com/sites/prod/files/default.png', alt: 'avatar', class: 'avatar'
+        = image_tag 'ico-blankuser.png', alt: 'avatar', class: 'avatar'
     %div.puser
       %h4 #{@profile.fullname}
       - if @profile.fullname == (nil || "")

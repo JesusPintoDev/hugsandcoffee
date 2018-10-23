@@ -5,6 +5,8 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @profile = Profile.find(params[:id])
+    @name = @profile.user.email
   end
 
   def hug
@@ -31,8 +33,7 @@ class ProfilesController < ApplicationController
   private
 
   def set_profile
-    @profile = Profile.find(params[:id])
-    @name = @profile.user.email
+    @profile = Profile.find(params[:id]) if params[:id]
   end
 
   def profile_params

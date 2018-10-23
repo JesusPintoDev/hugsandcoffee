@@ -7,6 +7,10 @@
   font-weight: normal;
   text-justify: left;
   font-size: 16px;
+  &.of_profiles {
+    margin-left: 8%;
+    margin-bottom: 15px;
+  }
 }
 
 .options-container {
@@ -55,6 +59,9 @@
   max-width: 75%;
   margin-top: 20px;
   margin-bottom: 42px;
+  &.heart {
+    margin-top: 0px;
+  }
   p {
     margin-top: 25px;
     font-family: roboto-lightItalic;
