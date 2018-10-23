@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   get 'profiles/:id/coffee' => "profiles#coffee", as: 'profiles_coffee'
   get 'profiles/:id/new_hug' => "hugs#new", as: 'new_hug'
   post 'profiles/:id/hug' => "hugs#create", as: 'hugs'
-  get 'profiles/:id/hug' => "profiles#hug", as: 'testimonials'
+  get 'profiles/:id/hug' => "profiles#hug", as: 'profiles_hug'
   get 'profiles/:id/thanks' => "profiles#thanks", as: 'profiles_thanks'
 
 
