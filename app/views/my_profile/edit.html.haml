@@ -45,19 +45,19 @@
               %h5.card-title Acerca de
               %p.card-text Abrazos y Café es una aplicación que te ayudará a crear una página sin necesidad de conocimientos técnios, donde la gente podrá apoyarte y hacer donaciones.
         %div.info
-          %div.card
+          %a.card.hover(href=my_profile_settings_path)
             %div.card-body
               %h5.card-title Perfil
               %p.card-text En tu perfil puedes ingresar tus datos básicos, como tu nombre, biografía, monto del café, etc.
               %div.card-img
                 = image_tag 'ico-profile', alt: '', height: '75px', width: '', class: ''
-          %div.card
+          %a.card.hover(href=my_profile_images_path)
             %div.card-body
               %h5.card-title Imágenes
               %p.card-text En la sección de imágenes podrás guardar estas que querrás mostrar en el carrusel de tu perfil.
               %div.card-img
                 = image_tag 'ico-images', alt: '', height: '75px', width: '', class: ''
-          %div.card
+          %a.card.hover(href=my_profile_accounts_path)
             %div.card-body
               %h5.card-title Cuentas
               %p.card-text Sincroniza tus cuentas bancarias a tu perfil para recibir las donaciones de tus seguidores.
