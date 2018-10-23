@@ -6,12 +6,15 @@ document.addEventListener('turbolinks:load',function () {
     elem5 = document.getElementById("hugMessage2");
     elem6 = document.getElementById("form1");
     elem7 = document.getElementById("form2");
+<<<<<<< HEAD
     coffeePrice = document.getElementById("coffee_price");
     questions = document.getElementsByTagName("input");
     quantityCoffee  = document.getElementById("quantityCoffee");
     quantityCoffee2  = document.getElementById("quantityCoffee2");
     coffees = document.getElementById("coffees");
     
+=======
+>>>>>>> 9e67ac157b671c1f8a01505aae12e501c4544489
     
     limit = elem2.clientWidth;
     padding = limit;
@@ -32,6 +35,17 @@ var pressed = false;
 var limit;
 var number;
 
+function ocultar() {
+    console.log(elem4)
+    elem6.hidden = true;;
+    elem7.hidden = false;
+}
+
+function regresar() {
+    console.log(elem4)
+    elem7.hidden = true;
+    elem6.hidden = false;
+}
 
 
 
