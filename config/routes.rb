@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :accounts, only: [:destroy]
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions'}
-  get 'hugs/' => "hugs#hugs", as: 'hugs'
   get 'my_profile/:id' => "my_profile#edit", as: 'profile'
   get 'my_profile/:id/settings/' => "my_profile#settings", as: 'my_profile_settings'
   # get 'my_profile/:id/images' => "my_profile#images", as: 'my_profile_images'
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
   get 'my_profile/edit_account/:id' => "accounts#edit", as: 'edit_accounts'
   patch 'accounts/:id' => "accounts#update"
   post 'my_profile/:id/new_account' => "accounts#create", as: 'accounts'
-
+  
   get 'my_profile/:id/images' => "my_profile#images", as: 'my_profile_images'
   get 'my_profile/:id/new_image' => "images#new", as: 'my_profile_new_image'
   get 'my_profile/edit_image/:id' => "images#edit", as: 'edit_images'
@@ -24,9 +23,12 @@ Rails.application.routes.draw do
   post 'my_profile/:id/new_image' => "images#create", as: 'images'
   delete 'my_profile/:id/new_image' => "images#destroy"
 
+  
   get 'profiles/:id/reward' => "profiles#reward", as: 'profiles_reward'
   get 'profiles/:id/coffee' => "profiles#coffee", as: 'profiles_coffee'
-  get 'profiles/:id/hug' => "profiles#hug", as: 'profiles_hug'
+  get 'profiles/:id/new_hug' => "hugs#new", as: 'new_hug'
+  post 'profiles/:id/hug' => "hugs#create", as: 'hugs'
+  get 'profiles/:id/hug' => "profiles#hug", as: 'testimonials'
   get 'profiles/:id/thanks' => "profiles#thanks", as: 'profiles_thanks'
 
 
