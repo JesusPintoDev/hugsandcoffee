@@ -28,6 +28,9 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    &.gray {
+      filter: grayscale(100%)
+    }
     &.full {
       width: 100%;
     }
@@ -89,6 +92,9 @@
   flex-direction: column;
   width: 88%;
   margin: 12.5px;
+  &.forhugs {
+    margin-bottom: 143px;
+  }
   .minicard {
     padding: 15px;
     border-radius: 5px;
@@ -201,6 +207,37 @@ div.miniseparator{
   text-align: center;
   color: #363636;
   margin-top: 10px;
+}
+
+div {
+  padding: 0px;
+
+  margin: 0px;
+}
+
+#hugBtn {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#hugMessage {
+  font-family: happyMonkey;
+  font-size: 20px;
+}
+
+#hugDesc {
+  font-family: roboto-lightItalic;
+  font-size: 14px;
+  text-align: center;
+  margin: 28px;
+  margin-top: 20px; 
+  margin-bottom: 29px;
+}
+
+#message {
+  input {
+    min-height: 93px;
+  }
 }
 
 .x {

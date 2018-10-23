@@ -20,6 +20,10 @@ class AccountsController < ApplicationController
   
     # GET /accounts/1/edit
     def edit
+      @account = Account.find(params[:id])
+      @id = current_user.id
+      @profile = Profile.find(current_user.id)
+      validate_user!
     end
   
     # POST /accounts
@@ -53,15 +57,21 @@ class AccountsController < ApplicationController
     def set_profile
       @user_email = current_user.email
       @profile = Profile.find(params[:id])
+      @id = current_user.id
     end
-      # Use callbacks to share common setup or constraints between actions.
-      def set_account
-        @account = Account.find(params[:id])
-      end
-  
-      # Never trust parameters from the scary internet, only allow the white list through.
-      def account_params
-        params.require(:account).permit(:id, :entity, :email, :account_number, :rif_ci, :account_type)
-      end
+    
+    # Use callbacks to share common setup or constraints between actions.
+    def set_account
+      @account = Account.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def account_params
+      params.require(:account).permit(:id, :entity, :email, :account_number, :rif_ci, :account_type)
+    end
+
+    def validate_user!
+      redirect_to profile_path(current_user) if @account.profile.user.id != current_user.id
+    end
   end
   

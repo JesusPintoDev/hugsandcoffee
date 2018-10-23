@@ -21,8 +21,9 @@ class ImagesController < ApplicationController
 
   # GET /images/1/edit
   def edit
-    p 'ffffffffffffffffffffffffffff'
-    p @image
+    @id = current_user.id
+    @profile = Profile.find(params[:id])
+    validate_user!
   end
 
   # POST /images
@@ -75,5 +76,9 @@ class ImagesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def image_params
     params.require(:image).permit(:url, :description, :show)
+  end
+
+  def validate_user!
+    redirect_to profile_path(current_user) if @image.profile.user.id != current_user.id
   end
 end

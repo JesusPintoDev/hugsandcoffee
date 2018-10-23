@@ -48,6 +48,7 @@ class MyProfileController < ApplicationController
   
   def set_my_profile
     @my_profile = Profile.find_by(user_id: current_user.id)
+    @profile = Profile.find(params[:id])
     unless @my_profile
       first_time()
     end 

@@ -15,6 +15,7 @@ class HugsController < ApplicationController
     # GET /hugs/new
     def new
       @hug = Testimonial.new
+      @name = @profile.user.email
     end
   
     # GET /hugs/1/edit

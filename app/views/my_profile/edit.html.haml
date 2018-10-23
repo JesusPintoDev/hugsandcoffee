@@ -3,9 +3,16 @@
     %div.logo
       = link_to image_tag('logo_temp.svg', alt: 'Logo'), root_path
     %div.bar
-      %input.disabled
-      %p #{@user_email}
-
+      %input.disabled{disabled: true}
+      - if @profile.fullname == (nil || "")
+        %p #{@profile.user.email}
+      - else
+        %p.name #{@profile.fullname}
+      %div.pavatar
+        - if @profile.avatar.attached?
+          = image_tag url_for(@profile.avatar), alt: 'avatar', class: 'my_profile_avatar'
+        - else
+          = image_tag 'https://www.manufacturingusa.com/sites/prod/files/default.png', alt: 'avatar', class: 'my_profile_avatar'
 
   -# Container de todo debajo del navbar. Usa flex-row.
   %div.admin-view

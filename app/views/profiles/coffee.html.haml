@@ -19,12 +19,11 @@
 
     %div.profile-content
 
-      %div.profile-description
-        %div.miniheader.coffeev
-          %div.go-back
-            %a(href=profiles_reward_path) < Atrás
-          %div.options-title
-            %p ¿Cuántos cafés?
+      %div.miniheader
+        %div.go-back
+          %a(href=profiles_reward_path) < Atrás
+        %div.options-title
+          %p ¿Cuántos cafés?
 
       %div.pform
 
@@ -87,7 +86,7 @@
           %p.data.field Ocupación
           = f.text_field :role
           %p.data.field Mensaje de agradecimiento
-          = f.text_field :message
+          #message= f.text_field :message
           = f.hidden_field :appreciation, :value => true
 
     .actions

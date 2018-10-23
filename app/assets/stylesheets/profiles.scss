@@ -80,20 +80,6 @@
       padding-left: 25px;
       padding-right: 25px;
       font-family: roboto;
-      .go-back {
-        font-family: roboto;
-        margin-top: -10px;
-        margin-bottom: 7px;
-        &.to-profile {
-          position: absolute;
-          left: 8%
-        }
-        a {
-          color: black;
-          text-decoration: none;
-          font-size: 13.5px;
-        }
-      }
     }
   }
   .profile-footer {
@@ -245,7 +231,7 @@
       top: 5px;
     }
     &.hug {
-      left: 76%;
+      left: 74%;
       top: 40px;
     }
   }
@@ -291,12 +277,21 @@ div.centered {
 }
 
 .miniheader {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 83%;
+  margin-left: 0px;
   &.coffeev {
     left: -79%;
   }
   &.rewardv {
     left: -19%;
+  }
+  &.hugv {
+    left: -3%;
+  }
+  &.hugv2 {
+    right: 20.75%;
   }
 }
 
@@ -306,3 +301,21 @@ div.centered {
 // Font Size: 14px
 // Line Height: 18px
 // Align: Left
+
+.go-back {
+  font-family: roboto;
+  margin-top: -10px;
+  margin-bottom: 7px;
+  &:hover {
+    cursor: pointer;
+  }
+  &.to-profile {
+    position: absolute;
+    left: 8%
+  }
+  a {
+    color: black;
+    text-decoration: none;
+    font-size: 13.5px;
+  }
+}
