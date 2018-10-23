@@ -13,17 +13,21 @@
     %div.profile-content
       %a(href=profiles_path) < Atras
       %div.card-body
-        %h5.card-title Seleccione la cantidad de cafes a enviar
+        %h4 ¿Cuantos cafés?
         -#Agregar este div generará una sección de botones en fila  estilizados.
-        %div.nested-section.of-multipliers
-          %input{value: @profile.multiplier[:a], type: "radio", name: 'multiplier', onclick: "multiplicar()"}
-            =@profile.multiplier[:a]
-          %input{value: @profile.multiplier[:b], type: "radio", name: 'multiplier', onclick: "multiplicar()"}
-            =@profile.multiplier[:b]
-          %input{value: @profile.multiplier[:c], type: "radio", name: 'multiplier', onclick: "multiplicar()" }
-            =@profile.multiplier[:c]
-          %input{value: @profile.multiplier[:d], type: "radio", name: 'multiplier', onclick: "multiplicar()"}
-            =@profile.multiplier[:d]
+        %div.box_quantity_coffes
+          %input{id: 'a',value: @profile.multiplier[:a], type: "radio", name: 'multiplier', onclick: "multiplicar()"}
+            %label{for: 'a', class: 'round'}
+              =@profile.multiplier[:a]
+          %input{id: 'b',value: @profile.multiplier[:b], type: "radio", name: 'multiplier', onclick: "multiplicar()"}
+            %label{for: 'b', class: 'round'}
+              =@profile.multiplier[:b]
+          %input{id: 'c',value: @profile.multiplier[:c], type: "radio", name: 'multiplier', onclick: "multiplicar()" }
+            %label{for: 'c', class: 'round'}
+              =@profile.multiplier[:c]
+          %input{id: 'd',value: @profile.multiplier[:d], text: 'asd', type: "radio", name: 'multiplier', onclick: "multiplicar()"}
+            %label{for: 'd', class: 'round'}
+              =@profile.multiplier[:d]
           %div(hidden='')  
             %input{id: 'coffee_price', value: @profile[:coffee_price]}
     .half   

@@ -1,6 +1,39 @@
+.box_quantity_coffes{
+    display: flex;
+    align-items: center;
+    width: 290px;
+    height: 80px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+
+}
+
 #coffeeMessage {
     display: flex;
+    #space{
+        color: #ffffff00;
+    }
 }
-#space{
-    color: #ffffff00;
+
+
+
+input{
+    display: none;
 }
+
+.round{
+    display: flex;
+    border-radius: 50%;
+    background-color: #ffffff00;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ee4380;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  input:checked + .round{
+    background-color: #F67DA8;
+  }

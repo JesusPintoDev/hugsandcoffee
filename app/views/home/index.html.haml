@@ -18,10 +18,11 @@
     %hr.padding/
     .btn= link_to "Crear mi perfil", new_user_registration_path
   %div.footer
-    %p Un perfil dedicado a recibir agradecimientos
-    -# %hr/
-    %div.line-separator
-    %p.desc.white Puedes crear una página en minutos sin conocimientos técnicos. Muestra tus datos y agradecimientos recibidos de otras personas.
-    %p #{@message}
-    %hr.padding/
-    .center= image_tag "cellphones.png"
+    %div
+      %p Un perfil dedicado a recibir agradecimientos
+      -# %hr/
+      %div.line-separator
+      %p.desc.white Puedes crear una página en minutos sin conocimientos técnicos. Muestra tus datos y agradecimientos recibidos de otras personas.
+      %p #{@message}
+      %hr.padding/
+      .center= image_tag "cellphones.png"
