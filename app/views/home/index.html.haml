@@ -16,7 +16,11 @@
     %p.desc mediante donaciones online
     %hr.padding/
     %hr.padding/
-    .btn= link_to "Crear mi perfil", new_user_registration_path
+    -# .btn= link_to "Ver perfiles", profile_path(current_user)
+    -if user_signed_in?
+      .btn= link_to "Ir a mi perfil", profile_path(current_user)
+    -else
+      .btn= link_to "Crear mi perfil", new_user_registration_path
   %div.footer
     %p Un perfil dedicado a recibir agradecimientos
     -# %hr/
