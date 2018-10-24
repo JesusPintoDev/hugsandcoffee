@@ -16,13 +16,15 @@ class ImagesController < ApplicationController
 
   # GET /images/new
   def new
+    @my_profile = current_user
     @image = Image.new
   end
 
   # GET /images/1/edit
   def edit
+    @my_profile = current_user
     @id = current_user.id
-    @profile = Profile.find(params[:id])
+    @profile = Profile.find(current_user.id)
     validate_user!
   end
 

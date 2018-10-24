@@ -84,6 +84,10 @@
         %div.separator
         -# %a.pinkbtn .pinkbtn
 
+        -if @my_profile.images.count == 1
+          %p.alert-pink TIP: El indicador a la izquierda de tu imagen representa la visibilidad de la misma. 
+          %p.alert-pink Si está en rosa, significa que tu imagen se mostrará en tu perfil, y será lo contrario cuando esté gris.
+
 :javascript
   document.addEventListener('turbolinks:load',function () {
     document.getElementById("link").onclick = function() {
