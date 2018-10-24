@@ -1,15 +1,21 @@
 
 document.addEventListener('DOMContentLoaded',() => {
-    elem = document.getElementById("myBar"); 
-    elem2 = document.getElementById("myProgress");
-    elem3 = document.getElementById("hugMessage");
-    elem4 = document.getElementById("seconds");
-    elem5 = document.getElementById("hugMessage2");
-    elem6 = document.getElementById("form1");
-    elem7 = document.getElementById("form2");
-    
-    limit = elem2.clientWidth;
-    padding = limit;
+    $(document).on("turbolinks:load", function()  {
+        elem = document.getElementById("myBar"); 
+        elem2 = document.getElementById("myProgress");
+        elem3 = document.getElementById("hugMessage");
+        elem4 = document.getElementById("seconds");
+        elem5 = document.getElementById("hugMessage2");
+        elem6 = document.getElementById("form1");
+        elem7 = document.getElementById("form2");
+        coffeePrice = document.getElementById("coffee_price");
+        questions = document.getElementsByTagName("input");
+        quantityCoffee  = document.getElementById("quantityCoffee");
+        monetarySymbol  = document.getElementById("monetary_symbol");
+        coffees = document.getElementById("coffees");
+        limit = elem2.clientWidth;
+        padding = limit;
+    }) 
 })
 
 let elem;   
@@ -26,6 +32,31 @@ var padding;
 var pressed = false;
 var limit;
 var number;
+
+
+
+
+let questions;
+let coffeePrice;
+let quantityCoffee;
+let monetarySymbol;
+let coffees;
+
+function multiplicar() {
+    var total = 0;
+    for(var i=0;i < questions.length; i++) {
+        if (questions[i].type == "radio" && questions[i].checked) total += Number(questions[i].value)*Number(coffeePrice.value);
+    }
+    total2 = new Intl.NumberFormat("de-DE").format(total)
+    console.log(total);
+    quantityCoffee.innerHTML = 'Total: ' + total2 + monetarySymbol.value;
+    coffees.value = total/Number(coffeePrice.value)
+}
+
+
+
+
+
 
 function ocultar() {
     console.log(elem4)
