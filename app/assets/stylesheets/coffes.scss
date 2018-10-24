@@ -1,24 +1,112 @@
-.box_quantity_coffes{
-    display: flex;
-    align-items: center;
-    width: 290px;
-    height: 80px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+#pad15{
+    padding-top: 15px;
+    padding-bottom: 2px
+}
 
+#pad11{
+    padding-top: 9px;
+    padding-left: 9px;
+    margin-left: -9px;
+}
+
+a{
+    font-family: roboto;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+}
+.info-user{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    border-radius: 5px;
+    width: 293px;
+    background-color: #FFFFFF;
+    margin-bottom: 2px;
+    padding-left: 7px;
+    input{
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #C4CDD5;
+        width: 279px;
+        height: 35px;
+    }
+    textarea{
+        width: 279px;
+        height: 93px;
+        padding: 0px;
+        resize: none;
+    }
+}
+
+.font-16{
+    font-family: roboto-regular;
+    font-size: 16px;
+    margin-top: 16px;
+    margin-left: 2px;
+    letter-spacing: 2%;
+}
+
+.font-14{
+    font-family: roboto-regular;
+    margin-top: 14px;
+    font-size: 14px;
+    margin-left: 2px;
+}
+
+.box_quantity_coffes{
+    margin-top: 12px;
+
+    padding-top: 10px;
+    display: flex;
+    height: 81px;
+    img{
+        height: 40px;
+    }
+    .inputs{
+        display: flex;
+    }
+    .x-div{
+        height: 40px;
+        display: flex;
+        align-items: center;
+        font-family: happyMonkey;
+        font-size: 16px;
+    }
+    .amount{
+        font-family: roboto-regular;
+        font-size: 10px;
+        color: #8F8F8F;
+    }
+
+    input[type='radio']{
+        display: none;
+    }
+}
+
+h4{
+    padding-top: 7px;
+    font-family: roboto-bold;
+    font-size: 16px;
+    font-weight: normal;
 }
 
 #coffeeMessage {
     display: flex;
+    #quantityCoffee{
+        margin-top: 18px;
+        width: 100%;
+        text-align: center;
+        font-family: roboto-medium;
+        font-size: 12px;
+    }
     #space{
         color: #ffffff00;
     }
+
 }
 
 
 
-input{
-    display: none;
-}
 
 .round{
     display: flex;
@@ -29,7 +117,7 @@ input{
     border-color: #ee4380;
     width: 40px;
     height: 40px;
-    margin-right: 20px;
+    margin-left: 13px;
     align-items: center;
     justify-content: center;
     text-align: center;

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded',() => {
     coffeePrice = document.getElementById("coffee_price");
     questions = document.getElementsByTagName("input");
     quantityCoffee  = document.getElementById("quantityCoffee");
-    quantityCoffee2  = document.getElementById("quantityCoffee2");
+    monetarySymbol  = document.getElementById("monetary_symbol");
     coffees = document.getElementById("coffees");
     
     
@@ -39,7 +39,7 @@ var number;
 let questions;
 let coffeePrice;
 let quantityCoffee;
-let quantityCoffee2;
+let monetarySymbol;
 let coffees;
 
 function multiplicar() {
@@ -47,9 +47,9 @@ function multiplicar() {
     for(var i=0;i < questions.length; i++) {
         if (questions[i].type == "radio" && questions[i].checked) total += Number(questions[i].value)*Number(coffeePrice.value);
     }
+    total = new Intl.NumberFormat("de-DE").format(total)
     console.log(total);
-    quantityCoffee.innerHTML = 'Enviando ' + total/Number(coffeePrice.value) + ' cafes, equivalentes a ' + total;
-    quantityCoffee2.innerHTML = 'Enviando ' + total/Number(coffeePrice.value) + ' cafes, equivalentes a ' + total;
+    quantityCoffee.innerHTML = 'Total: ' + total + monetarySymbol.value;
     coffees.value = total/Number(coffeePrice.value)
 }
 
