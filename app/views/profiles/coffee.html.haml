@@ -53,7 +53,7 @@
             %h3 Datos de #{@name}
           -else
             %h3 Datos de #{@profile.fullname.split(" ")[0]}
-            - index = 0
+          - index = 0
           - @profile.accounts.each do |i|
             - if index != 0 
               %div.miniseparator
@@ -86,8 +86,9 @@
           %p.data.field Ocupación
           = f.text_field :role
           %p.data.field Mensaje de agradecimiento
-          #message= f.text_field :message
+          #message= f.text_area :message
           = f.hidden_field :appreciation, :value => true
+          = f.hidden_field :show, :value => true
 
     .actions
       -if @profile.fullname == (nil || "")

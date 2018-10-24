@@ -242,8 +242,9 @@ div {
 }
 
 #message {
-  input {
+  textarea {
     min-height: 93px;
+    max-width: 95%;
   }
 }
 

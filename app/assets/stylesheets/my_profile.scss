@@ -168,6 +168,9 @@ div.card, a.card {
       }
     }
   }
+  &.small {
+    width: 50%;
+  }
   .nested-section {
     display: flex;
     &.of-multipliers {

@@ -11,10 +11,12 @@ class ProfilesController < ApplicationController
 
   def hug
     @testimonial = Testimonial.new
+    @name = @profile.user.email
   end
 
   def coffee
     @testimonial = Testimonial.new
+    @name = @profile.user.email
   end
 
   def thanks

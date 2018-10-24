@@ -32,13 +32,13 @@
           -#   %li{"data-slide-to" => "2", "data-target" => "#carouselExampleIndicators"}
           %div.carousel-inner
             - index = 0
-            - @profile.images.each do |image|
+            - @profile.images.where(:show => true).each do |image|
               - if index == 0
                 %div.carousel-item.active
                   %img.d-block.w-100.carousel-img.img{alt: "", src: "#{url_for(image.url)}"}/
                   %div.carousel-caption
                     %p #{image.description}
-              - elsif image.show
+              - else
                 %div.carousel-item
                   %img.d-block.w-100.carousel-img.img{alt: "", src: "#{url_for(image.url)}"}/
                   %div.carousel-caption
@@ -63,8 +63,7 @@
           -#   %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
           %div.carousel-inner.row.w-100.mx-auto
             - index = 0
-            - @profile.testimonials.each do |t|
-              -puts "index = " + index.to_s
+            - @profile.testimonials.where(:show => true).each do |t|
               -if index == 0
                 %div.carousel-item.active
                   %div.pcard.minheight

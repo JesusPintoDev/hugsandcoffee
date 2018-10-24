@@ -23,9 +23,16 @@ Rails.application.routes.draw do
   post 'my_profile/:id/new_image' => "images#create", as: 'images'
   delete 'my_profile/:id/new_image' => "images#destroy"
 
+  get 'my_profile/:id/photo' => "my_profile#photo", as: 'my_profile_photo'
+
+  get 'my_profile/:id/testimonials' => "my_profile#testimonials", as: 'my_profile_testimonials'
+  delete 'my_profile/:id/testimonials' => "hugs#destroy"
   
   get 'profiles/:id/reward' => "profiles#reward", as: 'profiles_reward'
   get 'profiles/:id/coffee' => "profiles#coffee", as: 'profiles_coffee'
+  delete 'profiles/:id/coffee' => "hugs#destroy"
+  patch 'profiles/:id/coffee' => "hugs#update"
+
   post 'profiles/:id/hug' => "hugs#create", as: 'hugs'
   # get 'profiles/:id/hug' => "profiles#hug", as: 'profiles_hug'
   get 'profiles/:id/thanks' => "profiles#thanks", as: 'profiles_thanks'

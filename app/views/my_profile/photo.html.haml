@@ -22,7 +22,7 @@
         %li
           = link_to image_tag('ico-home.svg', alt: 'Icon'), profile_path
           = link_to "Home", profile_path
-        %li.selected
+        %li
           = link_to image_tag('ico-profile.svg', alt: 'Icon'), my_profile_settings_path
           = link_to "Perfil", my_profile_settings_path
         %li   
@@ -31,7 +31,7 @@
         %li
           = link_to image_tag('ico-accounts.svg', alt: 'Icon'), my_profile_accounts_path
           = link_to "Cuentas", my_profile_accounts_path
-        %li
+        %li.selected
           = link_to image_tag('ico-photo.svg', alt: 'Icon'), my_profile_photo_path
           = link_to "Foto de Perfil", my_profile_photo_path
         %li
@@ -43,46 +43,25 @@
 
     %div.admin-content
       = form_for(@my_profile, method: :patch) do |f|
-        - if flash.notice && flash.notice != "¡Hola <Usuario>! Bienvenido a Abrazos y Café"
-          %div.alert-admin
-            %ul
-              %li #{flash.notice}        
-    
         %div.header
-          %h1 Perfil de Usuario
+          %h1 Foto de Perfil
           %div.separator
 
         %div.info
-          %div.card
-            %div.nested-section
-              %div.card-body
-                %h5.card-title Nombre y Apellido
-                = f.text_field :fullname
-              %div.card-body
-                %h5.card-title Ocupación o Rol
-                = f.text_field :role
+          %div.card.transparent
             %div.card-body
-              %h5.card-title Biografía
-              %div.trix
-                = f.trix_editor :bio
-              -# = f.text_area :bio, placeholder: "bio"
+              %div.card-title Foto de Perfil
+              %div.card-text ¡Añade una foto para que las personas que quieran apoyarte puedan reconocerte a primera vista!
+            -if @my_profile.avatar.attached?
+              %div.card-body
+                %div.card-title Foto actual:
+                =image_tag @my_profile.avatar, class: "preview" 
 
           %div.card
-            %div.card-body
-              %h5.card-title Monto de un café
-              = f.text_field :coffee_price, step: "any"
-            %div.card-body
-              %h5.card-title Símbolo de la moneda
-              = f.text_field :monetary_symbol
-            %div.card-body
-              %h5.card-title Multiplicadores
-              -# =#%p.card-text (a, b, c, d)
-              %div.nested-section.of-multipliers
-                = f.fields_for :multiplier do |fm|
-                  = fm.number_field :a, min: "1", max: "99", maxlength: "2", required: true
-                  = fm.number_field :b, min: "1", max: "99", maxlength: "2", required: true
-                  = fm.number_field :c, min: "1", max: "99", maxlength: "2", required: true
-                  = fm.number_field :d, min: "1", max: "99", maxlength: "2", required: true
+            %div.card-body.rpad
+              %div.card-title Agregar foto
+              = f.file_field :avatar, class: 'dropify', id: "input-file-now"
+
         %div.footer
           %div.separator
           .actions

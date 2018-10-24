@@ -31,6 +31,15 @@
         %li
           = link_to image_tag('ico-accounts.svg', alt: 'Icon'), my_profile_accounts_path
           = link_to "Cuentas", my_profile_accounts_path
+        %li
+          = link_to image_tag('ico-photo.svg', alt: 'Icon'), my_profile_photo_path
+          = link_to "Foto de Perfil", my_profile_photo_path
+        %li
+          = link_to image_tag('ico-testimonial.svg', alt: 'Icon'), my_profile_testimonials_path
+          = link_to "Testimoniales", my_profile_testimonials_path
+        %li#link
+          = image_tag('ico-link.svg', alt: 'Icon')
+          = link_to "Generar Link", ""
 
     %div.admin-content
 
@@ -71,3 +80,10 @@
           .actions
             = f.submit 'Guardar', :class => "pinkbtn"
           %div.separator
+
+:javascript
+  document.addEventListener('turbolinks:load',function () {
+    document.getElementById("link").onclick = function() {
+      alert("¡Copia el siguiente link y compártelo!\n\nhttp://localhost:3000/profiles/#{@my_profile.id}")
+    }
+  })

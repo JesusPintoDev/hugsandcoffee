@@ -12,6 +12,9 @@ class MyProfileController < ApplicationController
   def images
   end
 
+  def photo
+  end
+
   def new_acount
     @accounts = @my_profile.accounts.build
   end
@@ -47,7 +50,7 @@ class MyProfileController < ApplicationController
     unless @my_profile
       first_time
     end 
-    @profile = Profile.find(params[:id])
+    @profile = Profile.find_by(user_id: current_user.id)
     #@multiplier = @my_profile.multiplier
   end
 

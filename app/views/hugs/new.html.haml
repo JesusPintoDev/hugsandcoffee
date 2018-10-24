@@ -53,9 +53,10 @@
             %p.data.field Ocupación
             = t.text_field :role
             %p.data.field Mensaje de agradecimiento
-            #message= t.text_field :message
+            #message= t.text_area :message
             = t.hidden_field :quantity, value: 0, id: "seconds"
             = t.hidden_field :appreciation, :value => false
+            = t.hidden_field :show, :value => 1
       .actions
         -if @profile.fullname == (nil || "")
           = t.submit '¡Listo! Notificar a ' + @name, class: 'profile-footer'
