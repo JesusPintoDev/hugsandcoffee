@@ -228,7 +228,8 @@
       img {
         position: absolute;
         max-height: 40px;
-        margin-left: 77.5%;
+        left: 77.5%;
+        // margin-left: 77.5%;
       }
     }
   }
@@ -254,7 +255,7 @@
       text-justify: center;
       max-width: 18.5px;
       min-width: 18.5px;
-      left: 90%;
+      left: 85%;
       top: 5px;
     }
     &.hug {
