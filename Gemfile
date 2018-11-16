@@ -7,8 +7,8 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 
 require "rubygems"
-gem "autoprefixer-rails"
-require "autoprefixer-rails"
+
+gem "autoprefixer-rails", "~> 9.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
@@ -71,3 +71,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise", "~> 4.5"
 
 gem "activerecord", "~> 5.2"
+
+
+
