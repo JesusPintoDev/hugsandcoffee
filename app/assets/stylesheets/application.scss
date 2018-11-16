@@ -1,22 +1,31 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*= require dropify.css
+*= require trix
+*/
+
+@import 'dropify.css';
 
  @font-face {
   font-family: happyMonkey;
   src: url(HappyMonkey-Regular.ttf);
+}
+
+@font-face {
+  font-family: roboto-lightItalic;
+  src: url(Roboto-LightItalic.ttf);
 }
 
 @font-face {
@@ -32,6 +41,15 @@
 @font-face {
   font-family: roboto-medium;
   src: url(Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: roboto-italic;
+  src: url(Roboto-Italic.ttf);
+}
+@font-face {
+  font-family: roboto-bold;
+  src: url(Roboto-Bold.ttf);
 }
 
 .alert-error, #error_explanation {
@@ -72,6 +90,23 @@
   }
 }
 
-  br {
-    padding: 0px;
+br {
+  padding: 0px;
+}
+
+.alert-admin {
+  position: absolute;
+  font-family: roboto;
+  list-style-type: none;
+  background-color: rgb(230, 230, 230);
+  text-align: center; 
+  margin-left: -30px;
+  padding: 7px;
+  font-size: 18px;
+  width: 80%;
+  ul {
+    li {
+      list-style-type: none;
+    }
   }
+}

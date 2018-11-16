@@ -1,0 +1,63 @@
+%div.admin-container
+  %div.admin-navbar
+    %div.logo
+      = link_to image_tag('logo_temp.svg', alt: 'Logo'), root_path
+    %div.bar
+      %input.disabled
+      %p #{@user_email}
+
+
+  %div.admin-view
+
+    %div.admin-sidebar
+      %ul
+        %li
+          = link_to image_tag('ico-home.svg', alt: 'Icon'), profile_path
+          = link_to "Home", profile_path
+        %li
+          = link_to image_tag('ico-profile.svg', alt: 'Icon'), my_profile_settings_path
+          = link_to "Perfil", my_profile_settings_path
+        %li
+          = link_to image_tag('ico-images.svg', alt: 'Icon'), my_profile_images_path
+          = link_to "Imágenes", my_profile_images_path
+        %li.selected
+          = link_to image_tag('ico-accounts.svg', alt: 'Icon'), my_profile_accounts_path
+          = link_to "Cuentas", my_profile_accounts_path
+
+    %div.admin-content
+
+      %div.header
+        = link_to image_tag('ico-return.svg', alt: 'Icon'), my_profile_accounts_path
+        %a.returnbtn(href=my_profile_accounts_path) Listado de cuentas
+        %h1 Agregar Cuenta
+        %div.separator
+        = form_for @account do |f| 
+          %div.info
+            %div.card.transparent
+              %div.card-body
+                %h5.card-title Datos de la cuenta
+                %p.card-text Ingreso de datos de la cuenta bancaria que estará aninada a su cuenta de "Abrazos y Café".
+                %p.card-text
+                %p.card-text Todos los datos son opcionales. Aquellos sin rellenar no se mostrarán en el perfil.
+            %div.card
+              %div.card-body
+                %h5.card-title Entidad
+                = f.text_field :entity 
+              %div.card-body
+                %h5.card-title Email
+                = f.text_field :email
+              -# %div.nested-section
+              %div.card-body
+                %h5.card-title Nro de Cuenta
+                = f.text_field :account_number
+              %div.card-body
+                %h5.card-title RIF o Cédula
+                = f.text_field :rif_ci
+              %div.card-body
+                %h5.card-title Tipo de Cuenta
+                = f.text_field :account_type
+  
+          %div.footer
+            %div.separator
+            .actions
+              = f.submit 'Guardar', :class => "pinkbtn"

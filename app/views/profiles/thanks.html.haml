@@ -1,0 +1,29 @@
+%div.profile-container
+
+  %div.profile-navbar
+    %div.pavatar
+      - if @profile.avatar.attached?
+        = image_tag url_for(@profile.avatar), alt: 'avatar', class: 'avatar'
+      - else
+        = image_tag 'https://www.manufacturingusa.com/sites/prod/files/default.png', alt: 'avatar', class: 'avatar'
+    %div.puser
+      %h4 #{@profile.fullname}
+      - if @profile.fullname == (nil || "")
+        %h4 #{@profile.user.email}
+      %p #{@profile.role}
+      - if @profile.role == (nil || "")
+        %p Usuari@
+    %div.plogo
+      = link_to image_tag( 'logo_temp.svg'), root_path
+
+  %div.profile-content
+
+    %div.profile-description
+      %div.go-back.to-profile
+        %a(href=profiles_path) < Perfil
+    %div.empty-state
+      = image_tag 'bigheart.svg', alt: 'heart', class: 'thanks-heart'
+      = image_tag 'coffees2.svg', alt: 'pink girl', class: 'thanks-coffees'
+      %h1.thanks-message ¡Gracias!
+
+  %p.profile-minifooter Rightocopy abrazosycafe.com

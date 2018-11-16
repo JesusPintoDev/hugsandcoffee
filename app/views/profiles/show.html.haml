@@ -1,2 +1,140 @@
-%h1 Profiles#show
-%p Find me in app/views/profiles/show.html.haml
+%div.profile-container
+
+  %div.profile-navbar
+    %div.pavatar
+      - if @profile.avatar.attached?
+        = image_tag url_for(@profile.avatar), alt: 'avatar', class: 'avatar'
+      - else
+        = image_tag 'https://www.manufacturingusa.com/sites/prod/files/default.png', alt: 'avatar', class: 'avatar'
+    %div.puser
+      %h4 #{@profile.fullname}
+      - if @profile.fullname == (nil || "")
+        %h4 #{@profile.user.email}
+      %p #{@profile.role}
+      - if @profile.role == (nil || "")
+        %p Usuari@
+    %div.plogo
+      = link_to image_tag( 'logo_temp.svg'), root_path
+
+  %div.profile-content
+
+    %div.profile-description
+      -# %div.go-back
+        -# %a(href=my_profile_images_path) < Atrás
+      = raw @profile.bio
+
+    -if @profile.images.last != nil
+      %div.bootstrap
+        %div#carouselExampleIndicators.carousel.slide{"data-ride" => "carousel"}
+          -# %ol.carousel-indicators
+          -#   %li.active{"data-slide-to" => "0", "data-target" => "#carouselExampleIndicators"}
+          -#   %li{"data-slide-to" => "1", "data-target" => "#carouselExampleIndicators"}
+          -#   %li{"data-slide-to" => "2", "data-target" => "#carouselExampleIndicators"}
+          %div.carousel-inner
+            - index = 0
+            - @profile.images.each do |image|
+              - if index == 0
+                %div.carousel-item.active
+                  %img.d-block.w-100.carousel-img.img{alt: "", src: "#{url_for(image.url)}"}/
+                  %div.carousel-caption
+                    %p #{image.description}
+              - elsif image.show
+                %div.carousel-item
+                  %img.d-block.w-100.carousel-img.img{alt: "", src: "#{url_for(image.url)}"}/
+                  %div.carousel-caption
+                    %p #{image.description}
+              - index += 1
+          -# %a.carousel-control-prev{"data-slide" => "prev", href: "#carouselExampleIndicators", role: "button"}
+          -#   %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+          -#   %span.sr-only Previous
+          -# %a.carousel-control-next{"data-slide" => "next", href: "#carouselExampleIndicators", role: "button"}
+          -#   %span.carousel-control-next-icon{"aria-hidden" => "true"}
+          -#   %span.sr-only Next
+    - else
+      %h2 Sin contenido para mostrar.
+      = image_tag 'ico-brokenheart.svg', alt: 'icoheart', height: '300px', class: "grayfilter"
+
+    -if @profile.testimonials.last != nil
+      %div.bootstrap
+        %div#myCarousel.carousel.slide{"data-ride" => "carousel"}
+          -# %ol.carousel-indicators
+          -#   %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+          -#   %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+          -#   %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+          %div.carousel-inner.row.w-100.mx-auto
+            - index = 0
+            - @profile.testimonials.each do |t|
+              -puts "index = " + index.to_s
+              -if index == 0
+                %div.carousel-item.active
+                  %div.pcard.minheight
+                    %div.pcard-body
+                      %div.pcard-header
+                        %div.pcard-title
+                          - if t.appreciation == true
+                            = image_tag 'coffee.svg', alt: 'coffee'
+                            %div.pcard-text.coffee.count #{t.quantity}
+                          - else
+                            = image_tag 'ico-hug.svg', alt: 'hug', class: "hug-margin"
+                            %div.pcard-text.hug.count #{t.quantity} seg.
+                        %div.pcard-title
+                          - if t.fullname != (nil || "")
+                            %p #{t.fullname}
+                          - else
+                            %p Anónimo
+                          - if t.role != (nil || "")
+                            %p.subtitle #{t.role}
+                          - else
+                            %p.subtitle Sin rol
+                      - if t.message != (nil || "")
+                        %p.pcard-text #{t.message}
+                      - else
+                        %div.centered
+                          %p.pcard-text ¡Sigue adelante!
+                        %div.centered
+                          = image_tag 'ico-heart.svg', alt: 'icoheart', height: '52px'
+              -else
+                %div.carousel-item
+                  %div.pcard.minheight
+                    %div.pcard-body
+                      %div.pcard-header
+                        %div.pcard-title
+                          - if t.appreciation == true
+                            = image_tag 'coffee.svg', alt: 'coffee'
+                            %div.pcard-text.coffee.count #{t.quantity}
+                          - else
+                            = image_tag 'ico-hug.svg', alt: 'hug', class: "hug-margin"
+                            %div.pcard-text.hug.count #{t.quantity} seg.
+                        %div.pcard-title
+                          - if t.fullname != (nil || "")
+                            %p #{t.fullname}
+                          - else
+                            %p Anónimo
+                          - if t.role != (nil || "")
+                            %p.subtitle #{t.role}
+                          - else
+                            %p.subtitle Sin rol
+                      - if t.message != (nil || "")
+                        %p.pcard-text #{t.message}
+                      - else
+                        %div.centered
+                          %p.pcard-text ¡Sigue adelante!
+                        %div.centered
+                          = image_tag 'ico-heart.svg', alt: 'icoheart', height: '52px'
+              - index += 1
+    -else
+      %div.pcard.not
+        %div.pcard-body
+          %h4 Este usuario no tiene abrazos ni café.
+          %div.centered
+            = image_tag 'ico-brokenheart.svg', alt: 'icoheart', height: '70px'
+          %div.centered
+            %p ¡Sé la primera persona en apoyarle!
+
+  -if @profile.fullname == (nil || "")
+    %a.profile-footer(href=profiles_reward_path) Dar abrazos o café a #{@name}
+  -else
+    %a.profile-footer(href=profiles_reward_path) Dar abrazos o café a #{@profile.fullname.split(" ")[0]}
+
+:javascript
+  $('.carousel').bcSwipe({ threshold: 50 });

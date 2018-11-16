@@ -7,8 +7,17 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 
 require "rubygems"
+<<<<<<< HEAD
 
 gem "autoprefixer-rails", "~> 9.3"
+=======
+gem "autoprefixer-rails"
+require "autoprefixer-rails"
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'jquery-turbolinks'
+gem 'trix-gem'
+gem "trix"
+>>>>>>> 9e67ac157b671c1f8a01505aae12e501c4544489
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
@@ -72,5 +81,9 @@ gem "devise", "~> 4.5"
 
 gem "activerecord", "~> 5.2"
 
+<<<<<<< HEAD
 
 
+=======
+gem "dropify-rails", "~> 0.1.0"
+>>>>>>> 9e67ac157b671c1f8a01505aae12e501c4544489
