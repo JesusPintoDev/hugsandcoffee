@@ -6,9 +6,9 @@ gem "haml-rails"
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 
+
 require "rubygems"
-gem "autoprefixer-rails"
-require "autoprefixer-rails"
+
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-turbolinks'
 gem 'trix-gem'

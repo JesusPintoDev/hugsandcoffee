@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: 098f0455d5c91ae55e5e4ece32e117c557dabbee
+  revision: f73721163f6e96e5c8078b0de6100db4ca4581f6
   branch: master
   specs:
     faker (1.9.1)
@@ -254,7 +254,6 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (~> 5.2)
-  autoprefixer-rails (~> 9.3)
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.1.3)
   byebug
