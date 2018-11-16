@@ -3,9 +3,9 @@
     %ul
       %li= image_tag('logo_temp.svg')
       -if user_signed_in?
-        %li= link_to "Log out", destroy_user_session_path(user_session), method: :delete
+        %li= link_to( "Log out", destroy_user_session_path(user_session), method: :delete, :class => "log")
       -else
-        %li= link_to "Log in", new_user_session_path
+        %li= link_to( "Log in", new_user_session_path, :class => "log")
 
   %div.content.col-s-12
     = image_tag 'coffees.svg'
@@ -16,7 +16,12 @@
     %p.desc mediante donaciones online
     %hr.padding/
     %hr.padding/
-    .btn= link_to "Crear mi perfil", new_user_registration_path
+    -if Profile.last != nil
+      .btn= link_to "Ver perfiles", profiles_index_path
+    -if user_signed_in?
+      .btn= link_to "Ir a mi perfil", profile_path(current_user)
+    -else
+      .btn= link_to "Crear mi perfil", new_user_registration_path
   %div.footer
     %p Un perfil dedicado a recibir agradecimientos
     -# %hr/

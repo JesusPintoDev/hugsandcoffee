@@ -5,8 +5,9 @@ class CreateTestimonials < ActiveRecord::Migration[5.2]
       t.string :fullname
       t.string :role
       t.string :message
-      t.boolean :appreciation
+      t.boolean :appreciation, :null => false
       t.string :quantity
+      t.boolean :show, :null => false, :default => true
 
       t.timestamps
     end

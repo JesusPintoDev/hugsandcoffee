@@ -62,3 +62,9 @@
         %div.separator
         -# %a.pinkbtn .pinkbtn
 
+:javascript
+  document.addEventListener('turbolinks:load',function () {
+    document.getElementById("link").onclick = function() {
+      alert("¡Copia el siguiente link y compártelo!\n\nhttp://localhost:3000/profiles/#{@my_profile.id}")
+    }
+  })

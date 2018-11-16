@@ -3,8 +3,16 @@
     %div.logo
       = link_to image_tag('logo_temp.svg', alt: 'Logo'), root_path
     %div.bar
-      %input.disabled
-      %p #{@user_email}
+      %input.disabled{disabled: true}
+      - if @profile.fullname == (nil || "")
+        %p.name #{@profile.user.email}
+      - else
+        %p.name #{@profile.fullname}
+      %div.pavatar
+        - if @profile.avatar.attached?
+          = image_tag url_for(@profile.avatar), alt: 'avatar', class: 'my_profile_avatar'
+        - else
+          = image_tag 'ico-blankuser.png', alt: 'avatar', class: 'my_profile_avatar'
 
 
   %div.admin-view
@@ -23,7 +31,15 @@
         %li.selected
           = link_to image_tag('ico-accounts.svg', alt: 'Icon'), my_profile_accounts_path
           = link_to "Cuentas", my_profile_accounts_path
-
+        %li
+          = link_to image_tag('ico-photo.svg', alt: 'Icon'), my_profile_photo_path
+          = link_to "Foto de Perfil", my_profile_photo_path
+        %li
+          = link_to image_tag('ico-testimonial.svg', alt: 'Icon'), my_profile_testimonials_path
+          = link_to "Testimoniales", my_profile_testimonials_path
+        %li#link
+          = image_tag('ico-link.svg', alt: 'Icon')
+          = link_to "Generar Link", ""
     %div.admin-content
       - if flash.notice && flash.notice != "¡Hola <Usuario>! Bienvenido a Abrazos y Café"
         %div.alert-admin
@@ -45,7 +61,38 @@
                 %li.lpadding.nothingfound No tienes ninguna cuenta bancaria vinculada a tu perfil. ¡Agrega una!
             - @my_profile.accounts.each do |account|
               %ul
-                %li.lpadding= "Entidad: " + account.entity.to_s + ", e-mail: " + account.email.to_s + ", Numero de cuenta: " + account.account_number.to_s + ", CI_RIF: " + account.rif_ci.to_s + ", Tipo de cuenta:" + account.account_type.to_s
+                %li.lpadding 
+                  -if account.entity != (nil || "")
+                    %span
+                      %b
+                        Entidad:
+                    %span= account.entity
+                    %br/
+                  -if account.email != (nil || "")
+                    %span
+                      %b
+                        Email:
+                    %span= account.email
+                    %br/
+                  -if account.account_number != nil
+                    %span
+                      %b
+                        Nro de Cuenta:
+                    %span= account.account_number
+                    %br/
+                  -if account.rif_ci != (nil || "")
+                    %span
+                      %b
+                        RIF o Cédula:
+                    %span= account.rif_ci
+                    %br/
+                  -if account.account_type != (nil || "")
+                    %span
+                      %b
+                        Tipo de Cuenta:
+                    %span= account.account_type
+                    %br/
+
                 %div.options
                   = image_tag 'ico-options.svg', alt: 'options', class: ''
                   %div.options-content
@@ -62,3 +109,10 @@
       %div.footer
         %div.separator
         -# %a.pinkbtn .pinkbtn
+
+:javascript
+  document.addEventListener('turbolinks:load',function () {
+    document.getElementById("link").onclick = function() {
+      alert("¡Copia el siguiente link y compártelo!\n\nhttp://localhost:3000/profiles/#{@my_profile.id}")
+    }
+  })

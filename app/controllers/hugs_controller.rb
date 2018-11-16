@@ -15,6 +15,7 @@ class HugsController < ApplicationController
     # GET /hugs/new
     def new
       @hug = Testimonial.new
+      @name = @profile.user.email
     end
   
     # GET /hugs/1/edit
@@ -25,7 +26,7 @@ class HugsController < ApplicationController
     # POST /hugs.json
     def create
       @hug = @profile.testimonials.build(hug_params)
-      @hug[:appreciation] = false
+      @hug.show = 1
       if @hug.save
         redirect_to profiles_path(@hug.profile_id), notice: '¡Cuenta añadida satisfactoriamente!' 
       end
@@ -34,17 +35,20 @@ class HugsController < ApplicationController
     # PATCH/PUT /hugs/1
     # PATCH/PUT /hugs/1.json
     def update
-        if @hug.update(hug_params)
-          redirect_to profiles_path(@hug.profile_id), notice: '¡Cuenta editada satisfactoriamente!'
-        end
+      @hug = Testimonial.find(params[:id])
+      @hug.show = @hug.show == true ? false : true
+      if @hug.update(hug_params)
+        redirect_to profiles_path(@hug.profile_id), notice: '¡Cuenta editada satisfactoriamente!'
+      end
     end
   
     # DELETE /hugs/1
     # DELETE /hugs/1.json
     def destroy
+      @hug = Testimonial.find(params[:id])
       @hug.destroy
       respond_to do |format|
-        format.html { redirect_to profiles_path(@hug.profile_id), notice: 'Cuenta eliminada satisfactoriamente.' }
+        format.html { redirect_to my_profile_testimonials_path(@hug.profile_id), notice: 'Testimonial eliminado satisfactoriamente.' }
       end
     end
   
@@ -61,7 +65,6 @@ class HugsController < ApplicationController
   
       # Never trust parameters from the scary internet, only allow the white list through.
       def hug_params
-        params.require(:testimonial).permit(:fullname, :role, :message, :appreciation, :quantity)
+        params.require(:testimonial).permit(:fullname, :role, :message, :appreciation, :quantity, :show)
       end
   end
-  

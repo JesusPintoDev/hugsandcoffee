@@ -1,2 +1,36 @@
-%h1 Profiles#index
-%p Find me in app/views/profiles/index.html.haml
+%div.profile-container
+  %div.navbar.col-s-12.fixed
+    %ul
+      %li
+        =link_to image_tag('logo_temp.svg'), root_path
+      -if user_signed_in?
+        %li= link_to( "Log out", destroy_user_session_path(user_session), method: :delete, :class => "log")
+      -else
+        %li= link_to( "Log in", new_user_session_path, :class => "log")
+
+  %div.homepadding
+  %div.go-back.smpad
+    %a(href=root_path) < Atrás
+  %div.options-title.of_profiles
+    %p Lista de Perfiles
+
+  - if Profile.last != nil
+    - Profile.all.each do |i|
+      %div.profile-container.list
+        %a.profile-navbar.list(href="profiles/#{i.id}")
+          %div.pavatar
+            - if i.avatar.attached? && i.avatar != (nil || "")
+              = image_tag url_for(i.avatar), alt: 'avatar', class: 'avatar'
+            - else
+              = image_tag 'ico-blankuser.png', alt: 'avatar', class: 'avatar'
+          %div.puser
+            %h4 #{i.fullname}
+            - if i.fullname == (nil || "")
+              %h4 #{i.user.email}
+            %p #{i.role}
+            - if i.role == (nil || "")
+              %p Usuari@
+      %div.half
+
+  %div.half
+  %p.profile-minifooter Rightocopy abrazosycafe.com

@@ -12,6 +12,9 @@ class MyProfileController < ApplicationController
   def images
   end
 
+  def photo
+  end
+
   def new_acount
     @accounts = @my_profile.accounts.build
   end
@@ -38,10 +41,6 @@ class MyProfileController < ApplicationController
   def define_user
     @user_email = current_user.email
     @user = current_user.email.split("@")[0].capitalize
-    p '/////////////////////////////'
-    p @my_profile
-    p params
-    p '/////////////////////////////'
   end
   
   private
@@ -49,8 +48,9 @@ class MyProfileController < ApplicationController
   def set_my_profile
     @my_profile = Profile.find_by(user_id: current_user.id)
     unless @my_profile
-      first_time()
+      first_time
     end 
+    @profile = Profile.find_by(user_id: current_user.id)
     #@multiplier = @my_profile.multiplier
   end
 

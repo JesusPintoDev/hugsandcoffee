@@ -14,6 +14,7 @@
         - else
           = image_tag 'ico-blankuser.png', alt: 'avatar', class: 'my_profile_avatar'
 
+
   %div.admin-view
 
     %div.admin-sidebar
@@ -24,7 +25,7 @@
         %li
           = link_to image_tag('ico-profile.svg', alt: 'Icon'), my_profile_settings_path
           = link_to "Perfil", my_profile_settings_path
-        %li.selected
+        %li
           = link_to image_tag('ico-images.svg', alt: 'Icon'), my_profile_images_path
           = link_to "Imágenes", my_profile_images_path
         %li
@@ -33,7 +34,7 @@
         %li
           = link_to image_tag('ico-photo.svg', alt: 'Icon'), my_profile_photo_path
           = link_to "Foto de Perfil", my_profile_photo_path
-        %li
+        %li.selected
           = link_to image_tag('ico-testimonial.svg', alt: 'Icon'), my_profile_testimonials_path
           = link_to "Testimoniales", my_profile_testimonials_path
         %li#link
@@ -41,52 +42,59 @@
           = link_to "Generar Link", ""
 
     %div.admin-content
-      - if flash.notice && flash.notice != "¡Hola <Usuario>! Bienvenido a Abrazos y Café"
-        %div.alert-admin
-          %ul
-            %li #{flash.notice} 
-
       %div.header
-        %h1 Carousel de Imágenes
-        %a.pinkbtn(href=my_profile_new_image_path) Agregar
+        %h1 Testimoniales
         %div.separator
-      
+
       %div.info
         %div.card.bmargin
           %div.card-header
-            %div.section Imágenes
+            %div.section Testimoniales
           %div.card-list
-            - unless @my_profile.images.last
+            - unless @my_profile.testimonials.last
               %ul
-                %li.lpadding.nothingfound No tienes ninguna imagen en tu perfil. ¡Agregar una!
-            - @images.each do |i|
+                %li.lpadding.nothingfound No tienes ningún testimonial vinculada a tu cuenta. ¡Hazle llegar tu voz a las personas!
+            - @my_profile.testimonials.each do |testimonial|
               %ul
-                %div.options.fixpos
+                %li.lpadding 
+                  %span
+                    %b Nombre:
+                  -if testimonial.fullname != (nil || "")
+                    %span= testimonial.fullname
+                  -else
+                    %span Anónimo
+                  %br/
+                  %span
+                    %b Rol:
+                    -if testimonial.role != (nil || "")
+                      %span= testimonial.role
+                    -else
+                      %span Sin Rol
+                    %br/
+                  %span
+                    %b Mensaje:
+                    -if testimonial.message != (nil || "")
+                      %span= testimonial.message
+                    -else
+                      %span Sin Mensaje
+                    %br/
+
+                %div.options
                   = image_tag 'ico-options.svg', alt: 'options', class: ''
                   %div.options-content
-                    = link_to edit_images_path(i) do
-                      -# = link_to "" do
-                      %span 
-                      Editar
-                      = image_tag 'ico-edit', alt: 'e', height: '10px', width: '12px'
-                    = link_to images_path(i.id), method: :delete, data: { confirm: 'Are you sure?' } do
+                    -# = link_to testimonials_path(testimonial), method: :patch do
+                    -#   %span 
+                    -#   Editar
+                    -#   = image_tag 'ico-edit', alt: 'e', height: '10px', width: '12px'
+                    = link_to testimonials_path(testimonial), method: :delete, data: { confirm: 'Are you sure?' } do
                       %span
                       Eliminar
                       = image_tag 'ico-delete', alt: 'd'
-                .img=image_tag url_for(i.url)
-                %li #{i.description}
-                -if i.show == true
-                  %p.show *
-                -else
-                  %p *
-      
+            
+
       %div.footer
         %div.separator
         -# %a.pinkbtn .pinkbtn
-
-        -if @my_profile.images.count == 1
-          %p.alert-pink TIP: El indicador a la izquierda de tu imagen representa la visibilidad de la misma. 
-          %p.alert-pink Si está en rosa, significa que tu imagen se mostrará en tu perfil, y será lo contrario cuando esté gris.
 
 :javascript
   document.addEventListener('turbolinks:load',function () {

@@ -5,7 +5,7 @@
       - if @profile.avatar.attached?
         = image_tag url_for(@profile.avatar), alt: 'avatar', class: 'avatar'
       - else
-        = image_tag 'https://www.manufacturingusa.com/sites/prod/files/default.png', alt: 'avatar', class: 'avatar'
+        = image_tag 'ico-blankuser.png', alt: 'avatar', class: 'avatar'
     %div.puser
       %h4 #{@profile.fullname}
       - if @profile.fullname == (nil || "")
@@ -17,24 +17,27 @@
       = link_to image_tag( 'logo_temp.svg'), root_path
 
   %div.profile-content
+    %div.miniheader
+      %div.go-back
+        %a(href=profiles_path) < Atrás
+      %div.options-title
+        - if @profile.fullname != (nil || "")
+          %p Formas de reconocer a #{@profile.fullname.split(" ")[0]}
+        - else
+          %p Formas de reconocer a #{@name}
 
-    %div.profile-description
-      %div.miniheader.rewardv
-        %div.go-back
-          %a(href=profiles_path) < Atrás
-        %div.options-title
-          - if @profile.fullname != (nil || "")
-            %p Formas de reconocer a #{@profile.fullname.split(" ")[0]}
-          - else
-            %p Formas de reconocer a #{@name}
     %div.options-container
-      %a.option-card(href=profiles_coffee_path)
-        = image_tag 'coffee.svg'
-        %p Café
+      -if @profile.coffee_price && @profile.accounts.last
+        %a.option-card(href=profiles_coffee_path)
+          = image_tag 'coffee.svg'
+          %p Café
+      -else
+        %a.option-card.gray
+          = image_tag 'coffee.svg'
+          %p Café
       %a.option-card.minitopmargin(href=profiles_hug_path)
         = image_tag 'heart.png'
         %p Abrazo
-
     %div.empty-state
       = image_tag 'pink_girl.svg', alt: 'pink girl'
       %p Seleciona alguna de las dos opciones para continuar

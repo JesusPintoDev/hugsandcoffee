@@ -83,8 +83,9 @@ ActiveRecord::Schema.define(version: 2018_10_16_033211) do
     t.string "fullname"
     t.string "role"
     t.string "message"
-    t.boolean "appreciation"
+    t.boolean "appreciation", null: false
     t.string "quantity"
+    t.boolean "show", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_testimonials_on_profile_id"
